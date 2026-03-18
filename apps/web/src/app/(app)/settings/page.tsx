@@ -4,6 +4,7 @@ import { isPaymentEnabled } from "@quittungsch/payments/feature-flags";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@quittungsch/ui";
 import { Button } from "@quittungsch/ui";
+import { LanguageSelector } from "@/components/settings/language-selector";
 
 export const metadata = { title: "Einstellungen" };
 
@@ -101,6 +102,17 @@ export default async function SettingsPage() {
               <Button className="w-full">Jetzt abonnieren</Button>
             </Link>
           )}
+        </CardContent>
+      </Card>
+
+      {/* Language */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Sprache / Langue / Lingua / Lingua</CardTitle>
+          <CardDescription>Wählen Sie Ihre bevorzugte Sprache</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <LanguageSelector current={tenant?.preferredLanguage ?? "de"} />
         </CardContent>
       </Card>
 
