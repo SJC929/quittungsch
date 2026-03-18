@@ -1,4 +1,4 @@
-export const SUPPORTED_LANGUAGES = ["de", "fr", "it", "en"] as const;
+export const SUPPORTED_LANGUAGES = ["de", "fr", "it", "rm", "en"] as const;
 export type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
 
 export const DEFAULT_LANGUAGE: SupportedLanguage = "de";
@@ -7,6 +7,7 @@ export const LANGUAGE_NAMES: Record<SupportedLanguage, string> = {
   de: "Deutsch",
   fr: "Français",
   it: "Italiano",
+  rm: "Rumantsch",
   en: "English",
 };
 

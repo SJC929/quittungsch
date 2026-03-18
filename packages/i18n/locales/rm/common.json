@@ -1,0 +1,174 @@
+{
+  "app": {
+    "name": "QuittungsCH",
+    "tagline": "Registrar simpel las quittanzas – per independents svizzers"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "expenses": "Quittanzas",
+    "upload": "Registrar quittanza",
+    "exports": "Exports",
+    "settings": "Parameters",
+    "logout": "Deconnectar"
+  },
+  "auth": {
+    "login": "Connectar",
+    "register": "Registrar",
+    "email": "E-mail",
+    "password": "Pled-clav",
+    "forgotPassword": "Pled-clav emblidà?",
+    "magicLink": "Trametter Magic Link",
+    "orContinueWith": "u cuntinuar cun",
+    "alreadyHaveAccount": "Avais gia in conto?",
+    "noAccount": "Nagin conto anc?"
+  },
+  "onboarding": {
+    "welcome": "Bainvegni tar QuittungsCH",
+    "step1Title": "Vossa interpresa",
+    "step2Title": "Parameters da l'IVA",
+    "step3Title": "Preferenza d'export",
+    "step4Title": "Lingua",
+    "businessName": "Num da la firma / num",
+    "uid": "Numer d'IVA (UID, facultativ)",
+    "uidPlaceholder": "CHE-123.456.789",
+    "preferredExport": "Format d'export preferì",
+    "language": "Lingua",
+    "next": "Enavant",
+    "back": "Enavos",
+    "finish": "Cumenzar",
+    "skip": "Sursiglir"
+  },
+  "expenses": {
+    "title": "Quittanzas",
+    "add": "Agiuntar quittanza",
+    "search": "Tschertgar...",
+    "filterCategory": "Categoria",
+    "filterDate": "Perioda",
+    "filterAmount": "Import",
+    "noExpenses": "Naginas quittanzas anc avant maun",
+    "merchant": "Vendider",
+    "date": "Data",
+    "amount": "Import",
+    "category": "Categoria",
+    "vatRate": "Taux d'IVA",
+    "vatAmount": "Import d'IVA",
+    "paymentMethod": "Medi da pajament",
+    "notes": "Remartgas",
+    "receiptType": "Tip da quittanza",
+    "needsReview": "Da controllar",
+    "confidence": "Confidenza OCR",
+    "save": "Memorisar",
+    "cancel": "Interrumper",
+    "delete": "Stritgar",
+    "edit": "Modifitgar",
+    "view": "Mussar"
+  },
+  "categories": {
+    "RESTAURANT": "Mangiar & Baiver",
+    "TANKSTELLE": "Benzin / Transport",
+    "BUERO": "Material d'uffizi",
+    "TELEFON": "Telefon / Internet",
+    "TRANSPORT": "Transport / Viadi",
+    "UNTERKUNFT": "Logiaziun",
+    "VERSICHERUNG": "Assicuranza",
+    "WEITERBILDUNG": "Furmaziun",
+    "DIVERSES": "Divers"
+  },
+  "receiptTypes": {
+    "KASSENBON": "Quittanza da cassa",
+    "RECHNUNG": "Fattura",
+    "TANKBELEG": "Quittanza da benzin",
+    "QR_RECHNUNG": "Fattura QR",
+    "SONSTIGE": "Auters"
+  },
+  "paymentMethods": {
+    "CASH": "Cuntant",
+    "CARD": "Carta",
+    "TWINT": "TWINT",
+    "BANK_TRANSFER": "Viro bancari",
+    "UNKNOWN": "Nunenconuschent"
+  },
+  "ocr": {
+    "processing": "Quittanza vegn analisada...",
+    "highConfidence": "Autezza exactezza – pussaivel da memorisar directamain",
+    "mediumConfidence": "Controllai ils champs per plaschair",
+    "lowConfidence": "Bassa exactezza – corrigiai ils champs marcads",
+    "layer1": "Detecziun da text (OCR)...",
+    "layer2": "Analisa IA...",
+    "manualFallback": "Endataziun manuala da las datas",
+    "qrDetected": "Fattura QR detectada"
+  },
+  "upload": {
+    "title": "Registrar quittanza",
+    "dragDrop": "Trair ina maletg u PDF qua",
+    "orClick": "u cliccar per tscherner",
+    "takePhoto": "Far ina foto",
+    "supportedFormats": "JPG, PNG, PDF fin 10 MB",
+    "processing": "Vegn processat...",
+    "confirm": "Confermar e memorisar las datas"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalExpenses": "Expensas totals",
+    "totalVat": "IVA total",
+    "expenseCount": "Dumber da quittanzas",
+    "needsReview": "Da controllar",
+    "thisMonth": "Quest mais",
+    "lastMonth": "Il mais passà",
+    "byCategory": "Tenor categoria",
+    "recentExpenses": "Ultimas quittanzas"
+  },
+  "exports": {
+    "title": "Exports",
+    "generate": "Crear export",
+    "format": "Format",
+    "dateRange": "Perioda",
+    "from": "Da",
+    "to": "Fin",
+    "download": "Telechargiar",
+    "formats": {
+      "EXCEL": "Excel (.xlsx)",
+      "CSV": "CSV (ponts e virgulaziun)",
+      "PDF": "Rapport PDF",
+      "GOOGLE_SHEETS": "Google Sheets"
+    },
+    "status": {
+      "pending": "En spetga",
+      "processing": "Vegn creà...",
+      "done": "Finì",
+      "error": "Errur"
+    }
+  },
+  "payment": {
+    "title": "Abonnament",
+    "price": "CHF 10 / mais",
+    "payWithCard": "Pajar cun carta",
+    "payWithTwint": "Pajar cun TWINT",
+    "payWithDatatrans": "Pajar via Datatrans",
+    "comingSoon": "Bainbaud acceptain nus pajaments – pudais utilisar l'app gratuitamain fin al launch",
+    "managePlan": "Administrar l'abonnament",
+    "cancelSubscription": "Denunziar",
+    "trialDays": "{{days}} dis gratuitamain"
+  },
+  "errors": {
+    "generic": "Ina errur è succedida",
+    "notFound": "Betg chattà",
+    "unauthorized": "Betg autorisà",
+    "rateLimit": "Memia bleras dumondas – spetgai per plaschair",
+    "uploadFailed": "Upload buca reussì",
+    "ocrFailed": "Analisa OCR buca reussida"
+  },
+  "common": {
+    "loading": "Chargiar...",
+    "save": "Memorisar",
+    "cancel": "Interrumper",
+    "delete": "Stritgar",
+    "edit": "Modifitgar",
+    "confirm": "Confermar",
+    "close": "Serrar",
+    "yes": "Gea",
+    "no": "Na",
+    "chf": "CHF",
+    "dateFormat": "DD.MM.YYYY"
+  }
+}
