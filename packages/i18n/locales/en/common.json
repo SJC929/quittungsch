@@ -1,0 +1,174 @@
+{
+  "app": {
+    "name": "QuittungsCH",
+    "tagline": "Simple receipt management – for Swiss self-employed professionals"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "expenses": "Receipts",
+    "upload": "Add Receipt",
+    "exports": "Exports",
+    "settings": "Settings",
+    "logout": "Sign Out"
+  },
+  "auth": {
+    "login": "Sign In",
+    "register": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "magicLink": "Send Magic Link",
+    "orContinueWith": "or continue with",
+    "alreadyHaveAccount": "Already have an account?",
+    "noAccount": "Don't have an account?"
+  },
+  "onboarding": {
+    "welcome": "Welcome to QuittungsCH",
+    "step1Title": "Your Business",
+    "step2Title": "VAT Settings",
+    "step3Title": "Export Preference",
+    "step4Title": "Language",
+    "businessName": "Business / Full Name",
+    "uid": "VAT Number (UID, optional)",
+    "uidPlaceholder": "CHE-123.456.789",
+    "preferredExport": "Preferred export format",
+    "language": "Language",
+    "next": "Next",
+    "back": "Back",
+    "finish": "Get Started",
+    "skip": "Skip"
+  },
+  "expenses": {
+    "title": "Receipts",
+    "add": "Add Receipt",
+    "search": "Search...",
+    "filterCategory": "Category",
+    "filterDate": "Date Range",
+    "filterAmount": "Amount",
+    "noExpenses": "No receipts yet",
+    "merchant": "Merchant",
+    "date": "Date",
+    "amount": "Amount",
+    "category": "Category",
+    "vatRate": "VAT Rate",
+    "vatAmount": "VAT Amount",
+    "paymentMethod": "Payment Method",
+    "notes": "Notes",
+    "receiptType": "Receipt Type",
+    "needsReview": "Needs Review",
+    "confidence": "OCR Confidence",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View"
+  },
+  "categories": {
+    "RESTAURANT": "Food & Beverages",
+    "TANKSTELLE": "Fuel / Transport",
+    "BUERO": "Office Supplies",
+    "TELEFON": "Phone / Internet",
+    "TRANSPORT": "Transport / Travel",
+    "UNTERKUNFT": "Accommodation",
+    "VERSICHERUNG": "Insurance",
+    "WEITERBILDUNG": "Training / Education",
+    "DIVERSES": "Miscellaneous"
+  },
+  "receiptTypes": {
+    "KASSENBON": "Receipt",
+    "RECHNUNG": "Invoice",
+    "TANKBELEG": "Fuel Receipt",
+    "QR_RECHNUNG": "QR Invoice",
+    "SONSTIGE": "Other"
+  },
+  "paymentMethods": {
+    "CASH": "Cash",
+    "CARD": "Card",
+    "TWINT": "TWINT",
+    "BANK_TRANSFER": "Bank Transfer",
+    "UNKNOWN": "Unknown"
+  },
+  "ocr": {
+    "processing": "Analysing receipt...",
+    "highConfidence": "High accuracy – ready to save",
+    "mediumConfidence": "Please review the fields",
+    "lowConfidence": "Low accuracy – correct highlighted fields",
+    "layer1": "Text recognition (OCR)...",
+    "layer2": "AI analysis...",
+    "manualFallback": "Please enter data manually",
+    "qrDetected": "QR Invoice detected"
+  },
+  "upload": {
+    "title": "Add Receipt",
+    "dragDrop": "Drag an image or PDF here",
+    "orClick": "or click to select",
+    "takePhoto": "Take Photo",
+    "supportedFormats": "JPG, PNG, PDF up to 10 MB",
+    "processing": "Processing...",
+    "confirm": "Confirm and Save"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalExpenses": "Total Expenses",
+    "totalVat": "Total VAT",
+    "expenseCount": "Receipt Count",
+    "needsReview": "Needs Review",
+    "thisMonth": "This Month",
+    "lastMonth": "Last Month",
+    "byCategory": "By Category",
+    "recentExpenses": "Recent Receipts"
+  },
+  "exports": {
+    "title": "Exports",
+    "generate": "Create Export",
+    "format": "Format",
+    "dateRange": "Date Range",
+    "from": "From",
+    "to": "To",
+    "download": "Download",
+    "formats": {
+      "EXCEL": "Excel (.xlsx)",
+      "CSV": "CSV (semicolon)",
+      "PDF": "PDF Report",
+      "GOOGLE_SHEETS": "Google Sheets"
+    },
+    "status": {
+      "pending": "Pending",
+      "processing": "Creating...",
+      "done": "Done",
+      "error": "Error"
+    }
+  },
+  "payment": {
+    "title": "Subscription",
+    "price": "CHF 10 / month",
+    "payWithCard": "Pay with Card",
+    "payWithTwint": "Pay with TWINT",
+    "payWithDatatrans": "Pay via Datatrans",
+    "comingSoon": "Payments coming soon – use the app for free until launch",
+    "managePlan": "Manage Subscription",
+    "cancelSubscription": "Cancel Subscription",
+    "trialDays": "{{days}} days free"
+  },
+  "errors": {
+    "generic": "An error occurred",
+    "notFound": "Not found",
+    "unauthorized": "Unauthorized",
+    "rateLimit": "Too many requests – please wait",
+    "uploadFailed": "Upload failed",
+    "ocrFailed": "OCR analysis failed"
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "confirm": "Confirm",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No",
+    "chf": "CHF",
+    "dateFormat": "DD.MM.YYYY"
+  }
+}

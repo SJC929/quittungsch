@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuittungsCH – Onboarding</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');*{font-family:'Inter',sans-serif;}</style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+
+  <div class="w-full max-w-lg">
+    <a href="index.html" class="text-sm text-blue-500 hover:underline mb-4 block">← Zurück</a>
+
+    <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+      <!-- Progress bar (Step 2 active) -->
+      <div class="flex">
+        <div class="flex-1 h-1.5 bg-blue-600"></div>
+        <div class="flex-1 h-1.5 bg-blue-600"></div>
+        <div class="flex-1 h-1.5 bg-gray-200"></div>
+        <div class="flex-1 h-1.5 bg-gray-200"></div>
+      </div>
+
+      <div class="p-8">
+        <div class="flex items-center gap-2 mb-6">
+          <span class="text-xs text-gray-400 font-medium">Schritt 2 von 4</span>
+          <div class="h-px flex-1 bg-gray-100"></div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-900 mb-1">MwSt-Einstellungen</h2>
+        <p class="text-gray-400 text-sm mb-6">Sind Sie MwSt-pflichtig? Die UID erscheint auf Ihren Exporten.</p>
+
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">MwSt-Nummer (UID, optional)</label>
+            <input type="text" placeholder="CHE-123.456.789" value=""
+              class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm bg-gray-50">
+          </div>
+          <div class="bg-blue-50 rounded-xl p-4 text-xs text-blue-700 space-y-1">
+            <p class="font-semibold">Schweizer MwSt-Sätze:</p>
+            <p>🔵 <strong>8.1%</strong> – Normalsatz (Standardleistungen)</p>
+            <p>🟢 <strong>3.8%</strong> – Sondersatz (Beherbergung)</p>
+            <p>🟡 <strong>2.5%</strong> – Reduzierter Satz (Lebensmittel etc.)</p>
+            <p class="mt-2 text-blue-500">QuittungsCH erkennt diese automatisch via OCR.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3 mt-8">
+          <button class="flex-1 border border-gray-300 text-gray-700 font-medium rounded-xl py-3 text-sm hover:bg-gray-50">
+            Zurück
+          </button>
+          <a href="03-dashboard.html" class="flex-2 flex-grow-[2]">
+            <button class="w-full bg-blue-600 text-white font-semibold rounded-xl py-3 text-sm hover:bg-blue-700">
+              Weiter →
+            </button>
+          </a>
+        </div>
+        <button class="w-full text-center text-xs text-gray-400 mt-3 hover:text-gray-600">Überspringen</button>
+      </div>
+    </div>
+
+    <!-- Step 3 preview below -->
+    <div class="bg-white rounded-2xl shadow-xl overflow-hidden mt-4">
+      <div class="flex">
+        <div class="flex-1 h-1.5 bg-blue-600"></div>
+        <div class="flex-1 h-1.5 bg-blue-600"></div>
+        <div class="flex-1 h-1.5 bg-blue-600"></div>
+        <div class="flex-1 h-1.5 bg-gray-200"></div>
+      </div>
+      <div class="p-8">
+        <div class="flex items-center gap-2 mb-6"><span class="text-xs text-gray-400">Schritt 3 von 4</span><div class="h-px flex-1 bg-gray-100"></div></div>
+        <h2 class="text-2xl font-bold mb-1">Export-Präferenz</h2>
+        <p class="text-gray-400 text-sm mb-6">Für Ihr Treuhänderbüro oder Buchhaltungssoftware.</p>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="border-2 border-blue-600 bg-blue-50 rounded-xl p-4">
+            <p class="font-bold text-sm text-blue-700">📊 Excel (.xlsx)</p>
+            <p class="text-xs text-gray-500 mt-1">Ideal für Swiss Excel, eine Seite pro Monat</p>
+          </div>
+          <div class="border-2 border-gray-200 rounded-xl p-4 hover:border-gray-300">
+            <p class="font-bold text-sm">📋 CSV</p>
+            <p class="text-xs text-gray-500 mt-1">Für jede Buchhaltungssoftware</p>
+          </div>
+          <div class="border-2 border-gray-200 rounded-xl p-4 hover:border-gray-300">
+            <p class="font-bold text-sm">📄 PDF-Bericht</p>
+            <p class="text-xs text-gray-500 mt-1">Für Treuhänder</p>
+          </div>
+          <div class="border-2 border-gray-200 rounded-xl p-4 hover:border-gray-300">
+            <p class="font-bold text-sm">🌐 Google Sheets</p>
+            <p class="text-xs text-gray-500 mt-1">Direkt in Google Sheets</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

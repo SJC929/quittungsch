@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuittungsCH – UI Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    * { font-family: 'Inter', sans-serif; }
+    .screen-link { transition: all 0.2s; }
+    .screen-link:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen p-8">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-blue-600 mb-2">QuittungsCH</h1>
+      <p class="text-gray-500 text-lg">UI Preview – Alle Screens</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+      <a href="01-login.html" class="screen-link bg-white rounded-2xl shadow-md overflow-hidden block">
+        <div class="bg-blue-600 h-3"></div>
+        <div class="p-5">
+          <div class="text-3xl mb-3">🔐</div>
+          <h3 class="font-bold text-gray-800 mb-1">Login</h3>
+          <p class="text-sm text-gray-400">Anmeldung & Registrierung</p>
+        </div>
+      </a>
+
+      <a href="02-onboarding.html" class="screen-link bg-white rounded-2xl shadow-md overflow-hidden block">
+        <div class="bg-indigo-500 h-3"></div>
+        <div class="p-5">
+          <div class="text-3xl mb-3">🧭</div>
+          <h3 class="font-bold text-gray-800 mb-1">Onboarding</h3>
+          <p class="text-sm text-gray-400">4-Schritt Wizard</p>
+        </div>
+      </a>
+
+      <a href="03-dashboard.html" class="screen-link bg-white rounded-2xl shadow-md overflow-hidden block">
+        <div class="bg-green-500 h-3"></div>
+        <div class="p-5">
+          <div class="text-3xl mb-3">📊</div>
+          <h3 class="font-bold text-gray-800 mb-1">Dashboard</h3>
+          <p class="text-sm text-gray-400">Übersicht & Statistiken</p>
+        </div>
+      </a>
+
+      <a href="04-upload.html" class="screen-link bg-white rounded-2xl shadow-md overflow-hidden block">
+        <div class="bg-orange-500 h-3"></div>
+        <div class="p-5">
+          <div class="text-3xl mb-3">📷</div>
+          <h3 class="font-bold text-gray-800 mb-1">Beleg erfassen</h3>
+          <p class="text-sm text-gray-400">OCR Upload & KI-Analyse</p>
+        </div>
+      </a>
+
+      <a href="05-expenses.html" class="screen-link bg-white rounded-2xl shadow-md overflow-hidden block">
+        <div class="bg-purple-500 h-3"></div>
+        <div class="p-5">
+          <div class="text-3xl mb-3">🧾</div>
+          <h3 class="font-bold text-gray-800 mb-1">Belege Liste</h3>
+          <p class="text-sm text-gray-400">Filter, Suche, Review</p>
+        </div>
+      </a>
+
+      <a href="06-exports.html" class="screen-link bg-white rounded-2xl shadow-md overflow-hidden block">
+        <div class="bg-teal-500 h-3"></div>
+        <div class="p-5">
+          <div class="text-3xl mb-3">📤</div>
+          <h3 class="font-bold text-gray-800 mb-1">Export</h3>
+          <p class="text-sm text-gray-400">Excel / CSV / PDF</p>
+        </div>
+      </a>
+
+      <a href="07-checkout.html" class="screen-link bg-white rounded-2xl shadow-md overflow-hidden block">
+        <div class="bg-yellow-500 h-3"></div>
+        <div class="p-5">
+          <div class="text-3xl mb-3">💳</div>
+          <h3 class="font-bold text-gray-800 mb-1">Checkout</h3>
+          <p class="text-sm text-gray-400">Stripe / TWINT / Gratis</p>
+        </div>
+      </a>
+    </div>
+
+    <p class="text-center text-gray-400 text-sm mt-8">Klicken Sie auf einen Screen um ihn zu öffnen</p>
+  </div>
+</body>
+</html>

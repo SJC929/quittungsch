@@ -1,0 +1,174 @@
+{
+  "app": {
+    "name": "QuittungsCH",
+    "tagline": "Gérez vos reçus facilement – pour indépendants suisses"
+  },
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "expenses": "Reçus",
+    "upload": "Ajouter un reçu",
+    "exports": "Exports",
+    "settings": "Paramètres",
+    "logout": "Se déconnecter"
+  },
+  "auth": {
+    "login": "Se connecter",
+    "register": "S'inscrire",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "magicLink": "Envoyer un lien magique",
+    "orContinueWith": "ou continuer avec",
+    "alreadyHaveAccount": "Déjà un compte ?",
+    "noAccount": "Pas encore de compte ?"
+  },
+  "onboarding": {
+    "welcome": "Bienvenue sur QuittungsCH",
+    "step1Title": "Votre entreprise",
+    "step2Title": "Paramètres TVA",
+    "step3Title": "Préférence d'export",
+    "step4Title": "Langue",
+    "businessName": "Nom de l'entreprise / Nom",
+    "uid": "Numéro TVA (UID, optionnel)",
+    "uidPlaceholder": "CHE-123.456.789",
+    "preferredExport": "Format d'export préféré",
+    "language": "Langue",
+    "next": "Suivant",
+    "back": "Retour",
+    "finish": "Commencer",
+    "skip": "Passer"
+  },
+  "expenses": {
+    "title": "Reçus",
+    "add": "Ajouter un reçu",
+    "search": "Rechercher...",
+    "filterCategory": "Catégorie",
+    "filterDate": "Période",
+    "filterAmount": "Montant",
+    "noExpenses": "Aucun reçu pour l'instant",
+    "merchant": "Commerçant",
+    "date": "Date",
+    "amount": "Montant",
+    "category": "Catégorie",
+    "vatRate": "Taux TVA",
+    "vatAmount": "Montant TVA",
+    "paymentMethod": "Mode de paiement",
+    "notes": "Notes",
+    "receiptType": "Type de reçu",
+    "needsReview": "À vérifier",
+    "confidence": "Confiance OCR",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Afficher"
+  },
+  "categories": {
+    "RESTAURANT": "Repas & Boissons",
+    "TANKSTELLE": "Carburant / Transport",
+    "BUERO": "Matériel de bureau",
+    "TELEFON": "Téléphone / Internet",
+    "TRANSPORT": "Transport / Voyage",
+    "UNTERKUNFT": "Hébergement",
+    "VERSICHERUNG": "Assurance",
+    "WEITERBILDUNG": "Formation continue",
+    "DIVERSES": "Divers"
+  },
+  "receiptTypes": {
+    "KASSENBON": "Ticket de caisse",
+    "RECHNUNG": "Facture",
+    "TANKBELEG": "Reçu carburant",
+    "QR_RECHNUNG": "Facture QR",
+    "SONSTIGE": "Autre"
+  },
+  "paymentMethods": {
+    "CASH": "Espèces",
+    "CARD": "Carte",
+    "TWINT": "TWINT",
+    "BANK_TRANSFER": "Virement bancaire",
+    "UNKNOWN": "Inconnu"
+  },
+  "ocr": {
+    "processing": "Analyse du reçu en cours...",
+    "highConfidence": "Haute précision – enregistrement direct possible",
+    "mediumConfidence": "Veuillez vérifier les champs",
+    "lowConfidence": "Faible précision – corrigez les champs marqués",
+    "layer1": "Reconnaissance de texte (OCR)...",
+    "layer2": "Analyse IA...",
+    "manualFallback": "Veuillez saisir les données manuellement",
+    "qrDetected": "Facture QR détectée"
+  },
+  "upload": {
+    "title": "Ajouter un reçu",
+    "dragDrop": "Glissez une image ou un PDF ici",
+    "orClick": "ou cliquez pour sélectionner",
+    "takePhoto": "Prendre une photo",
+    "supportedFormats": "JPG, PNG, PDF jusqu'à 10 Mo",
+    "processing": "Traitement en cours...",
+    "confirm": "Confirmer et enregistrer"
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "totalExpenses": "Total des dépenses",
+    "totalVat": "TVA totale",
+    "expenseCount": "Nombre de reçus",
+    "needsReview": "À vérifier",
+    "thisMonth": "Ce mois",
+    "lastMonth": "Mois dernier",
+    "byCategory": "Par catégorie",
+    "recentExpenses": "Reçus récents"
+  },
+  "exports": {
+    "title": "Exports",
+    "generate": "Créer un export",
+    "format": "Format",
+    "dateRange": "Période",
+    "from": "De",
+    "to": "À",
+    "download": "Télécharger",
+    "formats": {
+      "EXCEL": "Excel (.xlsx)",
+      "CSV": "CSV (point-virgule)",
+      "PDF": "Rapport PDF",
+      "GOOGLE_SHEETS": "Google Sheets"
+    },
+    "status": {
+      "pending": "En attente",
+      "processing": "Création en cours...",
+      "done": "Terminé",
+      "error": "Erreur"
+    }
+  },
+  "payment": {
+    "title": "Abonnement",
+    "price": "CHF 10 / mois",
+    "payWithCard": "Payer par carte",
+    "payWithTwint": "Payer avec TWINT",
+    "payWithDatatrans": "Payer via Datatrans",
+    "comingSoon": "Les paiements arrivent bientôt – vous pouvez utiliser l'app gratuitement jusqu'au lancement",
+    "managePlan": "Gérer l'abonnement",
+    "cancelSubscription": "Résilier",
+    "trialDays": "{{days}} jours gratuits"
+  },
+  "errors": {
+    "generic": "Une erreur s'est produite",
+    "notFound": "Non trouvé",
+    "unauthorized": "Non autorisé",
+    "rateLimit": "Trop de requêtes – veuillez patienter",
+    "uploadFailed": "Échec du téléchargement",
+    "ocrFailed": "Échec de l'analyse OCR"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "confirm": "Confirmer",
+    "close": "Fermer",
+    "yes": "Oui",
+    "no": "Non",
+    "chf": "CHF",
+    "dateFormat": "DD.MM.YYYY"
+  }
+}

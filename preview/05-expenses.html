@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuittungsCH – Belege</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');*{font-family:'Inter',sans-serif;}</style>
+</head>
+<body class="bg-gray-50 min-h-screen flex">
+
+  <!-- Sidebar -->
+  <aside class="w-60 bg-white border-r border-gray-100 flex flex-col min-h-screen fixed left-0 top-0">
+    <div class="p-5 border-b border-gray-100">
+      <span class="text-xl font-bold text-blue-600">QuittungsCH</span>
+      <p class="text-xs text-gray-400 mt-0.5">Buchhaltung leicht gemacht</p>
+    </div>
+    <nav class="flex-1 p-4 space-y-1">
+      <a href="03-dashboard.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm"><span>📊</span> Dashboard</a>
+      <a href="04-upload.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm"><span>📷</span> Beleg erfassen</a>
+      <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-blue-50 text-blue-700 font-medium text-sm"><span>🧾</span> Belege</a>
+      <a href="06-exports.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm"><span>📤</span> Export</a>
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="ml-60 flex-1 p-8">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-6">
+      <div>
+        <h1 class="text-2xl font-bold text-gray-900">Belege</h1>
+        <p class="text-gray-400 text-sm mt-0.5">24 Belege im März 2026</p>
+      </div>
+      <a href="04-upload.html" class="bg-blue-600 text-white font-semibold rounded-xl px-5 py-2.5 text-sm hover:bg-blue-700">
+        + Beleg erfassen
+      </a>
+    </div>
+
+    <!-- Filters -->
+    <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-5">
+      <div class="flex gap-3 flex-wrap">
+        <input type="text" placeholder="🔍 Händler suchen..." class="border border-gray-200 rounded-xl px-3 py-2 text-sm flex-1 min-w-40">
+        <select class="border border-gray-200 rounded-xl px-3 py-2 text-sm">
+          <option>Alle Kategorien</option>
+          <option>🚗 Fahrzeug</option>
+          <option>💻 Software</option>
+          <option>🍽️ Verpflegung</option>
+          <option>📦 Material</option>
+          <option>📋 Büro</option>
+        </select>
+        <select class="border border-gray-200 rounded-xl px-3 py-2 text-sm">
+          <option>März 2026</option>
+          <option>Februar 2026</option>
+          <option>Januar 2026</option>
+        </select>
+        <select class="border border-gray-200 rounded-xl px-3 py-2 text-sm">
+          <option>Alle Status</option>
+          <option>⚠ Zu prüfen</option>
+          <option>✓ Geprüft</option>
+        </select>
+        <button class="bg-orange-100 text-orange-700 font-medium rounded-xl px-4 py-2 text-sm flex items-center gap-1.5">
+          ⚠ Zu prüfen <span class="bg-orange-500 text-white rounded-full px-1.5 py-0.5 text-xs">2</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-50 border-b border-gray-100">
+          <tr class="text-xs text-gray-400">
+            <th class="text-left px-5 py-3 font-medium">Datum ↕</th>
+            <th class="text-left px-5 py-3 font-medium">Händler</th>
+            <th class="text-left px-5 py-3 font-medium">Kategorie</th>
+            <th class="text-left px-5 py-3 font-medium">Zahlungsart</th>
+            <th class="text-right px-5 py-3 font-medium">MwSt%</th>
+            <th class="text-right px-5 py-3 font-medium">MwSt CHF</th>
+            <th class="text-right px-5 py-3 font-medium">Betrag</th>
+            <th class="text-center px-5 py-3 font-medium">KI</th>
+            <th class="px-5 py-3"></th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-50">
+          <!-- Row 1 - needs review -->
+          <tr class="bg-orange-50 hover:bg-orange-100 transition-colors">
+            <td class="px-5 py-3 text-gray-500">18.03.26</td>
+            <td class="px-5 py-3 font-medium text-gray-800">Adobe Inc.</td>
+            <td class="px-5 py-3"><span class="px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded-full text-xs">💻 Software</span></td>
+            <td class="px-5 py-3 text-gray-500">💳 Karte</td>
+            <td class="px-5 py-3 text-right text-gray-600">8.1%</td>
+            <td class="px-5 py-3 text-right text-gray-600">4.45</td>
+            <td class="px-5 py-3 text-right font-semibold">CHF 54.99</td>
+            <td class="px-5 py-3 text-center">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-orange-200 text-orange-700 rounded-full text-xs font-medium">⚠ 73%</span>
+            </td>
+            <td class="px-5 py-3">
+              <button class="text-blue-500 text-xs hover:underline">Prüfen</button>
+            </td>
+          </tr>
+          <!-- Row 2 - needs review -->
+          <tr class="bg-red-50 hover:bg-red-100 transition-colors">
+            <td class="px-5 py-3 text-gray-500">14.03.26</td>
+            <td class="px-5 py-3 font-medium text-gray-800">Digitec Galaxus</td>
+            <td class="px-5 py-3"><span class="px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs">📦 Material</span></td>
+            <td class="px-5 py-3 text-gray-500">📱 TWINT</td>
+            <td class="px-5 py-3 text-right text-gray-600">8.1%</td>
+            <td class="px-5 py-3 text-right text-gray-600">24.22</td>
+            <td class="px-5 py-3 text-right font-semibold">CHF 299.00</td>
+            <td class="px-5 py-3 text-center">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-red-200 text-red-700 rounded-full text-xs font-medium">⚠ 58%</span>
+            </td>
+            <td class="px-5 py-3">
+              <button class="text-blue-500 text-xs hover:underline">Prüfen</button>
+            </td>
+          </tr>
+          <!-- Normal rows -->
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-5 py-3 text-gray-500">18.03.26</td>
+            <td class="px-5 py-3 font-medium text-gray-800">Coop Pronto</td>
+            <td class="px-5 py-3"><span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full text-xs">🍽️ Verpflegung</span></td>
+            <td class="px-5 py-3 text-gray-500">💳 Karte</td>
+            <td class="px-5 py-3 text-right text-gray-600">2.5%</td>
+            <td class="px-5 py-3 text-right text-gray-600">0.39</td>
+            <td class="px-5 py-3 text-right font-semibold">CHF 15.80</td>
+            <td class="px-5 py-3 text-center">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-green-100 text-green-700 rounded-full text-xs font-medium">✓ 94%</span>
+            </td>
+            <td class="px-5 py-3"><button class="text-gray-300 text-xs hover:text-blue-500">···</button></td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-5 py-3 text-gray-500">17.03.26</td>
+            <td class="px-5 py-3 font-medium text-gray-800">Garage Müller AG</td>
+            <td class="px-5 py-3"><span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs">🚗 Fahrzeug</span></td>
+            <td class="px-5 py-3 text-gray-500">💵 Bar</td>
+            <td class="px-5 py-3 text-right text-gray-600">8.1%</td>
+            <td class="px-5 py-3 text-right text-gray-600">15.31</td>
+            <td class="px-5 py-3 text-right font-semibold">CHF 189.00</td>
+            <td class="px-5 py-3 text-center">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-green-100 text-green-700 rounded-full text-xs font-medium">✓ 96%</span>
+            </td>
+            <td class="px-5 py-3"><button class="text-gray-300 text-xs hover:text-blue-500">···</button></td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-5 py-3 text-gray-500">15.03.26</td>
+            <td class="px-5 py-3 font-medium text-gray-800">SBB</td>
+            <td class="px-5 py-3"><span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs">✈️ Reise</span></td>
+            <td class="px-5 py-3 text-gray-500">💳 Karte</td>
+            <td class="px-5 py-3 text-right text-gray-600">8.1%</td>
+            <td class="px-5 py-3 text-right text-gray-600">3.43</td>
+            <td class="px-5 py-3 text-right font-semibold">CHF 42.40</td>
+            <td class="px-5 py-3 text-center">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-green-100 text-green-700 rounded-full text-xs font-medium">✓ 91%</span>
+            </td>
+            <td class="px-5 py-3"><button class="text-gray-300 text-xs hover:text-blue-500">···</button></td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-5 py-3 text-gray-500">13.03.26</td>
+            <td class="px-5 py-3 font-medium text-gray-800">Interdiscount</td>
+            <td class="px-5 py-3"><span class="px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs">📦 Material</span></td>
+            <td class="px-5 py-3 text-gray-500">📱 TWINT</td>
+            <td class="px-5 py-3 text-right text-gray-600">8.1%</td>
+            <td class="px-5 py-3 text-right text-gray-600">40.57</td>
+            <td class="px-5 py-3 text-right font-semibold">CHF 501.00</td>
+            <td class="px-5 py-3 text-center">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-green-100 text-green-700 rounded-full text-xs font-medium">✓ 93%</span>
+            </td>
+            <td class="px-5 py-3"><button class="text-gray-300 text-xs hover:text-blue-500">···</button></td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-5 py-3 text-gray-500">12.03.26</td>
+            <td class="px-5 py-3 font-medium text-gray-800">Microsoft 365</td>
+            <td class="px-5 py-3"><span class="px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded-full text-xs">💻 Software</span></td>
+            <td class="px-5 py-3 text-gray-500">💳 Karte</td>
+            <td class="px-5 py-3 text-right text-gray-600">8.1%</td>
+            <td class="px-5 py-3 text-right text-gray-600">5.44</td>
+            <td class="px-5 py-3 text-right font-semibold">CHF 67.20</td>
+            <td class="px-5 py-3 text-center">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-green-100 text-green-700 rounded-full text-xs font-medium">✓ 97%</span>
+            </td>
+            <td class="px-5 py-3"><button class="text-gray-300 text-xs hover:text-blue-500">···</button></td>
+          </tr>
+        </tbody>
+        <!-- Total row -->
+        <tfoot class="bg-gray-50 border-t-2 border-gray-200">
+          <tr class="text-sm font-bold">
+            <td colspan="5" class="px-5 py-3 text-gray-700">Total März 2026 (24 Belege)</td>
+            <td class="px-5 py-3 text-right text-gray-700">CHF 311.64</td>
+            <td class="px-5 py-3 text-right text-blue-700">CHF 3'847.50</td>
+            <td colspan="2"></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex items-center justify-between mt-4 text-sm text-gray-400">
+      <p>Zeige 1–7 von 24 Belegen</p>
+      <div class="flex gap-1">
+        <button class="px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 text-gray-400">←</button>
+        <button class="px-3 py-1.5 rounded-lg bg-blue-600 text-white">1</button>
+        <button class="px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50">2</button>
+        <button class="px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50">3</button>
+        <button class="px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50">→</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

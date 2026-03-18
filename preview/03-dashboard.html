@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuittungsCH – Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');*{font-family:'Inter',sans-serif;}</style>
+</head>
+<body class="bg-gray-50 min-h-screen flex">
+
+  <!-- Sidebar -->
+  <aside class="w-60 bg-white border-r border-gray-100 flex flex-col min-h-screen fixed left-0 top-0">
+    <div class="p-5 border-b border-gray-100">
+      <span class="text-xl font-bold text-blue-600">QuittungsCH</span>
+      <p class="text-xs text-gray-400 mt-0.5">Buchhaltung leicht gemacht</p>
+    </div>
+    <nav class="flex-1 p-4 space-y-1">
+      <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-blue-50 text-blue-700 font-medium text-sm">
+        <span>📊</span> Dashboard
+      </a>
+      <a href="04-upload.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
+        <span>📷</span> Beleg erfassen
+      </a>
+      <a href="05-expenses.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
+        <span>🧾</span> Belege
+      </a>
+      <a href="06-exports.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
+        <span>📤</span> Export
+      </a>
+      <a href="07-checkout.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
+        <span>💳</span> Upgrade
+      </a>
+      <div class="pt-4 border-t border-gray-100 mt-4">
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
+          <span>⚙️</span> Einstellungen
+        </a>
+      </div>
+    </nav>
+    <div class="p-4 border-t border-gray-100">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-sm font-bold text-blue-700">M</div>
+        <div>
+          <p class="text-sm font-medium text-gray-800">Max Muster</p>
+          <p class="text-xs text-gray-400">Free Plan</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="ml-60 flex-1 p-8">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h1 class="text-2xl font-bold text-gray-900">Guten Morgen, Max 👋</h1>
+        <p class="text-gray-400 text-sm mt-0.5">März 2026 – Übersicht</p>
+      </div>
+      <a href="04-upload.html" class="bg-blue-600 text-white font-semibold rounded-xl px-5 py-2.5 text-sm hover:bg-blue-700 flex items-center gap-2">
+        + Beleg erfassen
+      </a>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="grid grid-cols-4 gap-5 mb-8">
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+        <p class="text-xs text-gray-400 font-medium mb-1">Ausgaben (März)</p>
+        <p class="text-2xl font-bold text-gray-900">CHF 3'847.50</p>
+        <p class="text-xs text-green-600 mt-1">↑ +12% vs. Vormonat</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+        <p class="text-xs text-gray-400 font-medium mb-1">MwSt (März)</p>
+        <p class="text-2xl font-bold text-gray-900">CHF 311.64</p>
+        <p class="text-xs text-gray-400 mt-1">8.1% Normalsatz</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+        <p class="text-xs text-gray-400 font-medium mb-1">Belege (März)</p>
+        <p class="text-2xl font-bold text-gray-900">24</p>
+        <p class="text-xs text-orange-500 mt-1">⚠ 2 zu prüfen</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+        <p class="text-xs text-gray-400 font-medium mb-1">Kilometer</p>
+        <p class="text-2xl font-bold text-gray-900">347 km</p>
+        <p class="text-xs text-gray-400 mt-1">CHF 242.90 Pauschale</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-6">
+      <!-- Category breakdown -->
+      <div class="col-span-1 bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <h3 class="font-bold text-gray-800 mb-4">Kategorien</h3>
+        <div class="space-y-3">
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span class="text-gray-600">🚗 Fahrzeug</span>
+              <span class="font-medium">CHF 1'240</span>
+            </div>
+            <div class="w-full bg-gray-100 rounded-full h-2">
+              <div class="bg-blue-500 h-2 rounded-full" style="width:32%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span class="text-gray-600">💻 Software</span>
+              <span class="font-medium">CHF 890</span>
+            </div>
+            <div class="w-full bg-gray-100 rounded-full h-2">
+              <div class="bg-indigo-500 h-2 rounded-full" style="width:23%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span class="text-gray-600">🍽️ Verpflegung</span>
+              <span class="font-medium">CHF 620</span>
+            </div>
+            <div class="w-full bg-gray-100 rounded-full h-2">
+              <div class="bg-purple-500 h-2 rounded-full" style="width:16%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span class="text-gray-600">📦 Material</span>
+              <span class="font-medium">CHF 540</span>
+            </div>
+            <div class="w-full bg-gray-100 rounded-full h-2">
+              <div class="bg-orange-500 h-2 rounded-full" style="width:14%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span class="text-gray-600">📋 Büro</span>
+              <span class="font-medium">CHF 380</span>
+            </div>
+            <div class="w-full bg-gray-100 rounded-full h-2">
+              <div class="bg-teal-500 h-2 rounded-full" style="width:10%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span class="text-gray-600">🔧 Sonstiges</span>
+              <span class="font-medium">CHF 178</span>
+            </div>
+            <div class="w-full bg-gray-100 rounded-full h-2">
+              <div class="bg-gray-400 h-2 rounded-full" style="width:5%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent expenses -->
+      <div class="col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-bold text-gray-800">Letzte Belege</h3>
+          <a href="05-expenses.html" class="text-sm text-blue-500 hover:underline">Alle anzeigen →</a>
+        </div>
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-xs text-gray-400 border-b border-gray-100">
+              <th class="text-left pb-2 font-medium">Datum</th>
+              <th class="text-left pb-2 font-medium">Händler</th>
+              <th class="text-left pb-2 font-medium">Kategorie</th>
+              <th class="text-right pb-2 font-medium">Betrag</th>
+              <th class="text-right pb-2 font-medium">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-50">
+            <tr class="py-2">
+              <td class="py-2.5 text-gray-500">18.03.26</td>
+              <td class="py-2.5 font-medium text-gray-800">Coop</td>
+              <td class="py-2.5"><span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full text-xs">Verpflegung</span></td>
+              <td class="py-2.5 text-right font-medium">CHF 24.80</td>
+              <td class="py-2.5 text-right"><span class="inline-flex items-center gap-1 text-xs text-green-600">● OK</span></td>
+            </tr>
+            <tr>
+              <td class="py-2.5 text-gray-500">17.03.26</td>
+              <td class="py-2.5 font-medium text-gray-800">Garage Müller</td>
+              <td class="py-2.5"><span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs">Fahrzeug</span></td>
+              <td class="py-2.5 text-right font-medium">CHF 189.00</td>
+              <td class="py-2.5 text-right"><span class="inline-flex items-center gap-1 text-xs text-green-600">● OK</span></td>
+            </tr>
+            <tr>
+              <td class="py-2.5 text-gray-500">16.03.26</td>
+              <td class="py-2.5 font-medium text-gray-800">Adobe Inc.</td>
+              <td class="py-2.5"><span class="px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded-full text-xs">Software</span></td>
+              <td class="py-2.5 text-right font-medium">CHF 54.99</td>
+              <td class="py-2.5 text-right"><span class="inline-flex items-center gap-1 text-xs text-orange-500">● Prüfen</span></td>
+            </tr>
+            <tr>
+              <td class="py-2.5 text-gray-500">15.03.26</td>
+              <td class="py-2.5 font-medium text-gray-800">SBB</td>
+              <td class="py-2.5"><span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs">Reise</span></td>
+              <td class="py-2.5 text-right font-medium">CHF 42.40</td>
+              <td class="py-2.5 text-right"><span class="inline-flex items-center gap-1 text-xs text-green-600">● OK</span></td>
+            </tr>
+            <tr>
+              <td class="py-2.5 text-gray-500">14.03.26</td>
+              <td class="py-2.5 font-medium text-gray-800">Digitec</td>
+              <td class="py-2.5"><span class="px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs">Material</span></td>
+              <td class="py-2.5 text-right font-medium">CHF 299.00</td>
+              <td class="py-2.5 text-right"><span class="inline-flex items-center gap-1 text-xs text-red-500">● Prüfen</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Free plan banner -->
+    <div class="mt-6 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-5 flex items-center justify-between text-white">
+      <div>
+        <p class="font-bold">Sie nutzen den kostenlosen Plan</p>
+        <p class="text-sm text-blue-100 mt-0.5">Upgrade auf Pro für unlimitierte Belege, Google Sheets & Prioritäts-Support</p>
+      </div>
+      <a href="07-checkout.html" class="bg-white text-blue-700 font-semibold rounded-xl px-5 py-2.5 text-sm hover:bg-blue-50 whitespace-nowrap">
+        Upgrade → CHF 9/Mt
+      </a>
+    </div>
+  </main>
+
+</body>
+</html>

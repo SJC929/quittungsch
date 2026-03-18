@@ -1,0 +1,174 @@
+{
+  "app": {
+    "name": "QuittungsCH",
+    "tagline": "Belege einfach erfassen – für Schweizer Selbständige"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "expenses": "Belege",
+    "upload": "Beleg erfassen",
+    "exports": "Exporte",
+    "settings": "Einstellungen",
+    "logout": "Abmelden"
+  },
+  "auth": {
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "forgotPassword": "Passwort vergessen?",
+    "magicLink": "Magic Link senden",
+    "orContinueWith": "oder weiter mit",
+    "alreadyHaveAccount": "Bereits ein Konto?",
+    "noAccount": "Noch kein Konto?"
+  },
+  "onboarding": {
+    "welcome": "Willkommen bei QuittungsCH",
+    "step1Title": "Ihr Unternehmen",
+    "step2Title": "MwSt-Einstellungen",
+    "step3Title": "Export-Präferenz",
+    "step4Title": "Sprache",
+    "businessName": "Firmenname / Name",
+    "uid": "MwSt-Nummer (UID, optional)",
+    "uidPlaceholder": "CHE-123.456.789",
+    "preferredExport": "Bevorzugtes Exportformat",
+    "language": "Sprache",
+    "next": "Weiter",
+    "back": "Zurück",
+    "finish": "Loslegen",
+    "skip": "Überspringen"
+  },
+  "expenses": {
+    "title": "Belege",
+    "add": "Beleg hinzufügen",
+    "search": "Suchen...",
+    "filterCategory": "Kategorie",
+    "filterDate": "Zeitraum",
+    "filterAmount": "Betrag",
+    "noExpenses": "Noch keine Belege vorhanden",
+    "merchant": "Händler",
+    "date": "Datum",
+    "amount": "Betrag",
+    "category": "Kategorie",
+    "vatRate": "MwSt-Satz",
+    "vatAmount": "MwSt-Betrag",
+    "paymentMethod": "Zahlungsmittel",
+    "notes": "Notizen",
+    "receiptType": "Belegart",
+    "needsReview": "Zu prüfen",
+    "confidence": "OCR-Konfidenz",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "view": "Anzeigen"
+  },
+  "categories": {
+    "RESTAURANT": "Essen & Getränke",
+    "TANKSTELLE": "Benzin / Transport",
+    "BUERO": "Büromaterial",
+    "TELEFON": "Telefon / Internet",
+    "TRANSPORT": "Transport / Reise",
+    "UNTERKUNFT": "Unterkunft",
+    "VERSICHERUNG": "Versicherung",
+    "WEITERBILDUNG": "Weiterbildung",
+    "DIVERSES": "Diverses"
+  },
+  "receiptTypes": {
+    "KASSENBON": "Kassenbon",
+    "RECHNUNG": "Rechnung",
+    "TANKBELEG": "Tankbeleg",
+    "QR_RECHNUNG": "QR-Rechnung",
+    "SONSTIGE": "Sonstige"
+  },
+  "paymentMethods": {
+    "CASH": "Bar",
+    "CARD": "Karte",
+    "TWINT": "TWINT",
+    "BANK_TRANSFER": "Banküberweisung",
+    "UNKNOWN": "Unbekannt"
+  },
+  "ocr": {
+    "processing": "Beleg wird analysiert...",
+    "highConfidence": "Hohe Genauigkeit – direkt speichern möglich",
+    "mediumConfidence": "Bitte prüfen Sie die Felder",
+    "lowConfidence": "Geringe Genauigkeit – markierte Felder bitte korrigieren",
+    "layer1": "Texterkennung (OCR)...",
+    "layer2": "KI-Analyse...",
+    "manualFallback": "Bitte Daten manuell eingeben",
+    "qrDetected": "QR-Rechnung erkannt"
+  },
+  "upload": {
+    "title": "Beleg erfassen",
+    "dragDrop": "Bild oder PDF hierher ziehen",
+    "orClick": "oder klicken zum Auswählen",
+    "takePhoto": "Foto aufnehmen",
+    "supportedFormats": "JPG, PNG, PDF bis 10 MB",
+    "processing": "Wird verarbeitet...",
+    "confirm": "Daten bestätigen und speichern"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalExpenses": "Gesamtausgaben",
+    "totalVat": "MwSt total",
+    "expenseCount": "Anzahl Belege",
+    "needsReview": "Zu prüfen",
+    "thisMonth": "Dieser Monat",
+    "lastMonth": "Letzter Monat",
+    "byCategory": "Nach Kategorie",
+    "recentExpenses": "Letzte Belege"
+  },
+  "exports": {
+    "title": "Exporte",
+    "generate": "Export erstellen",
+    "format": "Format",
+    "dateRange": "Zeitraum",
+    "from": "Von",
+    "to": "Bis",
+    "download": "Herunterladen",
+    "formats": {
+      "EXCEL": "Excel (.xlsx)",
+      "CSV": "CSV (Semikolon)",
+      "PDF": "PDF-Bericht",
+      "GOOGLE_SHEETS": "Google Sheets"
+    },
+    "status": {
+      "pending": "Ausstehend",
+      "processing": "Wird erstellt...",
+      "done": "Fertig",
+      "error": "Fehler"
+    }
+  },
+  "payment": {
+    "title": "Abonnement",
+    "price": "CHF 10 / Monat",
+    "payWithCard": "Mit Karte bezahlen",
+    "payWithTwint": "Mit TWINT bezahlen",
+    "payWithDatatrans": "Via Datatrans bezahlen",
+    "comingSoon": "Wir nehmen bald Zahlungen entgegen – du kannst die App kostenlos nutzen bis zum Launch",
+    "managePlan": "Abonnement verwalten",
+    "cancelSubscription": "Kündigen",
+    "trialDays": "{{days}} Tage kostenlos testen"
+  },
+  "errors": {
+    "generic": "Ein Fehler ist aufgetreten",
+    "notFound": "Nicht gefunden",
+    "unauthorized": "Nicht autorisiert",
+    "rateLimit": "Zu viele Anfragen – bitte warten",
+    "uploadFailed": "Upload fehlgeschlagen",
+    "ocrFailed": "OCR-Analyse fehlgeschlagen"
+  },
+  "common": {
+    "loading": "Lädt...",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "confirm": "Bestätigen",
+    "close": "Schliessen",
+    "yes": "Ja",
+    "no": "Nein",
+    "chf": "CHF",
+    "dateFormat": "DD.MM.YYYY"
+  }
+}

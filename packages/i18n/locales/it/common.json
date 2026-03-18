@@ -1,0 +1,174 @@
+{
+  "app": {
+    "name": "QuittungsCH",
+    "tagline": "Gestisci le ricevute facilmente – per lavoratori autonomi svizzeri"
+  },
+  "nav": {
+    "dashboard": "Pannello",
+    "expenses": "Ricevute",
+    "upload": "Aggiungi ricevuta",
+    "exports": "Esportazioni",
+    "settings": "Impostazioni",
+    "logout": "Esci"
+  },
+  "auth": {
+    "login": "Accedi",
+    "register": "Registrati",
+    "email": "E-mail",
+    "password": "Password",
+    "forgotPassword": "Password dimenticata?",
+    "magicLink": "Invia link magico",
+    "orContinueWith": "o continua con",
+    "alreadyHaveAccount": "Hai già un account?",
+    "noAccount": "Non hai ancora un account?"
+  },
+  "onboarding": {
+    "welcome": "Benvenuto su QuittungsCH",
+    "step1Title": "La tua azienda",
+    "step2Title": "Impostazioni IVA",
+    "step3Title": "Preferenza esportazione",
+    "step4Title": "Lingua",
+    "businessName": "Nome azienda / Nome",
+    "uid": "Numero IVA (UID, opzionale)",
+    "uidPlaceholder": "CHE-123.456.789",
+    "preferredExport": "Formato di esportazione preferito",
+    "language": "Lingua",
+    "next": "Avanti",
+    "back": "Indietro",
+    "finish": "Inizia",
+    "skip": "Salta"
+  },
+  "expenses": {
+    "title": "Ricevute",
+    "add": "Aggiungi ricevuta",
+    "search": "Cerca...",
+    "filterCategory": "Categoria",
+    "filterDate": "Periodo",
+    "filterAmount": "Importo",
+    "noExpenses": "Nessuna ricevuta ancora",
+    "merchant": "Commerciante",
+    "date": "Data",
+    "amount": "Importo",
+    "category": "Categoria",
+    "vatRate": "Aliquota IVA",
+    "vatAmount": "Importo IVA",
+    "paymentMethod": "Metodo di pagamento",
+    "notes": "Note",
+    "receiptType": "Tipo ricevuta",
+    "needsReview": "Da verificare",
+    "confidence": "Attendibilità OCR",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "view": "Visualizza"
+  },
+  "categories": {
+    "RESTAURANT": "Pasti & Bevande",
+    "TANKSTELLE": "Carburante / Trasporto",
+    "BUERO": "Materiale ufficio",
+    "TELEFON": "Telefono / Internet",
+    "TRANSPORT": "Trasporto / Viaggio",
+    "UNTERKUNFT": "Alloggio",
+    "VERSICHERUNG": "Assicurazione",
+    "WEITERBILDUNG": "Formazione",
+    "DIVERSES": "Varie"
+  },
+  "receiptTypes": {
+    "KASSENBON": "Scontrino",
+    "RECHNUNG": "Fattura",
+    "TANKBELEG": "Ricevuta carburante",
+    "QR_RECHNUNG": "Fattura QR",
+    "SONSTIGE": "Altro"
+  },
+  "paymentMethods": {
+    "CASH": "Contanti",
+    "CARD": "Carta",
+    "TWINT": "TWINT",
+    "BANK_TRANSFER": "Bonifico bancario",
+    "UNKNOWN": "Sconosciuto"
+  },
+  "ocr": {
+    "processing": "Analisi ricevuta in corso...",
+    "highConfidence": "Alta precisione – salvataggio diretto possibile",
+    "mediumConfidence": "Si prega di verificare i campi",
+    "lowConfidence": "Bassa precisione – correggere i campi evidenziati",
+    "layer1": "Riconoscimento testo (OCR)...",
+    "layer2": "Analisi IA...",
+    "manualFallback": "Inserire i dati manualmente",
+    "qrDetected": "Fattura QR rilevata"
+  },
+  "upload": {
+    "title": "Aggiungi ricevuta",
+    "dragDrop": "Trascina un'immagine o PDF qui",
+    "orClick": "o clicca per selezionare",
+    "takePhoto": "Scatta foto",
+    "supportedFormats": "JPG, PNG, PDF fino a 10 MB",
+    "processing": "Elaborazione in corso...",
+    "confirm": "Conferma e salva"
+  },
+  "dashboard": {
+    "title": "Pannello",
+    "totalExpenses": "Totale spese",
+    "totalVat": "IVA totale",
+    "expenseCount": "Numero ricevute",
+    "needsReview": "Da verificare",
+    "thisMonth": "Questo mese",
+    "lastMonth": "Mese scorso",
+    "byCategory": "Per categoria",
+    "recentExpenses": "Ricevute recenti"
+  },
+  "exports": {
+    "title": "Esportazioni",
+    "generate": "Crea esportazione",
+    "format": "Formato",
+    "dateRange": "Periodo",
+    "from": "Da",
+    "to": "A",
+    "download": "Scarica",
+    "formats": {
+      "EXCEL": "Excel (.xlsx)",
+      "CSV": "CSV (punto e virgola)",
+      "PDF": "Report PDF",
+      "GOOGLE_SHEETS": "Google Sheets"
+    },
+    "status": {
+      "pending": "In attesa",
+      "processing": "Creazione in corso...",
+      "done": "Completato",
+      "error": "Errore"
+    }
+  },
+  "payment": {
+    "title": "Abbonamento",
+    "price": "CHF 10 / mese",
+    "payWithCard": "Paga con carta",
+    "payWithTwint": "Paga con TWINT",
+    "payWithDatatrans": "Paga con Datatrans",
+    "comingSoon": "I pagamenti arriveranno presto – puoi usare l'app gratuitamente fino al lancio",
+    "managePlan": "Gestisci abbonamento",
+    "cancelSubscription": "Disdire",
+    "trialDays": "{{days}} giorni gratuiti"
+  },
+  "errors": {
+    "generic": "Si è verificato un errore",
+    "notFound": "Non trovato",
+    "unauthorized": "Non autorizzato",
+    "rateLimit": "Troppe richieste – attendere",
+    "uploadFailed": "Caricamento fallito",
+    "ocrFailed": "Analisi OCR fallita"
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "confirm": "Conferma",
+    "close": "Chiudi",
+    "yes": "Sì",
+    "no": "No",
+    "chf": "CHF",
+    "dateFormat": "DD.MM.YYYY"
+  }
+}

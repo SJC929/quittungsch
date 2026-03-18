@@ -1,0 +1,21 @@
+{
+  "name": "@quittungsch/payments",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./feature-flags": "./src/lib/feature-flags.ts"
+  },
+  "dependencies": {
+    "stripe": "^16.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@types/node": "^20.14.0"
+  },
+  "peerDependencies": {
+    "@quittungsch/types": "*"
+  }
+}
