@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap');*{font-family:'DM Sans',sans-serif;}</style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center p-4">
+<body class="min-h-screen bg-gradient-to-br from-emerald-100 to-emerald-200 flex items-center justify-center p-4">
 
   <!-- Top bar with logo and language switcher -->
   <div style="position:fixed;top:0;left:0;right:0;height:52px;background:white;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:50;">
@@ -167,7 +167,18 @@
 
   <script>
   const OT={de:{back:'← Zurück',step:'Schritt 2 von 4',title:'MwSt-Einstellungen',desc:'Sind Sie MwSt-pflichtig? Die UID erscheint auf Ihren Exporten.'},fr:{back:'← Retour',step:'Étape 2 sur 4',title:'Paramètres TVA',desc:'Êtes-vous assujetti à la TVA?'},it:{back:'← Indietro',step:'Passo 2 di 4',title:'Impostazioni IVA',desc:'Siete soggetti all' IVA?'},rm:{back:'← Returnar',step:'Pass 2 da 4',title:'Parameters IVA',desc:'Essas Vus IVA-obligà?'},en:{back:'← Back',step:'Step 2 of 4',title:'VAT Settings',desc:'Are you VAT registered?'},tr:{back:'← Geri',step:'Adım 2 / 4',title:'KDV Ayarları',desc:'KDV mükellefi misiniz?'},sq:{back:'← Kthehu',step:'Hapi 2 nga 4',title:'Cilësimet e TVSH',desc:'Jeni të regjistruar për TVSH?'}};
-  function changeLang(lang){const t=OT[lang];if(!t)return;['back','step','title','desc'].forEach(id=>{const el=document.getElementById('txt-'+id);if(el)el.textContent=t[id];});
+  // On page load: restore saved language
+  window.addEventListener('DOMContentLoaded', function() {
+    const saved = localStorage.getItem('spezo_lang');
+    if (saved) {
+      const sel = document.getElementById('langSelect');
+      if (sel) { sel.value = saved; changeLang(saved); }
+      // For dashboard-style pages that use applyLang:
+      const langMap = {de:['🇨🇭','Deutsch'], fr:['🇫🇷','Français'], it:['🇮🇹','Italiano'], rm:['🇨🇭','Rumantsch'], en:['🇬🇧','English'], tr:['🇹🇷','Türkçe'], sq:['🇦🇱','Shqip']};
+      if (typeof applyLang === 'function' && langMap[saved]) applyLang(saved, langMap[saved][0], langMap[saved][1]);
+    }
+  });
+  function changeLang(lang){localStorage.setItem('spezo_lang', lang);const t=OT[lang];if(!t)return;['back','step','title','desc'].forEach(id=>{const el=document.getElementById('txt-'+id);if(el)el.textContent=t[id];});
   </script>
 </body>
 </html>

@@ -8,6 +8,326 @@ import { Label } from "@spezo/ui";
 import { Card, CardContent } from "@spezo/ui";
 import { ConfidenceBadge } from "@spezo/ui";
 import type { ExtractedExpense } from "@spezo/types";
+import { useLanguage } from "@/contexts/language-context";
+import type { SupportedLanguage } from "@spezo/i18n";
+
+const T = {
+  de: {
+    title: "Beleg erfassen",
+    drag_drop: "Bild oder PDF hierher ziehen",
+    or_click: "oder klicken zum Auswählen",
+    file_hint: "JPG, PNG, PDF bis 10 MB",
+    saved: "Beleg gespeichert!",
+    redirecting: "Weiterleitung zu den Belegen...",
+    analyzing: "Beleg wird analysiert...",
+    ocr_confidence: "OCR-Konfidenz",
+    uncertain_fields: "Unsichere Felder:",
+    merchant: "Händler",
+    date: "Datum",
+    amount: "Betrag CHF *",
+    vat_rate: "MwSt-Satz %",
+    no_vat: "Kein MwSt",
+    category: "Kategorie",
+    receipt_type: "Belegart",
+    payment_method: "Zahlungsmittel",
+    notes: "Notizen",
+    notes_placeholder: "Optionale Notizen...",
+    cancel: "Abbrechen",
+    save: "Speichern",
+    saving: "Wird gespeichert...",
+    ocr_failed: "OCR fehlgeschlagen",
+    upload_failed: "Upload fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    save_failed: "Speichern fehlgeschlagen.",
+    cash: "Bar",
+    card: "Karte",
+    bank: "Banküberweisung",
+    unknown_payment: "Unbekannt",
+    kassenbon: "Kassenbon",
+    rechnung: "Rechnung",
+    tankbeleg: "Tankbeleg",
+    qr_rechnung: "QR-Rechnung",
+    sonstige: "Sonstige",
+    cat_restaurant: "Essen & Getränke",
+    cat_tankstelle: "Benzin / Transport",
+    cat_buero: "Büromaterial",
+    cat_telefon: "Telefon / Internet",
+    cat_transport: "Transport / Reise",
+    cat_unterkunft: "Unterkunft",
+    cat_versicherung: "Versicherung",
+    cat_weiterbildung: "Weiterbildung",
+    cat_diverses: "Diverses",
+  },
+  fr: {
+    title: "Saisir reçu",
+    drag_drop: "Glissez une image ou PDF ici",
+    or_click: "ou cliquez pour sélectionner",
+    file_hint: "JPG, PNG, PDF jusqu'à 10 Mo",
+    saved: "Reçu enregistré !",
+    redirecting: "Redirection vers les reçus...",
+    analyzing: "Analyse du reçu...",
+    ocr_confidence: "Confiance OCR",
+    uncertain_fields: "Champs incertains :",
+    merchant: "Marchand",
+    date: "Date",
+    amount: "Montant CHF *",
+    vat_rate: "Taux TVA %",
+    no_vat: "Pas de TVA",
+    category: "Catégorie",
+    receipt_type: "Type de reçu",
+    payment_method: "Moyen de paiement",
+    notes: "Notes",
+    notes_placeholder: "Notes optionnelles...",
+    cancel: "Annuler",
+    save: "Enregistrer",
+    saving: "Enregistrement...",
+    ocr_failed: "Échec OCR",
+    upload_failed: "Échec du téléchargement. Veuillez réessayer.",
+    save_failed: "Échec de l'enregistrement.",
+    cash: "Espèces",
+    card: "Carte",
+    bank: "Virement bancaire",
+    unknown_payment: "Inconnu",
+    kassenbon: "Ticket de caisse",
+    rechnung: "Facture",
+    tankbeleg: "Reçu carburant",
+    qr_rechnung: "Facture QR",
+    sonstige: "Autres",
+    cat_restaurant: "Alimentation",
+    cat_tankstelle: "Carburant / Transport",
+    cat_buero: "Fournitures bureau",
+    cat_telefon: "Téléphone / Internet",
+    cat_transport: "Transport / Voyage",
+    cat_unterkunft: "Hébergement",
+    cat_versicherung: "Assurance",
+    cat_weiterbildung: "Formation",
+    cat_diverses: "Divers",
+  },
+  it: {
+    title: "Aggiungi ricevuta",
+    drag_drop: "Trascina immagine o PDF qui",
+    or_click: "o clicca per selezionare",
+    file_hint: "JPG, PNG, PDF fino a 10 MB",
+    saved: "Ricevuta salvata!",
+    redirecting: "Reindirizzamento alle ricevute...",
+    analyzing: "Analisi della ricevuta...",
+    ocr_confidence: "Affidabilità OCR",
+    uncertain_fields: "Campi incerti:",
+    merchant: "Commerciante",
+    date: "Data",
+    amount: "Importo CHF *",
+    vat_rate: "Aliquota IVA %",
+    no_vat: "Nessuna IVA",
+    category: "Categoria",
+    receipt_type: "Tipo ricevuta",
+    payment_method: "Metodo di pagamento",
+    notes: "Note",
+    notes_placeholder: "Note opzionali...",
+    cancel: "Annulla",
+    save: "Salva",
+    saving: "Salvataggio...",
+    ocr_failed: "OCR fallito",
+    upload_failed: "Caricamento fallito. Riprovare.",
+    save_failed: "Salvataggio fallito.",
+    cash: "Contanti",
+    card: "Carta",
+    bank: "Bonifico bancario",
+    unknown_payment: "Sconosciuto",
+    kassenbon: "Scontrino",
+    rechnung: "Fattura",
+    tankbeleg: "Ricevuta carburante",
+    qr_rechnung: "Fattura QR",
+    sonstige: "Altro",
+    cat_restaurant: "Alimentazione",
+    cat_tankstelle: "Carburante / Trasporto",
+    cat_buero: "Materiale ufficio",
+    cat_telefon: "Telefono / Internet",
+    cat_transport: "Trasporto / Viaggio",
+    cat_unterkunft: "Alloggio",
+    cat_versicherung: "Assicurazione",
+    cat_weiterbildung: "Formazione",
+    cat_diverses: "Varie",
+  },
+  rm: {
+    title: "Registrar quittanza",
+    drag_drop: "Trar ina imagem u PDF qua",
+    or_click: "u cliccar per selecziunar",
+    file_hint: "JPG, PNG, PDF fin 10 MB",
+    saved: "Quittanza memorisada!",
+    redirecting: "Redirecziun a las quittanzas...",
+    analyzing: "Quittanza vegn analisada...",
+    ocr_confidence: "Confidenza OCR",
+    uncertain_fields: "Champs incerts:",
+    merchant: "Vendider",
+    date: "Data",
+    amount: "Import CHF *",
+    vat_rate: "Taux IVA %",
+    no_vat: "Nagina IVA",
+    category: "Categoria",
+    receipt_type: "Tip da quittanza",
+    payment_method: "Medi da pajament",
+    notes: "Notas",
+    notes_placeholder: "Notas opziunalas...",
+    cancel: "Interrumper",
+    save: "Memorisar",
+    saving: "Vegn memorisà...",
+    ocr_failed: "OCR ha fallì",
+    upload_failed: "Upload ha fallì. Emprovar danovamain.",
+    save_failed: "Memorisar ha fallì.",
+    cash: "Cuntant",
+    card: "Carta",
+    bank: "Transfer bancari",
+    unknown_payment: "Nunenconuschent",
+    kassenbon: "Quittanza da cassa",
+    rechnung: "Quint",
+    tankbeleg: "Quittanza da benzin",
+    qr_rechnung: "Quint QR",
+    sonstige: "Auters",
+    cat_restaurant: "Mangiar & Baiver",
+    cat_tankstelle: "Benzin / Transport",
+    cat_buero: "Material d'uffizi",
+    cat_telefon: "Telefon / Internet",
+    cat_transport: "Transport / Viadi",
+    cat_unterkunft: "Alloschi",
+    cat_versicherung: "Assicuranza",
+    cat_weiterbildung: "Furmaziun",
+    cat_diverses: "Auters",
+  },
+  en: {
+    title: "Add receipt",
+    drag_drop: "Drag image or PDF here",
+    or_click: "or click to select",
+    file_hint: "JPG, PNG, PDF up to 10 MB",
+    saved: "Receipt saved!",
+    redirecting: "Redirecting to receipts...",
+    analyzing: "Analyzing receipt...",
+    ocr_confidence: "OCR Confidence",
+    uncertain_fields: "Uncertain fields:",
+    merchant: "Merchant",
+    date: "Date",
+    amount: "Amount CHF *",
+    vat_rate: "VAT Rate %",
+    no_vat: "No VAT",
+    category: "Category",
+    receipt_type: "Receipt type",
+    payment_method: "Payment method",
+    notes: "Notes",
+    notes_placeholder: "Optional notes...",
+    cancel: "Cancel",
+    save: "Save",
+    saving: "Saving...",
+    ocr_failed: "OCR failed",
+    upload_failed: "Upload failed. Please try again.",
+    save_failed: "Save failed.",
+    cash: "Cash",
+    card: "Card",
+    bank: "Bank transfer",
+    unknown_payment: "Unknown",
+    kassenbon: "Receipt",
+    rechnung: "Invoice",
+    tankbeleg: "Fuel receipt",
+    qr_rechnung: "QR Invoice",
+    sonstige: "Other",
+    cat_restaurant: "Food & Drinks",
+    cat_tankstelle: "Fuel / Transport",
+    cat_buero: "Office supplies",
+    cat_telefon: "Phone / Internet",
+    cat_transport: "Transport / Travel",
+    cat_unterkunft: "Accommodation",
+    cat_versicherung: "Insurance",
+    cat_weiterbildung: "Training",
+    cat_diverses: "Miscellaneous",
+  },
+  tr: {
+    title: "Makbuz ekle",
+    drag_drop: "Resim veya PDF'i buraya sürükleyin",
+    or_click: "veya seçmek için tıklayın",
+    file_hint: "JPG, PNG, PDF 10 MB'a kadar",
+    saved: "Makbuz kaydedildi!",
+    redirecting: "Makbuzlara yönlendiriliyor...",
+    analyzing: "Makbuz analiz ediliyor...",
+    ocr_confidence: "OCR Güveni",
+    uncertain_fields: "Belirsiz alanlar:",
+    merchant: "Satıcı",
+    date: "Tarih",
+    amount: "Tutar CHF *",
+    vat_rate: "KDV Oranı %",
+    no_vat: "KDV yok",
+    category: "Kategori",
+    receipt_type: "Makbuz türü",
+    payment_method: "Ödeme yöntemi",
+    notes: "Notlar",
+    notes_placeholder: "İsteğe bağlı notlar...",
+    cancel: "İptal",
+    save: "Kaydet",
+    saving: "Kaydediliyor...",
+    ocr_failed: "OCR başarısız",
+    upload_failed: "Yükleme başarısız. Lütfen tekrar deneyin.",
+    save_failed: "Kaydetme başarısız.",
+    cash: "Nakit",
+    card: "Kart",
+    bank: "Banka havalesi",
+    unknown_payment: "Bilinmiyor",
+    kassenbon: "Fiş",
+    rechnung: "Fatura",
+    tankbeleg: "Yakıt fişi",
+    qr_rechnung: "QR Fatura",
+    sonstige: "Diğer",
+    cat_restaurant: "Yemek & İçecek",
+    cat_tankstelle: "Yakıt / Ulaşım",
+    cat_buero: "Ofis malzemeleri",
+    cat_telefon: "Telefon / İnternet",
+    cat_transport: "Ulaşım / Seyahat",
+    cat_unterkunft: "Konaklama",
+    cat_versicherung: "Sigorta",
+    cat_weiterbildung: "Eğitim",
+    cat_diverses: "Çeşitli",
+  },
+  sq: {
+    title: "Shto faturë",
+    drag_drop: "Tërhiq imazh ose PDF këtu",
+    or_click: "ose klikoni për të zgjedhur",
+    file_hint: "JPG, PNG, PDF deri në 10 MB",
+    saved: "Fatura u ruajt!",
+    redirecting: "Duke ridrejtuar te faturat...",
+    analyzing: "Duke analizuar faturën...",
+    ocr_confidence: "Besimi OCR",
+    uncertain_fields: "Fushat e pasigurta:",
+    merchant: "Shitësi",
+    date: "Data",
+    amount: "Shuma CHF *",
+    vat_rate: "Norma TVSH %",
+    no_vat: "Pa TVSH",
+    category: "Kategoria",
+    receipt_type: "Lloji i faturës",
+    payment_method: "Metoda e pagesës",
+    notes: "Shënime",
+    notes_placeholder: "Shënime opsionale...",
+    cancel: "Anulo",
+    save: "Ruaj",
+    saving: "Duke ruajtur...",
+    ocr_failed: "OCR dështoi",
+    upload_failed: "Ngarkimi dështoi. Ju lutemi provoni përsëri.",
+    save_failed: "Ruajtja dështoi.",
+    cash: "Para në dorë",
+    card: "Kartë",
+    bank: "Transfer bankar",
+    unknown_payment: "I panjohur",
+    kassenbon: "Faturë kasë",
+    rechnung: "Faturë",
+    tankbeleg: "Faturë karburanti",
+    qr_rechnung: "Faturë QR",
+    sonstige: "Të tjera",
+    cat_restaurant: "Ushqim & Pije",
+    cat_tankstelle: "Karburant / Transport",
+    cat_buero: "Materiale zyre",
+    cat_telefon: "Telefon / Internet",
+    cat_transport: "Transport / Udhëtim",
+    cat_unterkunft: "Akomodim",
+    cat_versicherung: "Sigurim",
+    cat_weiterbildung: "Trajnim",
+    cat_diverses: "Të ndryshme",
+  },
+} satisfies Record<SupportedLanguage, Record<string, string>>;
 
 type UploadState = "idle" | "uploading" | "reviewing" | "saving" | "done";
 
@@ -25,20 +345,23 @@ interface FormData {
   notes: string;
 }
 
-const CATEGORIES = [
-  { value: "RESTAURANT", label: "Essen & Getränke" },
-  { value: "TANKSTELLE", label: "Benzin / Transport" },
-  { value: "BUERO", label: "Büromaterial" },
-  { value: "TELEFON", label: "Telefon / Internet" },
-  { value: "TRANSPORT", label: "Transport / Reise" },
-  { value: "UNTERKUNFT", label: "Unterkunft" },
-  { value: "VERSICHERUNG", label: "Versicherung" },
-  { value: "WEITERBILDUNG", label: "Weiterbildung" },
-  { value: "DIVERSES", label: "Diverses" },
-];
-
 export default function UploadPage() {
   const router = useRouter();
+  const { lang } = useLanguage();
+  const t = T[lang] ?? T.de;
+
+  const CATEGORIES = [
+    { value: "RESTAURANT", label: t.cat_restaurant },
+    { value: "TANKSTELLE", label: t.cat_tankstelle },
+    { value: "BUERO", label: t.cat_buero },
+    { value: "TELEFON", label: t.cat_telefon },
+    { value: "TRANSPORT", label: t.cat_transport },
+    { value: "UNTERKUNFT", label: t.cat_unterkunft },
+    { value: "VERSICHERUNG", label: t.cat_versicherung },
+    { value: "WEITERBILDUNG", label: t.cat_weiterbildung },
+    { value: "DIVERSES", label: t.cat_diverses },
+  ];
+
   const [state, setState] = useState<UploadState>("idle");
   const [isSaving, setIsSaving] = useState(false);
   const [extracted, setExtracted] = useState<ExtractedExpense | null>(null);
@@ -82,7 +405,7 @@ export default function UploadPage() {
       };
 
       if (!res.ok) {
-        setError(data.error ?? "OCR fehlgeschlagen");
+        setError(data.error ?? t.ocr_failed);
         setState("idle");
         return;
       }
@@ -109,10 +432,10 @@ export default function UploadPage() {
 
       setState("reviewing");
     } catch {
-      setError("Upload fehlgeschlagen. Bitte versuchen Sie es erneut.");
+      setError(t.upload_failed);
       setState("idle");
     }
-  }, []);
+  }, [t]);
 
   const handleDrop = useCallback(
     (e: React.DragEvent) => {
@@ -154,7 +477,7 @@ export default function UploadPage() {
       setState("done");
       setTimeout(() => router.push("/expenses"), 1000);
     } else {
-      setError("Speichern fehlgeschlagen.");
+      setError(t.save_failed);
       setState("reviewing");
     }
     setIsSaving(false);
@@ -165,8 +488,8 @@ export default function UploadPage() {
       <div className="p-8 flex items-center justify-center min-h-[60vh]">
         <div className="text-center">
           <div className="text-5xl mb-4">✅</div>
-          <h2 className="text-xl font-semibold">Beleg gespeichert!</h2>
-          <p className="text-gray-500 mt-1">Weiterleitung zu den Belegen...</p>
+          <h2 className="text-xl font-semibold">{t.saved}</h2>
+          <p className="text-gray-500 mt-1">{t.redirecting}</p>
         </div>
       </div>
     );
@@ -174,7 +497,7 @@ export default function UploadPage() {
 
   return (
     <div className="p-8 max-w-4xl">
-      <h1 className="text-2xl font-bold mb-6">Beleg erfassen</h1>
+      <h1 className="text-2xl font-bold mb-6">{t.title}</h1>
 
       {state === "idle" && (
         <div
@@ -184,9 +507,9 @@ export default function UploadPage() {
           onClick={() => document.getElementById("file-input")?.click()}
         >
           <div className="text-5xl mb-4">📄</div>
-          <h3 className="text-lg font-medium mb-2">Bild oder PDF hierher ziehen</h3>
-          <p className="text-gray-400 text-sm mb-4">oder klicken zum Auswählen</p>
-          <p className="text-xs text-gray-400">JPG, PNG, PDF bis 10 MB</p>
+          <h3 className="text-lg font-medium mb-2">{t.drag_drop}</h3>
+          <p className="text-gray-400 text-sm mb-4">{t.or_click}</p>
+          <p className="text-xs text-gray-400">{t.file_hint}</p>
           <input
             id="file-input"
             type="file"
@@ -207,7 +530,7 @@ export default function UploadPage() {
         <div className="text-center py-16">
           <div className="animate-spin text-4xl mb-4">⚙️</div>
           <p className="font-medium">{ocrLayer}</p>
-          <p className="text-gray-400 text-sm mt-1">Beleg wird analysiert...</p>
+          <p className="text-gray-400 text-sm mt-1">{t.analyzing}</p>
         </div>
       )}
 
@@ -227,7 +550,7 @@ export default function UploadPage() {
             <Card className="mt-4">
               <CardContent className="pt-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">OCR-Konfidenz</span>
+                  <span className="text-sm text-gray-600">{t.ocr_confidence}</span>
                   <ConfidenceBadge confidence={extracted.confidence} />
                 </div>
                 <div className="w-full bg-gray-100 rounded-full h-2 mt-2">
@@ -244,7 +567,7 @@ export default function UploadPage() {
                 </div>
                 {extracted.confidence < 0.75 && extracted.missingFields.length > 0 && (
                   <p className="text-xs text-red-600 mt-2">
-                    Unsichere Felder: {extracted.missingFields.join(", ")}
+                    {t.uncertain_fields} {extracted.missingFields.join(", ")}
                   </p>
                 )}
               </CardContent>
@@ -255,7 +578,7 @@ export default function UploadPage() {
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Label>Händler</Label>
+                <Label>{t.merchant}</Label>
                 <Input
                   value={form.merchantName}
                   onChange={(e) => setForm({ ...form, merchantName: e.target.value })}
@@ -267,7 +590,7 @@ export default function UploadPage() {
                 />
               </div>
               <div>
-                <Label>Datum</Label>
+                <Label>{t.date}</Label>
                 <Input
                   type="date"
                   value={form.date}
@@ -283,7 +606,7 @@ export default function UploadPage() {
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Label>Betrag CHF *</Label>
+                <Label>{t.amount}</Label>
                 <Input
                   type="number"
                   step="0.01"
@@ -298,13 +621,13 @@ export default function UploadPage() {
                 />
               </div>
               <div>
-                <Label>MwSt-Satz %</Label>
+                <Label>{t.vat_rate}</Label>
                 <select
                   value={form.vatRate}
                   onChange={(e) => setForm({ ...form, vatRate: e.target.value })}
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm mt-1"
                 >
-                  <option value="">Kein MwSt</option>
+                  <option value="">{t.no_vat}</option>
                   <option value="8.1">8.1% (Standard)</option>
                   <option value="3.8">3.8% (Beherbergung)</option>
                   <option value="2.5">2.5% (Reduziert)</option>
@@ -314,7 +637,7 @@ export default function UploadPage() {
             </div>
 
             <div>
-              <Label>Kategorie</Label>
+              <Label>{t.category}</Label>
               <select
                 value={form.category}
                 onChange={(e) => setForm({ ...form, category: e.target.value })}
@@ -330,41 +653,41 @@ export default function UploadPage() {
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Label>Belegart</Label>
+                <Label>{t.receipt_type}</Label>
                 <select
                   value={form.receiptType}
                   onChange={(e) => setForm({ ...form, receiptType: e.target.value })}
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm mt-1"
                 >
-                  <option value="KASSENBON">Kassenbon</option>
-                  <option value="RECHNUNG">Rechnung</option>
-                  <option value="TANKBELEG">Tankbeleg</option>
-                  <option value="QR_RECHNUNG">QR-Rechnung</option>
-                  <option value="SONSTIGE">Sonstige</option>
+                  <option value="KASSENBON">{t.kassenbon}</option>
+                  <option value="RECHNUNG">{t.rechnung}</option>
+                  <option value="TANKBELEG">{t.tankbeleg}</option>
+                  <option value="QR_RECHNUNG">{t.qr_rechnung}</option>
+                  <option value="SONSTIGE">{t.sonstige}</option>
                 </select>
               </div>
               <div>
-                <Label>Zahlungsmittel</Label>
+                <Label>{t.payment_method}</Label>
                 <select
                   value={form.paymentMethod}
                   onChange={(e) => setForm({ ...form, paymentMethod: e.target.value })}
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm mt-1"
                 >
-                  <option value="CASH">Bar</option>
-                  <option value="CARD">Karte</option>
+                  <option value="CASH">{t.cash}</option>
+                  <option value="CARD">{t.card}</option>
                   <option value="TWINT">TWINT</option>
-                  <option value="BANK_TRANSFER">Banküberweisung</option>
-                  <option value="UNKNOWN">Unbekannt</option>
+                  <option value="BANK_TRANSFER">{t.bank}</option>
+                  <option value="UNKNOWN">{t.unknown_payment}</option>
                 </select>
               </div>
             </div>
 
             <div>
-              <Label>Notizen</Label>
+              <Label>{t.notes}</Label>
               <Input
                 value={form.notes}
                 onChange={(e) => setForm({ ...form, notes: e.target.value })}
-                placeholder="Optionale Notizen..."
+                placeholder={t.notes_placeholder}
                 className="mt-1"
               />
             </div>
@@ -382,14 +705,14 @@ export default function UploadPage() {
                 }}
                 className="flex-1"
               >
-                Abbrechen
+                {t.cancel}
               </Button>
               <Button
                 onClick={() => void handleSave()}
                 disabled={!form.amount || isSaving}
                 className="flex-1"
               >
-                {isSaving ? "Wird gespeichert..." : "Speichern"}
+                {isSaving ? t.saving : t.save}
               </Button>
             </div>
           </div>

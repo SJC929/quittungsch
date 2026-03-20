@@ -12,7 +12,7 @@
     .screen-link:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
   </style>
 </head>
-<body class="min-h-screen p-8" style="background:#F0FDF9;">
+<body class="min-h-screen p-8" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #d1fae5 100%);">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-10">
       <h1 class="text-4xl font-bold mb-2" style="color:#059669;">Spezo</h1>
@@ -86,5 +86,21 @@
 
     <p class="text-center text-gray-400 text-sm mt-8">Klicken Sie auf einen Screen um ihn zu öffnen</p>
   </div>
+<script>
+  // On page load: restore saved language
+  window.addEventListener('DOMContentLoaded', function() {
+    const saved = localStorage.getItem('spezo_lang');
+    if (saved) {
+      const sel = document.getElementById('langSelect');
+      if (sel) { sel.value = saved; changeLang(saved); }
+      // For dashboard-style pages that use applyLang:
+      const langMap = {de:['🇨🇭','Deutsch'], fr:['🇫🇷','Français'], it:['🇮🇹','Italiano'], rm:['🇨🇭','Rumantsch'], en:['🇬🇧','English'], tr:['🇹🇷','Türkçe'], sq:['🇦🇱','Shqip']};
+      if (typeof applyLang === 'function' && langMap[saved]) applyLang(saved, langMap[saved][0], langMap[saved][1]);
+    }
+  });
+  function changeLang(lang) {
+    localStorage.setItem('spezo_lang', lang);
+  }
+</script>
 </body>
 </html>

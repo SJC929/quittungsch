@@ -33,11 +33,11 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 border-r border-emerald-200 flex flex-col h-screen fixed left-0 top-0 z-30" style={{ background: "linear-gradient(180deg, #d1fae5 0%, #ecfdf5 100%)" }}>
+    <aside className="w-64 border-r border-emerald-300 flex flex-col h-screen fixed left-0 top-0 z-30" style={{ background: "linear-gradient(180deg, #6ee7b7 0%, #a7f3d0 40%, #d1fae5 100%)" }}>
       {/* Logo */}
-      <div className="p-5 border-b border-emerald-200">
+      <div className="p-5 border-b border-emerald-300">
         <LogoWithText iconSize={34} textSize="md" />
-        <p className="text-xs text-gray-400 mt-1 ml-11">Schweizer Buchhaltung</p>
+        <p className="text-xs text-emerald-700 mt-1 ml-11">Schweizer Buchhaltung</p>
       </div>
 
       {/* Quick add button */}
@@ -61,10 +61,10 @@ export function Sidebar() {
               "flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium transition-colors",
               pathname === href
                 ? "bg-emerald-500 text-white font-semibold"
-                : "text-gray-600 hover:bg-emerald-100 hover:text-gray-900"
+                : "text-emerald-900 hover:bg-emerald-200/60 hover:text-emerald-900"
             )}
           >
-            <Icon className={cn("h-5 w-5 flex-shrink-0", pathname === href ? "text-white" : "text-gray-400")} />
+            <Icon className={cn("h-5 w-5 flex-shrink-0", pathname === href ? "text-white" : "text-emerald-700")} />
             {label}
             {pathname === href && (
               <div className="ml-auto w-1.5 h-5 rounded-full bg-white" />
@@ -74,7 +74,7 @@ export function Sidebar() {
       </nav>
 
       {/* Bottom section */}
-      <div className="p-4 border-t border-emerald-200">
+      <div className="p-4 border-t border-emerald-300">
         <button
           onClick={() => void signOut({ callbackUrl: "/login" })}
           className="flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm font-medium text-gray-500 hover:bg-red-50 hover:text-red-600 transition-colors"

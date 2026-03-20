@@ -34,7 +34,7 @@ export function Topbar({ currentLanguage }: { currentLanguage: string }) {
   }
 
   return (
-    <header className="h-14 bg-white/80 backdrop-blur border-b border-emerald-100 flex items-center justify-end px-6 gap-4 sticky top-0 z-20">
+    <header className="h-14 border-b border-emerald-200 flex items-center justify-end px-6 gap-4 sticky top-0 z-20" style={{ background: "rgba(209, 250, 229, 0.85)", backdropFilter: "blur(8px)" }}>
       {saving && <span className="text-xs text-gray-400">Wird gespeichert...</span>}
 
       {/* Language dropdown */}

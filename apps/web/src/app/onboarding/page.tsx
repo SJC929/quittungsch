@@ -50,7 +50,7 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex flex-col p-4">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-100 to-emerald-200 flex flex-col p-4">
       <div className="flex justify-between items-center mb-4">
         <LogoWithText iconSize={32} textSize="sm" />
         <LanguageSwitcher />

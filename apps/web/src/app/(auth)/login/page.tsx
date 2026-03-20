@@ -191,7 +191,7 @@ export default function LoginPage() {
 
   if (magicLinkSent) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: "#F0FDF9" }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: "linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #d1fae5 100%)" }}>
         <div className="max-w-md w-full bg-white rounded-2xl shadow-sm border border-emerald-100 p-8 text-center">
           <div className="text-5xl mb-4">📧</div>
           <h2 className="text-xl font-bold mb-2">{t.magicSentTitle}</h2>
@@ -204,7 +204,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: "#F0FDF9" }}>
+    <div className="min-h-screen flex flex-col" style={{ background: "linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #d1fae5 100%)" }}>
       {/* Top bar with language switcher */}
       <div className="flex justify-end p-4 pr-6">
         <LanguageSwitcher current={lang} onChange={setLang} />

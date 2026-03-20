@@ -158,7 +158,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: "#F0FDF9" }}>
+    <div className="min-h-screen flex flex-col" style={{ background: "linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #d1fae5 100%)" }}>
       {/* Top bar with language switcher */}
       <div className="flex justify-end p-4 pr-6">
         <LanguageSwitcher current={lang} onChange={setLang} />
