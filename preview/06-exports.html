@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap');*{font-family:'DM Sans',sans-serif;}</style>
 </head>
-<body class="min-h-screen flex" style="background: #d6f5e8;">
+<body class="min-h-screen flex" style="background: #eafaf3;">
 
   <!-- Sidebar -->
   <aside class="w-60 border-r border-emerald-300 flex flex-col min-h-screen fixed left-0 top-0" style="background: linear-gradient(180deg, #6ee7b7 0%, #a7f3d0 40%, #d1fae5 100%);">
@@ -38,7 +38,7 @@
       <a href="03-dashboard.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm"><span>📊</span> Dashboard</a>
       <a href="04-upload.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm"><span>📷</span> Beleg erfassen</a>
       <a href="05-expenses.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm"><span>🧾</span> Belege</a>
-      <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-50 text-emerald-700 font-medium text-sm"><span>📤</span> Export</a>
+      <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white text-emerald-700 font-medium text-sm"><span>📤</span> Export</a>
     </nav>
   </aside>
 
@@ -75,7 +75,7 @@
         <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
           <h3 class="font-bold text-gray-800 mb-4">1. Export-Format wählen</h3>
           <div class="grid grid-cols-2 gap-3" id="format-selector">
-            <div class="format-card border-2 border-emerald-700 bg-emerald-50 rounded-xl p-4 cursor-pointer" onclick="selectFormat(this)">
+            <div class="format-card border-2 border-emerald-700 bg-white rounded-xl p-4 cursor-pointer" onclick="selectFormat(this)">
               <p class="font-bold text-sm text-emerald-700">📊 Excel (.xlsx)</p>
               <p class="text-xs text-gray-500 mt-1">Ideal für Treuhänder, eine Seite pro Monat</p>
               <span class="mt-2 inline-block text-xs bg-emerald-700 text-white px-2 py-0.5 rounded-full">Empfohlen</span>
@@ -110,11 +110,11 @@
             </div>
           </div>
           <div class="flex gap-2 mt-3">
-            <button class="text-xs px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">Januar</button>
-            <button class="text-xs px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">Februar</button>
+            <button class="text-xs px-3 py-1.5 bg-white text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">Januar</button>
+            <button class="text-xs px-3 py-1.5 bg-white text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">Februar</button>
             <button class="text-xs px-3 py-1.5 bg-emerald-700 text-white rounded-lg font-medium">März</button>
-            <button class="text-xs px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">Q1 2026</button>
-            <button class="text-xs px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">2025</button>
+            <button class="text-xs px-3 py-1.5 bg-white text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">Q1 2026</button>
+            <button class="text-xs px-3 py-1.5 bg-white text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">2025</button>
           </div>
         </div>
 
@@ -260,11 +260,11 @@
     }
     function selectFormat(el) {
       document.querySelectorAll('.format-card').forEach(c => {
-        c.classList.remove('border-emerald-700', 'bg-emerald-50');
+        c.classList.remove('border-emerald-700', 'bg-white');
         c.classList.add('border-gray-200');
       });
       el.classList.remove('border-gray-200');
-      el.classList.add('border-emerald-700', 'bg-emerald-50');
+      el.classList.add('border-emerald-700', 'bg-white');
     }
   </script>
 </body>

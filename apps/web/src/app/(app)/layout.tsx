@@ -24,7 +24,7 @@ export default async function AppLayout({
 
   return (
     <CameraPermissionGate language={lang}>
-      <div className="flex h-screen" style={{ background: "linear-gradient(135deg, #d1fae5 0%, #ecfdf5 50%, #d1fae5 100%)" }}>
+      <div className="flex h-screen" style={{ background: "linear-gradient(135deg, #e2faf1 0%, #f4fdf9 50%, #e2faf1 100%)" }}>
         {/* Desktop Sidebar – hidden on mobile */}
         <div className="hidden lg:block">
           <Sidebar />

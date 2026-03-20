@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap');*{font-family:'DM Sans',sans-serif;}</style>
 </head>
-<body class="min-h-screen flex" style="background: #d6f5e8;">
+<body class="min-h-screen flex" style="background: #eafaf3;">
 
   <!-- Sidebar -->
   <aside class="w-60 border-r border-emerald-300 flex flex-col min-h-screen fixed left-0 top-0" style="background: linear-gradient(180deg, #6ee7b7 0%, #a7f3d0 40%, #d1fae5 100%);">
@@ -38,7 +38,7 @@
       <a href="03-dashboard.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
         <span>📊</span> Dashboard
       </a>
-      <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-50 text-emerald-700 font-medium text-sm">
+      <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white text-emerald-700 font-medium text-sm">
         <span>📷</span> Beleg erfassen
       </a>
       <a href="05-expenses.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
@@ -77,7 +77,7 @@
 
     <!-- STATE 1: Upload zone (default visible) -->
     <div id="state-upload">
-      <div class="border-2 border-dashed border-gray-300 rounded-2xl p-12 text-center hover:border-blue-400 hover:bg-emerald-50 transition-colors cursor-pointer bg-white"
+      <div class="border-2 border-dashed border-gray-300 rounded-2xl p-12 text-center hover:border-blue-400 hover:bg-white transition-colors cursor-pointer bg-white"
            onclick="showState('state-processing')">
         <div class="text-5xl mb-4">📁</div>
         <p class="text-lg font-semibold text-gray-700 mb-1">Beleg hier ablegen</p>
