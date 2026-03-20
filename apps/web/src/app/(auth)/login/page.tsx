@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { signIn } from "next-auth/react";
+// lang state moved to global context
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@spezo/ui";
@@ -10,6 +11,7 @@ import { Label } from "@spezo/ui";
 import { LogoWithText } from "@/components/logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import type { SupportedLanguage } from "@spezo/i18n";
+import { useLanguage } from "@/contexts/language-context";
 
 const T = {
   de: {
@@ -149,7 +151,7 @@ const T = {
 
 export default function LoginPage() {
   const router = useRouter();
-  const [lang, setLang] = useState<SupportedLanguage>("de");
+  const { lang, setLang } = useLanguage();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [magicLinkSent, setMagicLinkSent] = useState(false);

@@ -32,17 +32,17 @@
       <span style="font-size:17px;font-weight:700;color:#059669;">Spezo</span>
     </div>
     <select id="langSelect" onchange="changeLang(this.value)" style="padding:6px 10px;border:1px solid #D1FAE5;border-radius:10px;font-family:inherit;font-size:13px;color:#374151;background:white;cursor:pointer;">
-      <option value="de">🇩🇪 Deutsch</option>
+      <option value="de">🇨🇭 Deutsch</option>
       <option value="fr">🇫🇷 Français</option>
       <option value="it">🇮🇹 Italiano</option>
-      <option value="rm">🏔️ Rumantsch</option>
+      <option value="rm">🇨🇭 Rumantsch</option>
       <option value="en">🇬🇧 English</option>
       <option value="tr">🇹🇷 Türkçe</option>
       <option value="sq">🇦🇱 Shqip</option>
     </select>
   </div>
 
-  <div class="w-full max-w-4xl" style="margin-top:52px;">
+  <div class="w-full max-w-3xl" style="margin-top:52px;">
     <a href="03-dashboard.html" class="text-sm text-emerald-600 hover:underline mb-6 block" id="txt-back">← Zurück zum Dashboard</a>
 
     <!-- Free trial banner (payments disabled) -->
@@ -54,75 +54,56 @@
       </div>
     </div>
 
-    <!-- Plans -->
-    <div class="grid grid-cols-3 gap-5">
+    <h1 class="text-3xl font-bold text-gray-900 mb-2 text-center">Einfache Preise</h1>
+    <p class="text-gray-500 mb-8 text-center">Keine versteckten Kosten. Kündigung jederzeit.</p>
+
+    <!-- Plans: 2 columns -->
+    <div class="grid grid-cols-2 gap-5">
 
       <!-- Free plan -->
       <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-gray-200">
         <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Gratis</p>
-        <div class="flex items-end gap-1 mb-4">
-          <span class="text-4xl font-bold text-gray-900">CHF 0</span>
+        <div class="flex items-end gap-1 mb-1">
+          <span class="text-5xl font-bold text-gray-900">CHF 0</span>
           <span class="text-gray-400 text-sm mb-1">/Monat</span>
         </div>
-        <p class="text-xs text-gray-400 mb-5">Für Einsteiger und Nebenberufliche</p>
+        <p class="text-xs text-gray-400 mb-5">Für Einsteiger</p>
         <ul class="space-y-2.5 text-sm mb-6">
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> 30 Belege/Monat</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> OCR mit Google Vision</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> Excel & CSV Export</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> 3 Monate Speicher</li>
-          <li class="flex items-center gap-2 text-gray-400"><span>✗</span> PDF-Berichte</li>
-          <li class="flex items-center gap-2 text-gray-400"><span>✗</span> Google Sheets</li>
-          <li class="flex items-center gap-2 text-gray-400"><span>✗</span> Kilometer-Protokoll</li>
+          <li class="flex items-center gap-2 text-gray-600"><span class="text-emerald-500 font-bold">✓</span> 10 Belege/Monat</li>
+          <li class="flex items-center gap-2 text-gray-600"><span class="text-emerald-500 font-bold">✓</span> OCR-Analyse (KI-gestützt)</li>
+          <li class="flex items-center gap-2 text-gray-600"><span class="text-emerald-500 font-bold">✓</span> Excel / CSV Export</li>
+          <li class="flex items-center gap-2 text-gray-600"><span class="text-emerald-500 font-bold">✓</span> Schweizer Datenspeicherung</li>
         </ul>
-        <button class="w-full border-2 border-gray-200 text-gray-500 font-medium rounded-xl py-3 text-sm cursor-default">
-          Aktueller Plan
+        <button onclick="window.location.href='03-dashboard.html'" class="w-full border-2 border-gray-200 text-gray-600 font-medium rounded-xl py-3 text-sm hover:bg-gray-50">
+          Kostenlos starten
         </button>
       </div>
 
       <!-- Pro plan (highlighted) -->
-      <div class="bg-white rounded-2xl p-6 shadow-xl border-2 border-emerald-700 relative">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-700 text-white text-xs font-bold px-4 py-1 rounded-full">BELIEBTESTE WAHL</div>
-        <p class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-3">Pro</p>
+      <div class="bg-white rounded-2xl p-6 shadow-xl border-2 border-emerald-500 relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-xs font-bold px-4 py-1 rounded-full">BELIEBTESTE WAHL</div>
+        <p class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-3">Pro</p>
         <div class="flex items-end gap-1 mb-1">
-          <span class="text-4xl font-bold text-gray-900">CHF 9</span>
+          <span class="text-5xl font-bold text-emerald-700">CHF 4.95</span>
           <span class="text-gray-400 text-sm mb-1">/Monat</span>
         </div>
-        <p class="text-xs text-gray-400 mb-5">CHF 79/Jahr – 2 Monate gratis</p>
+        <p class="text-xs text-gray-400 mb-5">CHF 49.90/Jahr – 2 Monate gratis</p>
         <ul class="space-y-2.5 text-sm mb-6">
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> <strong>Unlimitierte</strong> Belege</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> OCR + Claude KI-Analyse</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> Excel, CSV, PDF Export</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> Google Sheets Sync</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> Kilometer-Protokoll</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> 5 Jahre Speicher</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> Prioritäts-Support</li>
+          <li class="flex items-center gap-2 text-gray-600"><span class="text-emerald-500 font-bold">✓</span> <strong>Unbegrenzte</strong> Belege</li>
+          <li class="flex items-center gap-2 text-gray-600"><span class="text-emerald-500 font-bold">✓</span> OCR + Claude KI-Analyse</li>
+          <li class="flex items-center gap-2 text-gray-600"><span class="text-emerald-500 font-bold">✓</span> Excel, CSV, PDF Export</li>
+          <li class="flex items-center gap-2 text-gray-600"><span class="text-emerald-500 font-bold">✓</span> GPS Kilometer-Protokoll</li>
+          <li class="flex items-center gap-2 text-gray-600"><span class="text-emerald-500 font-bold">✓</span> MwSt-Abrechnung für ESTV</li>
+          <li class="flex items-center gap-2 text-gray-600"><span class="text-emerald-500 font-bold">✓</span> Treuhänder-Zugang (read-only)</li>
+          <li class="flex items-center gap-2 text-gray-600"><span class="text-emerald-500 font-bold">✓</span> Alle Sprachen (DE/FR/IT/EN/TR/SQ)</li>
         </ul>
-        <button onclick="showStripeModal()" class="w-full bg-emerald-700 text-white font-bold rounded-xl py-3 text-sm hover:bg-emerald-800">
-          Upgrade auf Pro →
-        </button>
+        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+          <p class="text-emerald-700 text-sm font-medium mb-3">🎉 Kostenlos bis zum Launch – jetzt gratis Pro nutzen!</p>
+          <button onclick="window.location.href='03-dashboard.html'" class="w-full bg-emerald-600 text-white font-bold rounded-xl py-3 text-sm hover:bg-emerald-700">
+            Zur App →
+          </button>
+        </div>
         <p class="text-center text-xs text-gray-400 mt-2">Monatlich kündbar · Stripe + TWINT</p>
-      </div>
-
-      <!-- Business plan -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-gray-200">
-        <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Business</p>
-        <div class="flex items-end gap-1 mb-1">
-          <span class="text-4xl font-bold text-gray-900">CHF 29</span>
-          <span class="text-gray-400 text-sm mb-1">/Monat</span>
-        </div>
-        <p class="text-xs text-gray-400 mb-5">Für Treuhänder & KMU-Teams</p>
-        <ul class="space-y-2.5 text-sm mb-6">
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> Alles in Pro</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> Bis zu 5 Mandanten</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> Treuhänder-Zugang</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> API-Zugang</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> Benutzerdefinierte Kategorien</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> Dedizierter Support</li>
-          <li class="flex items-center gap-2 text-gray-600"><span class="text-green-500">✓</span> Unbegrenzt Speicher</li>
-        </ul>
-        <button class="w-full border-2 border-gray-200 text-gray-700 font-medium rounded-xl py-3 text-sm hover:border-gray-300 hover:bg-gray-50">
-          Kontakt aufnehmen
-        </button>
       </div>
     </div>
 
@@ -147,60 +128,15 @@
       </div>
       <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
         <p class="font-semibold text-gray-700 mb-1">Wo werden meine Daten gespeichert?</p>
-        <p class="text-gray-400 text-xs">Alle Daten werden auf Servern in der Schweiz gespeichert (Infomaniak / Exoscale Zürich). 100% DSGVO-konform.</p>
+        <p class="text-gray-400 text-xs">Alle Daten werden auf Servern in der Schweiz gespeichert (Infomaniak / Exoscale Zürich). 100% DSG-konform.</p>
       </div>
     </div>
-  </div>
 
-  <!-- Stripe modal (hidden) -->
-  <div id="stripe-modal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl">
-      <div class="flex items-center justify-between mb-6">
-        <h3 class="text-lg font-bold">Upgrade zu Pro</h3>
-        <button onclick="hideStripeModal()" class="text-gray-400 hover:text-gray-600">✕</button>
-      </div>
-      <div class="bg-emerald-50 rounded-xl p-4 mb-5">
-        <p class="font-bold text-blue-800">Spezo Pro – CHF 9/Monat</p>
-        <p class="text-sm text-emerald-700">Unbegrenzte Belege + alle Features</p>
-      </div>
-      <div class="space-y-3">
-        <div>
-          <label class="block text-xs text-gray-500 mb-1.5">Karteninhaber</label>
-          <input type="text" placeholder="Max Muster" class="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm">
-        </div>
-        <div>
-          <label class="block text-xs text-gray-500 mb-1.5">Kartennummer</label>
-          <input type="text" placeholder="4242 4242 4242 4242" class="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm font-mono">
-        </div>
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block text-xs text-gray-500 mb-1.5">Ablaufdatum</label>
-            <input type="text" placeholder="MM/JJ" class="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm">
-          </div>
-          <div>
-            <label class="block text-xs text-gray-500 mb-1.5">CVC</label>
-            <input type="text" placeholder="123" class="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm">
-          </div>
-        </div>
-      </div>
-      <div class="border border-blue-200 rounded-xl p-3 mt-4 flex items-center gap-3 cursor-pointer hover:bg-emerald-50">
-        <span class="text-2xl">📱</span>
-        <div>
-          <p class="text-sm font-bold text-emerald-700">TWINT bezahlen</p>
-          <p class="text-xs text-gray-400">QR-Code scannen oder App-Wechsel</p>
-        </div>
-      </div>
-      <button class="w-full bg-emerald-700 text-white font-bold rounded-xl py-3 text-sm mt-4 hover:bg-emerald-800">
-        🔒 Jetzt CHF 9/Mt. abonnieren
-      </button>
-      <p class="text-center text-xs text-gray-400 mt-2">Sicher via Stripe · Jederzeit kündbar</p>
-    </div>
+    <p class="text-center text-xs text-gray-400 mt-6">🇨🇭 Alle Daten werden in der Schweiz gespeichert (DSG-konform). Kündigung jederzeit möglich.</p>
   </div>
 
   <script>
-    function showStripeModal() { document.getElementById('stripe-modal').classList.remove('hidden'); }
-    function hideStripeModal() { document.getElementById('stripe-modal').classList.add('hidden'); }
-    const CT={de:{back:'← Zurück zum Dashboard',bannerTitle:'Kostenloser Zugang bis zum offiziellen Launch!',bannerSub:'Zahlung noch nicht aktiviert – Sie können Spezo jetzt vollständig gratis nutzen.'},fr:{back:'← Retour au tableau de bord',bannerTitle:'Accès gratuit jusqu'au lancement officiel!',bannerSub:'Paiement pas encore activé – Vous pouvez utiliser Spezo gratuitement.'},it:{back:'← Torna alla dashboard',bannerTitle:'Accesso gratuito fino al lancio ufficiale!',bannerSub:'Pagamento non ancora attivato – Puoi usare Spezo completamente gratis.'},rm:{back:'← Returnar al dashboard',bannerTitle:'Access gratuit fin al launch!',bannerSub:'Pajament betg anc activà – Vus pudais utilisar Spezo gratuitamain.'},en:{back:'← Back to Dashboard',bannerTitle:'Free access until the official launch!',bannerSub:'Payments not yet activated – You can use Spezo completely free.'},tr:{back:'← Panele geri dön',bannerTitle:'Resmi lansmana kadar ücretsiz erişim!',bannerSub:'Ödeme henüz etkinleştirilmedi – Spezo'yu tamamen ücretsiz kullanabilirsiniz.'},sq:{back:'← Kthehu te paneli',bannerTitle:'Akses falas deri në lansimin zyrtar!',bannerSub:'Pagesa ende nuk është aktivizuar – Mund ta përdorni Spezon krejtësisht falas.'}};
+    const CT={de:{back:'← Zurück zum Dashboard',bannerTitle:'Kostenloser Zugang bis zum offiziellen Launch!',bannerSub:'Zahlung noch nicht aktiviert – Sie können Spezo jetzt vollständig gratis nutzen.'},fr:{back:'← Retour au tableau de bord',bannerTitle:'Accès gratuit jusqu\'au lancement officiel!',bannerSub:'Paiement pas encore activé – Vous pouvez utiliser Spezo gratuitement.'},it:{back:'← Torna alla dashboard',bannerTitle:'Accesso gratuito fino al lancio ufficiale!',bannerSub:'Pagamento non ancora attivato – Puoi usare Spezo completamente gratis.'},rm:{back:'← Returnar al dashboard',bannerTitle:'Access gratuit fin al launch!',bannerSub:'Pajament betg anc activà – Vus pudais utilisar Spezo gratuitamain.'},en:{back:'← Back to Dashboard',bannerTitle:'Free access until the official launch!',bannerSub:'Payments not yet activated – You can use Spezo completely free.'},tr:{back:'← Panele geri dön',bannerTitle:'Resmi lansmana kadar ücretsiz erişim!',bannerSub:'Ödeme henüz etkinleştirilmedi – Spezo\'yu tamamen ücretsiz kullanabilirsiniz.'},sq:{back:'← Kthehu te paneli',bannerTitle:'Akses falas deri në lansimin zyrtar!',bannerSub:'Pagesa ende nuk është aktivizuar – Mund ta përdorni Spezon krejtësisht falas.'}};
   function changeLang(lang){const t=CT[lang];if(!t)return;document.getElementById('txt-back').textContent=t.back;document.getElementById('txt-banner-title').textContent=t.bannerTitle;document.getElementById('txt-banner-sub').textContent=t.bannerSub;}
   </script>
 </body>

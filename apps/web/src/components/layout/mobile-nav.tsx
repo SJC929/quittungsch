@@ -32,8 +32,8 @@ export function MobileNav() {
                 <div className={cn(
                   "w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg transition-colors",
                   isActive
-                    ? "bg-emerald-800 shadow-emerald-200"
-                    : "bg-emerald-700 hover:bg-emerald-800 shadow-emerald-200"
+                    ? "bg-emerald-600 shadow-emerald-200"
+                    : "bg-emerald-500 hover:bg-emerald-600 shadow-emerald-200"
                 )}>
                   <Icon className="h-6 w-6 text-white" />
                 </div>

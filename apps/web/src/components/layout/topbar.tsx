@@ -3,13 +3,12 @@
 import { useState, useRef, useEffect } from "react";
 import { LANGUAGE_NAMES, LANGUAGE_FLAGS, SUPPORTED_LANGUAGES, type SupportedLanguage } from "@spezo/i18n";
 import { Globe } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
 
 export function Topbar({ currentLanguage }: { currentLanguage: string }) {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState<SupportedLanguage>(
-    (currentLanguage as SupportedLanguage) ?? "de"
-  );
   const [saving, setSaving] = useState(false);
+  const { lang, setLang } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -22,14 +21,14 @@ export function Topbar({ currentLanguage }: { currentLanguage: string }) {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
-  async function handleSelect(lang: SupportedLanguage) {
-    setSelected(lang);
+  async function handleSelect(selected: SupportedLanguage) {
+    setLang(selected);
     setOpen(false);
     setSaving(true);
     await fetch("/api/tenant/onboarding", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ language: lang }),
+      body: JSON.stringify({ language: selected }),
     });
     setSaving(false);
   }
@@ -45,8 +44,8 @@ export function Topbar({ currentLanguage }: { currentLanguage: string }) {
           className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-gray-200 hover:border-emerald-300 hover:bg-emerald-50 transition-colors text-sm font-medium text-gray-700"
         >
           <Globe className="h-4 w-4 text-gray-400" />
-          <span>{LANGUAGE_FLAGS[selected]}</span>
-          <span>{LANGUAGE_NAMES[selected]}</span>
+          <span>{LANGUAGE_FLAGS[lang]}</span>
+          <span>{LANGUAGE_NAMES[lang]}</span>
           <svg className="h-3 w-3 text-gray-400 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
@@ -54,17 +53,17 @@ export function Topbar({ currentLanguage }: { currentLanguage: string }) {
 
         {open && (
           <div className="absolute right-0 top-full mt-1 w-44 bg-white border border-gray-200 rounded-xl shadow-lg py-1 z-50">
-            {SUPPORTED_LANGUAGES.map((lang) => (
+            {SUPPORTED_LANGUAGES.map((l) => (
               <button
-                key={lang}
-                onClick={() => void handleSelect(lang)}
+                key={l}
+                onClick={() => void handleSelect(l)}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 text-sm hover:bg-emerald-50 transition-colors ${
-                  selected === lang ? "text-emerald-700 font-semibold bg-emerald-50" : "text-gray-700"
+                  lang === l ? "text-emerald-700 font-semibold bg-emerald-50" : "text-gray-700"
                 }`}
               >
-                <span className="text-base">{LANGUAGE_FLAGS[lang]}</span>
-                <span>{LANGUAGE_NAMES[lang]}</span>
-                {selected === lang && (
+                <span className="text-base">{LANGUAGE_FLAGS[l]}</span>
+                <span>{LANGUAGE_NAMES[l]}</span>
+                {lang === l && (
                   <svg className="h-4 w-4 ml-auto text-emerald-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>

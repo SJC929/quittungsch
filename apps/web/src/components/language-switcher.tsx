@@ -3,16 +3,26 @@
 import { useState, useRef, useEffect } from "react";
 import { LANGUAGE_NAMES, LANGUAGE_FLAGS, SUPPORTED_LANGUAGES, type SupportedLanguage } from "@spezo/i18n";
 import { Globe } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
 
 interface LanguageSwitcherProps {
   current?: SupportedLanguage;
   onChange?: (lang: SupportedLanguage) => void;
 }
 
-export function LanguageSwitcher({ current = "de", onChange }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ current, onChange }: LanguageSwitcherProps) {
+  const { lang: ctxLang, setLang: ctxSetLang } = useLanguage();
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState<SupportedLanguage>(current);
+  const [selected, setSelected] = useState<SupportedLanguage>(current ?? ctxLang);
   const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (current !== undefined) setSelected(current);
+  }, [current]);
+
+  useEffect(() => {
+    if (current === undefined) setSelected(ctxLang);
+  }, [ctxLang, current]);
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -27,6 +37,7 @@ export function LanguageSwitcher({ current = "de", onChange }: LanguageSwitcherP
   function handleSelect(lang: SupportedLanguage) {
     setSelected(lang);
     setOpen(false);
+    ctxSetLang(lang);
     onChange?.(lang);
   }
 

@@ -9,6 +9,7 @@ import { Label } from "@spezo/ui";
 import { LogoWithText } from "@/components/logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import type { SupportedLanguage } from "@spezo/i18n";
+import { useLanguage } from "@/contexts/language-context";
 
 const T = {
   de: {
@@ -127,7 +128,7 @@ const T = {
 
 export default function RegisterPage() {
   const router = useRouter();
-  const [lang, setLang] = useState<SupportedLanguage>("de");
+  const { lang, setLang } = useLanguage();
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");

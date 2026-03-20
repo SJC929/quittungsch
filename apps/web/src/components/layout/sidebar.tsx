@@ -11,6 +11,9 @@ import {
   Settings,
   LogOut,
   Plus,
+  MapPin,
+  Calculator,
+  UserCheck,
 } from "lucide-react";
 import { cn } from "@spezo/ui";
 import { LogoWithText } from "@/components/logo";
@@ -20,6 +23,9 @@ const NAV_ITEMS = [
   { href: "/expenses", icon: Receipt, label: "Belege" },
   { href: "/upload", icon: Upload, label: "Beleg erfassen" },
   { href: "/exports", icon: Download, label: "Exporte" },
+  { href: "/km-log", icon: MapPin, label: "Kilometer-Log" },
+  { href: "/mwst", icon: Calculator, label: "MwSt-Abrechnung" },
+  { href: "/treuhander", icon: UserCheck, label: "Treuhänder" },
   { href: "/settings", icon: Settings, label: "Einstellungen" },
 ];
 
@@ -27,9 +33,9 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 bg-emerald-50/70 border-r border-emerald-100 flex flex-col h-screen fixed left-0 top-0 z-30">
+    <aside className="w-64 border-r border-emerald-200 flex flex-col h-screen fixed left-0 top-0 z-30" style={{ background: "linear-gradient(180deg, #d1fae5 0%, #ecfdf5 100%)" }}>
       {/* Logo */}
-      <div className="p-5 border-b border-emerald-100">
+      <div className="p-5 border-b border-emerald-200">
         <LogoWithText iconSize={34} textSize="md" />
         <p className="text-xs text-gray-400 mt-1 ml-11">Schweizer Buchhaltung</p>
       </div>
@@ -38,7 +44,7 @@ export function Sidebar() {
       <div className="px-4 py-3">
         <Link
           href="/upload"
-          className="flex items-center justify-center gap-2 w-full bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl py-3 text-sm font-semibold transition-colors shadow-sm"
+          className="flex items-center justify-center gap-2 w-full bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl py-3 text-sm font-semibold transition-colors shadow-sm"
         >
           <Plus className="h-4 w-4" />
           Beleg erfassen
@@ -46,7 +52,7 @@ export function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-3 py-2 space-y-0.5">
+      <nav className="flex-1 px-3 py-2 space-y-0.5 overflow-y-auto">
         {NAV_ITEMS.map(({ href, icon: Icon, label }) => (
           <Link
             key={href}
@@ -54,21 +60,21 @@ export function Sidebar() {
             className={cn(
               "flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium transition-colors",
               pathname === href
-                ? "bg-emerald-50 text-emerald-700 font-semibold"
-                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                ? "bg-emerald-500 text-white font-semibold"
+                : "text-gray-600 hover:bg-emerald-100 hover:text-gray-900"
             )}
           >
-            <Icon className={cn("h-5 w-5 flex-shrink-0", pathname === href ? "text-emerald-600" : "text-gray-400")} />
+            <Icon className={cn("h-5 w-5 flex-shrink-0", pathname === href ? "text-white" : "text-gray-400")} />
             {label}
             {pathname === href && (
-              <div className="ml-auto w-1.5 h-5 rounded-full bg-emerald-600" />
+              <div className="ml-auto w-1.5 h-5 rounded-full bg-white" />
             )}
           </Link>
         ))}
       </nav>
 
       {/* Bottom section */}
-      <div className="p-4 border-t border-emerald-100">
+      <div className="p-4 border-t border-emerald-200">
         <button
           onClick={() => void signOut({ callbackUrl: "/login" })}
           className="flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm font-medium text-gray-500 hover:bg-red-50 hover:text-red-600 transition-colors"

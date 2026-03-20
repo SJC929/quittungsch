@@ -2,6 +2,7 @@
 
 import { SessionProvider } from "next-auth/react";
 import type { Session } from "next-auth";
+import { LanguageProvider } from "@/contexts/language-context";
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -11,7 +12,9 @@ interface ProvidersProps {
 export function Providers({ children, session }: ProvidersProps) {
   return (
     <SessionProvider session={session}>
-      {children}
+      <LanguageProvider>
+        {children}
+      </LanguageProvider>
     </SessionProvider>
   );
 }

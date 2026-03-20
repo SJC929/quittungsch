@@ -14,10 +14,10 @@ export const LANGUAGE_NAMES: Record<SupportedLanguage, string> = {
 };
 
 export const LANGUAGE_FLAGS: Record<SupportedLanguage, string> = {
-  de: "🇩🇪",
+  de: "🇨🇭",
   fr: "🇫🇷",
   it: "🇮🇹",
-  rm: "🏔️",
+  rm: "🇨🇭",
   en: "🇬🇧",
   tr: "🇹🇷",
   sq: "🇦🇱",

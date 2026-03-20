@@ -6,6 +6,27 @@ import { Button } from "@spezo/ui";
 import { Card, CardContent, CardHeader, CardTitle } from "@spezo/ui";
 import { LogoWithText } from "@/components/logo";
 
+const FEATURES_FREE = [
+  "10 Belege pro Monat",
+  "OCR-Analyse (KI-gestützt)",
+  "Excel / CSV Export",
+  "Schweizer Datenspeicherung",
+];
+
+const FEATURES_PRO = [
+  "Unbegrenzte Belege",
+  "OCR + Claude KI-Analyse",
+  "Excel, CSV, PDF Export",
+  "GPS Kilometer-Protokoll",
+  "MwSt-Abrechnung für ESTV",
+  "Treuhänder-Zugang (read-only)",
+  "Wiederkehrende Ausgaben",
+  "Belegfrist-Erinnerungen",
+  "QR-Rechnungen automatisch erkannt",
+  "Schweizer Datenspeicherung",
+  "Alle Sprachen (DE/FR/IT/EN/TR/SQ)",
+];
+
 export default function CheckoutPage() {
   const [loading, setLoading] = useState(false);
   const paymentEnabled = isPaymentEnabled();
@@ -20,113 +41,108 @@ export default function CheckoutPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ paymentMethod }),
       });
-
-      const data = await res.json() as { checkoutUrl?: string; comingSoon?: boolean };
-
-      if (data.checkoutUrl) {
-        window.location.href = data.checkoutUrl;
-      }
+      const data = await res.json() as { checkoutUrl?: string };
+      if (data.checkoutUrl) window.location.href = data.checkoutUrl;
     } finally {
       setLoading(false);
     }
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="max-w-md w-full space-y-4">
-        {/* Logo */}
-        <div className="flex flex-col items-center mb-6">
-          <LogoWithText iconSize={52} textSize="xl" />
-          <p className="text-gray-500 mt-2 text-sm">Alle Features ohne Einschränkungen</p>
+    <div className="min-h-screen flex flex-col" style={{ background: "#F0FDF9" }}>
+      <div className="p-4 flex items-center">
+        <LogoWithText iconSize={36} textSize="md" />
+      </div>
+
+      <div className="flex-1 flex flex-col items-center justify-center px-4 pb-12">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2 text-center">Einfache Preise</h1>
+        <p className="text-gray-500 mb-10 text-center">Keine versteckten Kosten. Kündigung jederzeit.</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl w-full">
+          {/* Free Plan */}
+          <Card className="border-2 border-gray-200">
+            <CardHeader>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Gratis</p>
+              <CardTitle className="flex items-baseline gap-2 mt-1">
+                <span className="text-5xl font-bold">CHF 0</span>
+                <span className="text-gray-400 font-normal text-sm">/Monat</span>
+              </CardTitle>
+              <p className="text-sm text-gray-400">Für Einsteiger</p>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-gray-600 mb-6">
+                {FEATURES_FREE.map((f) => (
+                  <li key={f} className="flex items-center gap-2">
+                    <span className="text-emerald-500 font-bold">✓</span> {f}
+                  </li>
+                ))}
+              </ul>
+              <Button variant="outline" className="w-full" onClick={() => window.location.href = "/dashboard"}>
+                Kostenlos starten
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Pro Plan */}
+          <Card className="border-2 border-emerald-500 relative shadow-lg">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+              <span className="bg-emerald-600 text-white text-xs font-bold px-4 py-1 rounded-full">
+                BELIEBTESTE WAHL
+              </span>
+            </div>
+            <CardHeader>
+              <p className="text-xs font-bold text-emerald-600 uppercase tracking-wider">Pro</p>
+              <CardTitle className="flex items-baseline gap-2 mt-1">
+                <span className="text-5xl font-bold text-emerald-700">CHF 4.95</span>
+                <span className="text-gray-400 font-normal text-sm">/Monat</span>
+              </CardTitle>
+              <p className="text-sm text-gray-400">Alle Features + GPS Mobile</p>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-gray-600 mb-6">
+                {FEATURES_PRO.map((f) => (
+                  <li key={f} className="flex items-center gap-2">
+                    <span className="text-emerald-500 font-bold">✓</span> {f}
+                  </li>
+                ))}
+              </ul>
+
+              {!paymentEnabled ? (
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                  <p className="text-emerald-700 text-sm font-medium mb-3">
+                    🎉 Kostenlos bis zum Launch – jetzt gratis Pro nutzen!
+                  </p>
+                  <Button className="w-full bg-emerald-600 hover:bg-emerald-700" onClick={() => window.location.href = "/dashboard"}>
+                    Zur App →
+                  </Button>
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {activeProvider === "stripe" && (
+                    <>
+                      <Button className="w-full h-12 text-base bg-emerald-600 hover:bg-emerald-700" onClick={() => void handleCheckout("card")} disabled={loading}>
+                        {loading ? "Lädt..." : "Mit Karte bezahlen"}
+                      </Button>
+                      {twintEnabled && (
+                        <Button variant="outline" className="w-full h-12 text-base border-2 border-emerald-200" onClick={() => void handleCheckout("twint")} disabled={loading}>
+                          <span className="mr-2">📱</span> Mit TWINT bezahlen
+                        </Button>
+                      )}
+                    </>
+                  )}
+                  {activeProvider === "datatrans" && (
+                    <Button className="w-full h-12 text-base bg-emerald-600 hover:bg-emerald-700" onClick={() => void handleCheckout()} disabled={loading}>
+                      {loading ? "Lädt..." : "Via Datatrans bezahlen"}
+                    </Button>
+                  )}
+                </div>
+              )}
+            </CardContent>
+          </Card>
         </div>
 
-        {/* Price card */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-baseline gap-2">
-              <span className="text-4xl font-bold">CHF 10</span>
-              <span className="text-gray-500 font-normal">/ Monat</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2 text-sm text-gray-600">
-              {[
-                "Unbegrenzte Belege",
-                "OCR-Analyse (KI-gestützt)",
-                "Excel / CSV / PDF Export",
-                "QR-Rechnungen automatisch erkannt",
-                "Schweizer Datenspeicherung",
-                "Alle Sprachen (DE/FR/IT/EN)",
-              ].map((feature) => (
-                <li key={feature} className="flex items-center gap-2">
-                  <span className="text-green-500">✓</span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-
-        {/* Payment section */}
-        {!paymentEnabled ? (
-          /* Both providers disabled – free trial mode */
-          <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 text-center">
-            <div className="text-2xl mb-2">🎉</div>
-            <h3 className="font-semibold text-emerald-800 mb-2">
-              Kostenlos bis zum Launch
-            </h3>
-            <p className="text-emerald-700 text-sm">
-              Wir nehmen bald Zahlungen entgegen – du kannst die App kostenlos nutzen bis zum Launch.
-            </p>
-            <Button
-              className="mt-4 w-full"
-              variant="outline"
-              onClick={() => window.location.href = "/dashboard"}
-            >
-              Zur App →
-            </Button>
-          </div>
-        ) : (
-          <div className="space-y-3">
-            {activeProvider === "stripe" && (
-              <>
-                <Button
-                  className="w-full h-12 text-base"
-                  onClick={() => void handleCheckout("card")}
-                  disabled={loading}
-                >
-                  {loading ? "Lädt..." : "Mit Karte bezahlen"}
-                </Button>
-
-                {twintEnabled && (
-                  <Button
-                    variant="outline"
-                    className="w-full h-12 text-base border-2"
-                    onClick={() => void handleCheckout("twint")}
-                    disabled={loading}
-                  >
-                    <span className="mr-2">📱</span>
-                    Mit TWINT bezahlen
-                  </Button>
-                )}
-              </>
-            )}
-
-            {activeProvider === "datatrans" && (
-              <Button
-                className="w-full h-12 text-base bg-red-600 hover:bg-red-700"
-                onClick={() => void handleCheckout()}
-                disabled={loading}
-              >
-                {loading ? "Lädt..." : "Via Datatrans bezahlen"}
-              </Button>
-            )}
-          </div>
-        )}
-
-        <p className="text-center text-xs text-gray-400">
-          Alle Daten werden in der Schweiz gespeichert (DSG-konform).
-          Kündigung jederzeit möglich.
+        <p className="text-center text-xs text-gray-400 mt-8">
+          🇨🇭 Alle Daten werden in der Schweiz gespeichert (DSG-konform). Kündigung jederzeit möglich.
         </p>
       </div>
     </div>
