@@ -262,7 +262,7 @@ const T = {
     status_ok: "OK", status_review: "Prüfen",
     banner_title: "Sie nutzen den kostenlosen Plan",
     banner_sub: "Upgrade auf Pro für unlimitierte Belege, Google Sheets & Prioritäts-Support",
-    banner_btn: "Upgrade → CHF 9/Mt"
+    banner_btn: "Upgrade → CHF 4.95/Mt"
   },
   fr: {
     tagline: "La comptabilité simplifiée",
@@ -280,7 +280,7 @@ const T = {
     status_ok: "OK", status_review: "À vérifier",
     banner_title: "Vous utilisez le plan gratuit",
     banner_sub: "Passez à Pro pour des reçus illimités, Google Sheets & support prioritaire",
-    banner_btn: "Mise à niveau → CHF 9/mois"
+    banner_btn: "Mise à niveau → CHF 4.95/mois"
   },
   it: {
     tagline: "Contabilità semplice",
@@ -298,7 +298,7 @@ const T = {
     status_ok: "OK", status_review: "Da verificare",
     banner_title: "Stai usando il piano gratuito",
     banner_sub: "Passa a Pro per ricevute illimitate, Google Sheets & supporto prioritario",
-    banner_btn: "Aggiornamento → CHF 9/mese"
+    banner_btn: "Aggiornamento → CHF 4.95/mese"
   },
   rm: {
     tagline: "La contabilitad simplifitgada",
@@ -316,7 +316,7 @@ const T = {
     status_ok: "OK", status_review: "Controllar",
     banner_title: "Utilisais il plan gratuit",
     banner_sub: "Agrandissement per quittanzas illimitadas, Google Sheets & support prioritar",
-    banner_btn: "Agrandissement → CHF 9/mais"
+    banner_btn: "Agrandissement → CHF 4.95/mais"
   },
   en: {
     tagline: "Accounting made easy",
@@ -338,7 +338,43 @@ const T = {
   }
 };
 
-let currentLang = 'de';
+  tr: {
+    tagline: 'Muhasebe kolaylaştırıldı',
+    nav_dashboard: 'Panel', nav_upload: 'Makbuz ekle', nav_expenses: 'Makbuzlar',
+    nav_exports: 'Dışa aktarım', nav_upgrade: 'Yükselt', nav_settings: 'Ayarlar',
+    free_plan: 'Ücretsiz Plan',
+    greeting: 'Günaydın, Max 👋', subtitle: 'Mart 2026 – Genel Bakış', btn_add: 'Makbuz ekle',
+    kpi_expenses: 'Giderler (Mart)', kpi_expenses_sub: '↑ +12% önceki aya göre',
+    kpi_vat: 'KDV (Mart)', kpi_vat_sub: '8.1% normal oran',
+    kpi_receipts: 'Makbuzlar (Mart)', kpi_receipts_sub: '⚠ 2 incelenecek',
+    kpi_km: 'Kilometre', kpi_km_sub: 'CHF 242.90 götürü',
+    categories: 'Kategoriler', recent: 'Son Makbuzlar', show_all: 'Tümünü göster →',
+    th_date: 'Tarih', th_merchant: 'Satıcı', th_category: 'Kategori', th_amount: 'Tutar', th_status: 'Durum',
+    cat_vehicle: 'Araç', cat_food: 'Yiyecek & İçecek', cat_material: 'Malzeme', cat_office: 'Ofis', cat_other: 'Diğer', cat_travel: 'Seyahat',
+    status_ok: 'Tamam', status_review: 'İncele',
+    banner_title: 'Ücretsiz plan kullanıyorsunuz',
+    banner_sub: 'Sınırsız makbuz, Google Sheets & öncelikli destek için Pro'a geçin',
+    banner_btn: 'Yükselt → CHF 4.95/Ay'
+  },
+  sq: {
+    tagline: 'Kontabiliteti i thjeshtësuar',
+    nav_dashboard: 'Paneli', nav_upload: 'Shto faturë', nav_expenses: 'Faturat',
+    nav_exports: 'Eksportet', nav_upgrade: 'Përmirëso', nav_settings: 'Cilësimet',
+    free_plan: 'Plan Falas',
+    greeting: 'Mirëmëngjes, Max 👋', subtitle: 'Mars 2026 – Pasqyra', btn_add: 'Shto faturë',
+    kpi_expenses: 'Shpenzimet (Mars)', kpi_expenses_sub: '↑ +12% vs muajin e kaluar',
+    kpi_vat: 'TVSH (Mars)', kpi_vat_sub: '8.1% norma normale',
+    kpi_receipts: 'Faturat (Mars)', kpi_receipts_sub: '⚠ 2 për t'u verifikuar',
+    kpi_km: 'Kilometra', kpi_km_sub: 'CHF 242.90 tarifë e sheshtë',
+    categories: 'Kategoritë', recent: 'Faturat e fundit', show_all: 'Shfaq të gjitha →',
+    th_date: 'Data', th_merchant: 'Shitësi', th_category: 'Kategoria', th_amount: 'Shuma', th_status: 'Statusi',
+    cat_vehicle: 'Automjet', cat_food: 'Ushqim & Pije', cat_material: 'Material', cat_office: 'Zyrë', cat_other: 'Të tjera', cat_travel: 'Udhëtim',
+    status_ok: 'OK', status_review: 'Verifiko',
+    banner_title: 'Jeni duke përdorur planin falas',
+    banner_sub: 'Kaloni në Pro për fatura të pakufizuara, Google Sheets & mbështetje prioritare',
+    banner_btn: 'Përmirëso → CHF 4.95/Muaj'
+  },
+  let currentLang = 'de';
 
 // On page load: restore saved language
 window.addEventListener('DOMContentLoaded', function() {
