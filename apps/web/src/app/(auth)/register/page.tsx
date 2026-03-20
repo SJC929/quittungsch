@@ -52,7 +52,7 @@ export default function RegisterPage() {
           </div>
           <p className="text-center text-gray-500 -mt-4 mb-8 text-sm">14 Tage kostenlos testen</p>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+          <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-8">
             <h2 className="text-xl font-bold mb-2 text-gray-900">Konto erstellen</h2>
             <p className="text-sm text-gray-400 mb-6">Kostenlos, keine Kreditkarte nötig</p>
 

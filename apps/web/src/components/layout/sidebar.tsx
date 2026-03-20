@@ -27,9 +27,9 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 bg-white border-r border-gray-200 flex flex-col h-screen fixed left-0 top-0 z-30">
+    <aside className="w-64 bg-emerald-50/70 border-r border-emerald-100 flex flex-col h-screen fixed left-0 top-0 z-30">
       {/* Logo */}
-      <div className="p-5 border-b border-gray-100">
+      <div className="p-5 border-b border-emerald-100">
         <LogoWithText iconSize={34} textSize="md" />
         <p className="text-xs text-gray-400 mt-1 ml-11">Schweizer Buchhaltung</p>
       </div>
@@ -68,7 +68,7 @@ export function Sidebar() {
       </nav>
 
       {/* Bottom section */}
-      <div className="p-4 border-t border-gray-100">
+      <div className="p-4 border-t border-emerald-100">
         <button
           onClick={() => void signOut({ callbackUrl: "/login" })}
           className="flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm font-medium text-gray-500 hover:bg-red-50 hover:text-red-600 transition-colors"

@@ -50,7 +50,7 @@ export default function LoginPage() {
   if (magicLinkSent) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ background: "#F0FDF9" }}>
-        <div className="max-w-md w-full bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center">
+        <div className="max-w-md w-full bg-white rounded-2xl shadow-sm border border-emerald-100 p-8 text-center">
           <div className="text-5xl mb-4">📧</div>
           <h2 className="text-xl font-bold mb-2">Magic Link gesendet!</h2>
           <p className="text-gray-500">
@@ -76,7 +76,7 @@ export default function LoginPage() {
           </div>
           <p className="text-center text-gray-500 -mt-4 mb-8 text-sm">Belege einfach erfassen</p>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+          <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-8">
             <h2 className="text-xl font-bold mb-6 text-gray-900">Anmelden</h2>
 
             {error && (

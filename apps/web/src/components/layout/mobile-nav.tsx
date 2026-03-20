@@ -17,7 +17,7 @@ export function MobileNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-30 bg-white border-t border-gray-200 safe-area-pb">
+    <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-30 bg-white/90 backdrop-blur border-t border-emerald-100 safe-area-pb">
       <div className="flex items-center justify-around px-2 py-1">
         {NAV_ITEMS.map(({ href, icon: Icon, label, primary }) => {
           const isActive = pathname === href;
