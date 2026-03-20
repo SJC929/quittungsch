@@ -8,7 +8,7 @@ import Link from "next/link";
 import { Button } from "@spezo/ui";
 import { Input } from "@spezo/ui";
 import { Label } from "@spezo/ui";
-import { LogoWithText } from "@/components/logo";
+import { LogoIcon } from "@/components/logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import type { SupportedLanguage } from "@spezo/i18n";
 import { useLanguage } from "@/contexts/language-context";
@@ -191,12 +191,14 @@ export default function LoginPage() {
 
   if (magicLinkSent) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: "linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #d1fae5 100%)" }}>
-        <div className="max-w-md w-full bg-white rounded-2xl shadow-sm border border-emerald-100 p-8 text-center">
-          <div className="text-5xl mb-4">📧</div>
-          <h2 className="text-xl font-bold mb-2">{t.magicSentTitle}</h2>
-          <p className="text-gray-500">
-            {t.magicSentText} <strong>{email}</strong> {t.magicSentSuffix}
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="max-w-md w-full bg-white rounded-2xl shadow-lg border border-gray-200 p-10 text-center">
+          <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span className="text-3xl">📧</span>
+          </div>
+          <h2 className="text-xl font-bold mb-2 text-gray-900">{t.magicSentTitle}</h2>
+          <p className="text-gray-500 text-sm">
+            {t.magicSentText} <strong className="text-gray-800">{email}</strong> {t.magicSentSuffix}
           </p>
         </div>
       </div>
@@ -204,22 +206,25 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: "linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #d1fae5 100%)" }}>
+    <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Top bar with language switcher */}
       <div className="flex justify-end p-4 pr-6">
         <LanguageSwitcher current={lang} onChange={setLang} />
       </div>
 
       <div className="flex-1 flex items-center justify-center px-4 pb-8">
-        <div className="max-w-md w-full">
-          {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <LogoWithText iconSize={48} textSize="xl" />
+        <div className="max-w-sm w-full">
+          {/* Logo – prominent and centered */}
+          <div className="flex flex-col items-center mb-10">
+            <div className="w-20 h-20 bg-emerald-600 rounded-2xl flex items-center justify-center shadow-xl shadow-emerald-200 mb-4">
+              <LogoIcon size={52} />
+            </div>
+            <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Spezo</h1>
+            <p className="text-sm text-gray-500 mt-1">{t.tagline}</p>
           </div>
-          <p className="text-center text-gray-500 -mt-4 mb-8 text-sm">{t.tagline}</p>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-8">
-            <h2 className="text-xl font-bold mb-6 text-gray-900">{t.title}</h2>
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+            <h2 className="text-lg font-semibold mb-6 text-gray-900">{t.title}</h2>
 
             {error && (
               <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl mb-4 text-sm">
@@ -229,7 +234,7 @@ export default function LoginPage() {
 
             <form onSubmit={(e) => void handleSubmit(e)} className="space-y-4">
               <div>
-                <Label htmlFor="email">{t.email}</Label>
+                <Label htmlFor="email" className="text-gray-700">{t.email}</Label>
                 <Input
                   id="email"
                   type="email"
@@ -237,27 +242,27 @@ export default function LoginPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="max@muster.ch"
                   required
-                  className="mt-1"
+                  className="mt-1 border-gray-200 focus:border-emerald-400"
                 />
               </div>
 
               {mode === "password" && (
                 <div>
-                  <Label htmlFor="password">{t.password}</Label>
+                  <Label htmlFor="password" className="text-gray-700">{t.password}</Label>
                   <Input
                     id="password"
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="mt-1"
+                    className="mt-1 border-gray-200 focus:border-emerald-400"
                   />
                 </div>
               )}
 
               <Button
                 type="submit"
-                className="w-full h-12 text-sm font-semibold bg-emerald-700 hover:bg-emerald-800"
+                className="w-full h-11 text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 shadow-sm"
                 disabled={loading}
               >
                 {loading ? t.loading : mode === "magic" ? t.sendMagicLink : t.submit}
@@ -268,14 +273,14 @@ export default function LoginPage() {
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-gray-100" />
               </div>
-              <div className="relative flex justify-center text-sm">
+              <div className="relative flex justify-center text-xs">
                 <span className="px-3 bg-white text-gray-400">oder</span>
               </div>
             </div>
 
             <Button
               variant="outline"
-              className="w-full h-11 border-emerald-200 text-emerald-700 hover:bg-emerald-50"
+              className="w-full h-10 border-gray-200 text-gray-600 hover:bg-gray-50 text-sm"
               onClick={() => setMode(mode === "password" ? "magic" : "password")}
             >
               {mode === "password" ? t.magicLink : t.withPassword}
@@ -283,13 +288,13 @@ export default function LoginPage() {
 
             <p className="text-center text-sm text-gray-500 mt-6">
               {t.noAccount}{" "}
-              <Link href="/register" className="text-emerald-700 hover:underline font-semibold">
+              <Link href="/register" className="text-emerald-600 hover:text-emerald-700 font-semibold">
                 {t.register}
               </Link>
             </p>
           </div>
 
-          <p className="text-center text-xs text-gray-400 mt-4">{t.footer}</p>
+          <p className="text-center text-xs text-gray-400 mt-5">{t.footer}</p>
         </div>
       </div>
     </div>

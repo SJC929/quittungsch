@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Button } from "@spezo/ui";
 import { Input } from "@spezo/ui";
 import { Label } from "@spezo/ui";
-import { LogoWithText } from "@/components/logo";
+import { LogoIcon } from "@/components/logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import type { SupportedLanguage } from "@spezo/i18n";
 import { useLanguage } from "@/contexts/language-context";
@@ -158,23 +158,26 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: "linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #d1fae5 100%)" }}>
+    <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Top bar with language switcher */}
       <div className="flex justify-end p-4 pr-6">
         <LanguageSwitcher current={lang} onChange={setLang} />
       </div>
 
       <div className="flex-1 flex items-center justify-center px-4 pb-8">
-        <div className="max-w-md w-full">
-          {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <LogoWithText iconSize={48} textSize="xl" />
+        <div className="max-w-sm w-full">
+          {/* Logo – prominent and centered */}
+          <div className="flex flex-col items-center mb-10">
+            <div className="w-20 h-20 bg-emerald-600 rounded-2xl flex items-center justify-center shadow-xl shadow-emerald-200 mb-4">
+              <LogoIcon size={52} />
+            </div>
+            <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Spezo</h1>
+            <p className="text-sm text-gray-500 mt-1">{t.tagline}</p>
           </div>
-          <p className="text-center text-gray-500 -mt-4 mb-8 text-sm">{t.tagline}</p>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-8">
-            <h2 className="text-xl font-bold mb-2 text-gray-900">{t.title}</h2>
-            <p className="text-sm text-gray-400 mb-6">{t.subtitle}</p>
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+            <h2 className="text-lg font-semibold mb-1 text-gray-900">{t.title}</h2>
+            <p className="text-xs text-gray-400 mb-6">{t.subtitle}</p>
 
             {error && (
               <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl mb-4 text-sm">
@@ -184,18 +187,18 @@ export default function RegisterPage() {
 
             <form onSubmit={(e) => void handleSubmit(e)} className="space-y-4">
               <div>
-                <Label htmlFor="name">{t.name}</Label>
+                <Label htmlFor="name" className="text-gray-700">{t.name}</Label>
                 <Input
                   id="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Max Muster"
-                  className="mt-1"
+                  className="mt-1 border-gray-200 focus:border-emerald-400"
                 />
               </div>
 
               <div>
-                <Label htmlFor="email">{t.email}</Label>
+                <Label htmlFor="email" className="text-gray-700">{t.email}</Label>
                 <Input
                   id="email"
                   type="email"
@@ -203,12 +206,12 @@ export default function RegisterPage() {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="max@muster.ch"
                   required
-                  className="mt-1"
+                  className="mt-1 border-gray-200 focus:border-emerald-400"
                 />
               </div>
 
               <div>
-                <Label htmlFor="password">{t.password}</Label>
+                <Label htmlFor="password" className="text-gray-700">{t.password}</Label>
                 <Input
                   id="password"
                   type="password"
@@ -217,13 +220,13 @@ export default function RegisterPage() {
                   placeholder={t.passwordHint}
                   required
                   minLength={8}
-                  className="mt-1"
+                  className="mt-1 border-gray-200 focus:border-emerald-400"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full h-12 text-sm font-semibold bg-emerald-700 hover:bg-emerald-800"
+                className="w-full h-11 text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 shadow-sm"
                 disabled={loading}
               >
                 {loading ? t.loading : t.submit}
@@ -234,13 +237,13 @@ export default function RegisterPage() {
 
             <p className="text-center text-sm text-gray-500 mt-4">
               {t.alreadyAccount}{" "}
-              <Link href="/login" className="text-emerald-700 hover:underline font-semibold">
+              <Link href="/login" className="text-emerald-600 hover:text-emerald-700 font-semibold">
                 {t.login}
               </Link>
             </p>
           </div>
 
-          <p className="text-center text-xs text-gray-400 mt-4">{t.footer}</p>
+          <p className="text-center text-xs text-gray-400 mt-5">{t.footer}</p>
         </div>
       </div>
     </div>

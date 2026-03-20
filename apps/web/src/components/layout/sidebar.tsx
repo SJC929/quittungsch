@@ -33,18 +33,23 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 border-r border-emerald-300 flex flex-col h-screen fixed left-0 top-0 z-30" style={{ background: "linear-gradient(180deg, #6ee7b7 0%, #a7f3d0 40%, #d1fae5 100%)" }}>
-      {/* Logo */}
-      <div className="p-5 border-b border-emerald-300">
-        <LogoWithText iconSize={34} textSize="md" />
-        <p className="text-xs text-emerald-700 mt-1 ml-11">Schweizer Buchhaltung</p>
+    <aside
+      className="w-64 flex flex-col h-screen fixed left-0 top-0 z-30"
+      style={{ background: "linear-gradient(180deg, #0a1f14 0%, #0d2318 100%)" }}
+    >
+      {/* Logo section */}
+      <div className="px-5 py-6 border-b border-white/10">
+        <LogoWithText iconSize={36} textSize="md" variant="white" />
+        <p className="text-xs text-emerald-400/80 mt-1.5 ml-[calc(36px+12px)] font-medium tracking-wide uppercase">
+          Schweizer Buchhaltung
+        </p>
       </div>
 
       {/* Quick add button */}
-      <div className="px-4 py-3">
+      <div className="px-4 py-4">
         <Link
           href="/upload"
-          className="flex items-center justify-center gap-2 w-full bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl py-3 text-sm font-semibold transition-colors shadow-sm"
+          className="flex items-center justify-center gap-2 w-full bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl py-3 text-sm font-semibold transition-all shadow-lg shadow-emerald-900/40"
         >
           <Plus className="h-4 w-4" />
           Beleg erfassen
@@ -52,32 +57,41 @@ export function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-3 py-2 space-y-0.5 overflow-y-auto">
+      <nav className="flex-1 px-3 py-1 space-y-0.5 overflow-y-auto">
         {NAV_ITEMS.map(({ href, icon: Icon, label }) => (
           <Link
             key={href}
             href={href}
             className={cn(
-              "flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium transition-colors",
+              "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all",
               pathname === href
-                ? "bg-emerald-500 text-white font-semibold"
-                : "text-emerald-900 hover:bg-emerald-200/60 hover:text-emerald-900"
+                ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+                : "text-gray-400 hover:bg-white/8 hover:text-gray-200"
             )}
           >
-            <Icon className={cn("h-5 w-5 flex-shrink-0", pathname === href ? "text-white" : "text-emerald-700")} />
+            <Icon
+              className={cn(
+                "h-[18px] w-[18px] flex-shrink-0",
+                pathname === href ? "text-emerald-400" : "text-gray-500"
+              )}
+            />
             {label}
             {pathname === href && (
-              <div className="ml-auto w-1.5 h-5 rounded-full bg-white" />
+              <div className="ml-auto w-1.5 h-1.5 rounded-full bg-emerald-400" />
             )}
           </Link>
         ))}
       </nav>
 
-      {/* Bottom section */}
-      <div className="p-4 border-t border-emerald-300">
+      {/* Bottom: plan badge + logout */}
+      <div className="p-4 border-t border-white/10 space-y-2">
+        <div className="px-3 py-2 rounded-xl bg-white/5 border border-white/10">
+          <p className="text-xs text-gray-400">Plan</p>
+          <p className="text-sm font-semibold text-emerald-400">Free Trial</p>
+        </div>
         <button
           onClick={() => void signOut({ callbackUrl: "/login" })}
-          className="flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm font-medium text-gray-500 hover:bg-red-50 hover:text-red-600 transition-colors"
+          className="flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm font-medium text-gray-500 hover:bg-red-500/10 hover:text-red-400 transition-colors"
         >
           <LogOut className="h-4 w-4" />
           Abmelden

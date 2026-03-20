@@ -2,52 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap');
 
 @layer base {
   :root {
-    --background: 160 35% 96%;
-    --foreground: 0 0% 7%;
+    --background: 0 0% 98%;
+    --foreground: 220 13% 13%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 7%;
+    --card-foreground: 220 13% 13%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7%;
-    --primary: 161 94% 30%;
+    --popover-foreground: 220 13% 13%;
+    --primary: 158 64% 32%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 160 84% 90%;
-    --secondary-foreground: 161 94% 20%;
-    --muted: 160 50% 93%;
-    --muted-foreground: 0 0% 42%;
-    --accent: 160 84% 90%;
-    --accent-foreground: 161 94% 20%;
+    --secondary: 158 20% 94%;
+    --secondary-foreground: 158 64% 22%;
+    --muted: 220 14% 95%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 158 20% 94%;
+    --accent-foreground: 158 64% 22%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 160 40% 84%;
-    --input: 160 40% 84%;
-    --ring: 161 94% 30%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 158 64% 32%;
     --radius: 0.625rem;
   }
 
   .dark {
-    --background: 161 30% 8%;
+    --background: 220 20% 10%;
     --foreground: 0 0% 98%;
-    --card: 161 25% 12%;
+    --card: 220 20% 14%;
     --card-foreground: 0 0% 98%;
-    --popover: 161 25% 12%;
+    --popover: 220 20% 14%;
     --popover-foreground: 0 0% 98%;
-    --primary: 160 64% 52%;
+    --primary: 158 60% 44%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 161 25% 18%;
+    --secondary: 220 20% 18%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 161 25% 18%;
+    --muted: 220 20% 18%;
     --muted-foreground: 0 0% 65%;
-    --accent: 161 25% 18%;
+    --accent: 220 20% 18%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 161 25% 18%;
-    --input: 161 25% 18%;
-    --ring: 160 64% 52%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 158 60% 44%;
   }
 }
 
@@ -58,5 +58,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }

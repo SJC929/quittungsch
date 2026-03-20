@@ -3,9 +3,14 @@ import React from "react";
 interface LogoIconProps {
   size?: number;
   className?: string;
+  variant?: "default" | "white";
 }
 
-export function LogoIcon({ size = 40, className = "" }: LogoIconProps) {
+export function LogoIcon({ size = 40, className = "", variant = "default" }: LogoIconProps) {
+  const bgColor = variant === "white" ? "rgba(255,255,255,0.15)" : "#10b981";
+  const accentColor = variant === "white" ? "white" : "#065f46";
+  const lineColor = variant === "white" ? "rgba(255,255,255,0.5)" : "#a7f3d0";
+
   return (
     <svg
       width={size}
@@ -15,37 +20,37 @@ export function LogoIcon({ size = 40, className = "" }: LogoIconProps) {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Green rounded background */}
-      <rect width="100" height="100" rx="22" fill="#34D399" />
+      {/* Rounded background */}
+      <rect width="100" height="100" rx="24" fill={bgColor} />
 
       {/* Receipt paper */}
-      <rect x="18" y="14" width="52" height="64" rx="4" fill="white" />
+      <rect x="20" y="14" width="50" height="62" rx="5" fill={variant === "white" ? "rgba(255,255,255,0.95)" : "white"} />
 
       {/* Zigzag bottom of receipt */}
       <path
-        d="M18 74 L23 68 L28 74 L33 68 L38 74 L43 68 L48 74 L53 68 L58 74 L63 68 L68 74 L70 74 L70 78 L18 78 Z"
-        fill="white"
+        d="M20 72 L25 66 L30 72 L35 66 L40 72 L45 66 L50 72 L55 66 L60 72 L65 66 L70 72 L70 76 L20 76 Z"
+        fill={variant === "white" ? "rgba(255,255,255,0.95)" : "white"}
       />
 
-      {/* Receipt lines */}
-      <rect x="26" y="23" width="22" height="5" rx="2.5" fill="#059669" />
-      <rect x="26" y="33" width="32" height="3" rx="1.5" fill="#D1FAE5" />
-      <rect x="26" y="40" width="28" height="3" rx="1.5" fill="#D1FAE5" />
-      <rect x="26" y="47" width="30" height="3" rx="1.5" fill="#D1FAE5" />
-      <rect x="26" y="54" width="24" height="3" rx="1.5" fill="#D1FAE5" />
-      <rect x="26" y="61" width="20" height="4" rx="2" fill="#059669" />
+      {/* Receipt header line – brand color */}
+      <rect x="28" y="22" width="20" height="5" rx="2.5" fill={accentColor} />
 
-      {/* Magnifying glass circle */}
-      <circle cx="72" cy="74" r="18" fill="#047857" />
-      <circle cx="72" cy="74" r="13" fill="white" />
-      <circle cx="72" cy="74" r="8" fill="none" stroke="#047857" strokeWidth="3" />
+      {/* Receipt data lines */}
+      <rect x="28" y="32" width="30" height="3" rx="1.5" fill={lineColor} />
+      <rect x="28" y="39" width="26" height="3" rx="1.5" fill={lineColor} />
+      <rect x="28" y="46" width="28" height="3" rx="1.5" fill={lineColor} />
+      <rect x="28" y="53" width="22" height="3" rx="1.5" fill={lineColor} />
 
-      {/* Magnifying glass handle */}
-      <line x1="78" y1="80" x2="86" y2="88" stroke="#047857" strokeWidth="4" strokeLinecap="round" />
+      {/* Total line */}
+      <rect x="28" y="60" width="18" height="4" rx="2" fill={accentColor} />
 
-      {/* Lines inside magnifying glass */}
-      <rect x="67" y="72" width="10" height="2" rx="1" fill="#047857" />
-      <rect x="67" y="76" width="7" height="2" rx="1" fill="#047857" />
+      {/* Magnifying glass */}
+      <circle cx="73" cy="73" r="17" fill={accentColor} />
+      <circle cx="73" cy="73" r="12" fill={variant === "white" ? "rgba(255,255,255,0.15)" : "white"} />
+      <circle cx="73" cy="73" r="7" fill="none" stroke={variant === "white" ? "rgba(255,255,255,0.9)" : accentColor} strokeWidth="2.5" />
+      <line x1="78" y1="79" x2="86" y2="87" stroke={variant === "white" ? "rgba(255,255,255,0.9)" : accentColor} strokeWidth="4" strokeLinecap="round" />
+      <rect x="69" y="72" width="8" height="2" rx="1" fill={variant === "white" ? "rgba(255,255,255,0.9)" : accentColor} />
+      <rect x="69" y="75.5" width="5.5" height="2" rx="1" fill={variant === "white" ? "rgba(255,255,255,0.9)" : accentColor} />
     </svg>
   );
 }
@@ -54,20 +59,23 @@ interface LogoWithTextProps {
   iconSize?: number;
   className?: string;
   textSize?: "sm" | "md" | "lg" | "xl";
+  variant?: "default" | "white";
 }
 
-export function LogoWithText({ iconSize = 36, className = "", textSize = "md" }: LogoWithTextProps) {
+export function LogoWithText({ iconSize = 36, className = "", textSize = "md", variant = "default" }: LogoWithTextProps) {
   const textClass = {
-    sm: "text-lg font-bold",
-    md: "text-xl font-bold",
-    lg: "text-2xl font-bold",
-    xl: "text-3xl font-bold",
+    sm: "text-lg font-bold tracking-tight",
+    md: "text-xl font-bold tracking-tight",
+    lg: "text-2xl font-bold tracking-tight",
+    xl: "text-3xl font-bold tracking-tight",
   }[textSize];
 
+  const textColor = variant === "white" ? "text-white" : "text-emerald-700";
+
   return (
-    <div className={`flex items-center gap-2.5 ${className}`}>
-      <LogoIcon size={iconSize} />
-      <span className={`${textClass} text-emerald-700`}>Spezo</span>
+    <div className={`flex items-center gap-3 ${className}`}>
+      <LogoIcon size={iconSize} variant={variant} />
+      <span className={`${textClass} ${textColor}`}>Spezo</span>
     </div>
   );
 }
