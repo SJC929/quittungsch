@@ -1,5 +1,5 @@
-import type { ExtractedExpense, OcrProvider, ReceiptInput } from "@quittungsch/types";
-import { OCR_CONFIDENCE } from "@quittungsch/types";
+import type { ExtractedExpense, OcrProvider, ReceiptInput } from "@spezo/types";
+import { OCR_CONFIDENCE } from "@spezo/types";
 import { GoogleVisionProvider } from "./providers/google-vision.provider";
 import { ClaudeVisionProvider } from "./providers/claude-vision.provider";
 import { TesseractProvider } from "./providers/tesseract.provider";

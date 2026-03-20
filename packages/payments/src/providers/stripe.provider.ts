@@ -1,5 +1,5 @@
 import Stripe from "stripe";
-import type { CheckoutSession, SubscriptionStatusResult, WebhookEvent } from "@quittungsch/types";
+import type { CheckoutSession, SubscriptionStatusResult, WebhookEvent } from "@spezo/types";
 import type { IPaymentProvider, Plan } from "../payment-provider.interface";
 
 /**
@@ -73,7 +73,7 @@ export class StripeProvider implements IPaymentProvider {
       cancel_url: `${appUrl}/checkout?canceled=true`,
       metadata: {
         userId,
-        appName: "QuittungsCH",
+        appName: "Spezo",
       },
       subscription_data: {
         trial_period_days: 14,

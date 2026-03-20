@@ -10,7 +10,7 @@ import { CameraScreen } from "./src/screens/CameraScreen";
 import { OcrConfirmScreen } from "./src/screens/OcrConfirmScreen";
 import { ExpensesListScreen } from "./src/screens/ExpensesListScreen";
 import { useAuthStore } from "./src/lib/auth-store";
-import type { ExtractedExpense } from "@quittungsch/types";
+import type { ExtractedExpense } from "@spezo/types";
 
 const Stack = createNativeStackNavigator();
 

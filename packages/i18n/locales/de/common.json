@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "QuittungsCH",
+    "name": "Spezo",
     "tagline": "Belege einfach erfassen – für Schweizer Selbständige"
   },
   "nav": {
@@ -23,7 +23,7 @@
     "noAccount": "Noch kein Konto?"
   },
   "onboarding": {
-    "welcome": "Willkommen bei QuittungsCH",
+    "welcome": "Willkommen bei Spezo",
     "step1Title": "Ihr Unternehmen",
     "step2Title": "MwSt-Einstellungen",
     "step3Title": "Export-Präferenz",

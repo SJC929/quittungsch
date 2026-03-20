@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "QuittungsCH",
-    "slug": "quittungsch",
+    "name": "Spezo",
+    "slug": "spezo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,10 +13,10 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "ch.quittungsch.app",
+      "bundleIdentifier": "ch.spezo.app",
       "infoPlist": {
-        "NSCameraUsageDescription": "QuittungsCH benötigt Kamerazugriff, um Belege zu fotografieren.",
-        "NSPhotoLibraryUsageDescription": "QuittungsCH benötigt Zugriff auf Fotos, um Belege auszuwählen."
+        "NSCameraUsageDescription": "Spezo benötigt Kamerazugriff, um Belege zu fotografieren.",
+        "NSPhotoLibraryUsageDescription": "Spezo benötigt Zugriff auf Fotos, um Belege auszuwählen."
       }
     },
     "android": {
@@ -24,7 +24,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#2563EB"
       },
-      "package": "ch.quittungsch.app",
+      "package": "ch.spezo.app",
       "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE"]
     },
     "web": {
@@ -34,7 +34,7 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "QuittungsCH benötigt Kamerazugriff für Belege."
+          "cameraPermission": "Spezo benötigt Kamerazugriff für Belege."
         }
       ]
     ],

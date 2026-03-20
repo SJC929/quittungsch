@@ -1,5 +1,5 @@
 {
-  "name": "@quittungsch/mobile",
+  "name": "@spezo/mobile",
   "version": "0.1.0",
   "private": true,
   "main": "src/index.tsx",
@@ -12,8 +12,8 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@quittungsch/i18n": "*",
-    "@quittungsch/types": "*",
+    "@spezo/i18n": "*",
+    "@spezo/types": "*",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",

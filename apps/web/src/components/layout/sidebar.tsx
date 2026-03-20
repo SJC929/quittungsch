@@ -12,7 +12,7 @@ import {
   LogOut,
   Plus,
 } from "lucide-react";
-import { cn } from "@quittungsch/ui";
+import { cn } from "@spezo/ui";
 import { LogoWithText } from "@/components/logo";
 
 const NAV_ITEMS = [

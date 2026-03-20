@@ -4,7 +4,7 @@
  */
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { prisma } from "@quittungsch/db/client";
+import { prisma } from "@spezo/db/client";
 import { getSession } from "@/lib/auth";
 
 const CreateKmLogSchema = z.object({

@@ -10,7 +10,7 @@ import {
   Image,
   ActivityIndicator,
 } from "react-native";
-import type { ExtractedExpense } from "@quittungsch/types";
+import type { ExtractedExpense } from "@spezo/types";
 import { apiRequest } from "../lib/api";
 
 const CATEGORIES = [

@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "QuittungsCH",
+    "name": "Spezo",
     "tagline": "Makbuzlarınızı kolayca yönetin – İsviçreli serbest çalışanlar için"
   },
   "nav": {
@@ -23,7 +23,7 @@
     "noAccount": "Henüz hesabınız yok mu?"
   },
   "onboarding": {
-    "welcome": "QuittungsCH'e Hoş Geldiniz",
+    "welcome": "Spezo'e Hoş Geldiniz",
     "step1Title": "İşletmeniz",
     "step2Title": "KDV Ayarları",
     "step3Title": "Dışa Aktarma Tercihi",

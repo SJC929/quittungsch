@@ -2,12 +2,12 @@
 
 import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "@quittungsch/ui";
-import { Input } from "@quittungsch/ui";
-import { Label } from "@quittungsch/ui";
-import { Card, CardContent } from "@quittungsch/ui";
-import { ConfidenceBadge } from "@quittungsch/ui";
-import type { ExtractedExpense } from "@quittungsch/types";
+import { Button } from "@spezo/ui";
+import { Input } from "@spezo/ui";
+import { Label } from "@spezo/ui";
+import { Card, CardContent } from "@spezo/ui";
+import { ConfidenceBadge } from "@spezo/ui";
+import type { ExtractedExpense } from "@spezo/types";
 
 type UploadState = "idle" | "uploading" | "reviewing" | "saving" | "done";
 

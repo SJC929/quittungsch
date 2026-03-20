@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { processReceipt } from "@quittungsch/ocr";
+import { processReceipt } from "@spezo/ocr";
 import { uploadReceipt } from "@/lib/storage";
 import { getSession } from "@/lib/auth";
 import { ocrRateLimit, checkRateLimit } from "@/lib/rate-limit";

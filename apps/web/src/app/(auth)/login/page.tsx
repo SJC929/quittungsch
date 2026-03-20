@@ -4,9 +4,9 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Button } from "@quittungsch/ui";
-import { Input } from "@quittungsch/ui";
-import { Label } from "@quittungsch/ui";
+import { Button } from "@spezo/ui";
+import { Input } from "@spezo/ui";
+import { Label } from "@spezo/ui";
 import { LogoWithText } from "@/components/logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 

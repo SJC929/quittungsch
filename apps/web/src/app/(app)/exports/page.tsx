@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@quittungsch/ui";
-import { Card, CardContent, CardHeader, CardTitle } from "@quittungsch/ui";
-import { Label } from "@quittungsch/ui";
-import { Input } from "@quittungsch/ui";
+import { Button } from "@spezo/ui";
+import { Card, CardContent, CardHeader, CardTitle } from "@spezo/ui";
+import { Label } from "@spezo/ui";
+import { Input } from "@spezo/ui";
 
 type ExportFormat = "EXCEL" | "CSV" | "PDF" | "GOOGLE_SHEETS";
 
@@ -62,7 +62,7 @@ export default function ExportsPage() {
 
       const contentDisposition = res.headers.get("Content-Disposition") ?? "";
       const match = /filename="([^"]+)"/.exec(contentDisposition);
-      a.download = match?.[1] ?? `QuittungsCH_Export.${format.toLowerCase()}`;
+      a.download = match?.[1] ?? `Spezo_Export.${format.toLowerCase()}`;
 
       document.body.appendChild(a);
       a.click();
@@ -166,7 +166,7 @@ export default function ExportsPage() {
       </Button>
 
       <p className="text-center text-xs text-gray-400 mt-3">
-        PDF-Exporte enthalten den Vermerk «Erstellt mit QuittungsCH – Nicht geprüft»
+        PDF-Exporte enthalten den Vermerk «Erstellt mit Spezo – Nicht geprüft»
       </p>
     </div>
   );

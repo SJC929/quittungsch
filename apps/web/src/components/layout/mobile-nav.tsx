@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LayoutDashboard, Receipt, Upload, Download, Settings } from "lucide-react";
-import { cn } from "@quittungsch/ui";
+import { cn } from "@spezo/ui";
 
 const NAV_ITEMS = [
   { href: "/dashboard", icon: LayoutDashboard, label: "Panel" },

@@ -44,7 +44,7 @@ export function LoginScreen({ onNavigateToRegister }: LoginScreenProps) {
     >
       {/* Logo */}
       <View style={styles.header}>
-        <Text style={styles.appName}>QuittungsCH</Text>
+        <Text style={styles.appName}>Spezo</Text>
         <Text style={styles.tagline}>Belege einfach erfassen</Text>
       </View>
 

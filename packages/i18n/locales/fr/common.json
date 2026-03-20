@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "QuittungsCH",
+    "name": "Spezo",
     "tagline": "Gérez vos reçus facilement – pour indépendants suisses"
   },
   "nav": {
@@ -23,7 +23,7 @@
     "noAccount": "Pas encore de compte ?"
   },
   "onboarding": {
-    "welcome": "Bienvenue sur QuittungsCH",
+    "welcome": "Bienvenue sur Spezo",
     "step1Title": "Votre entreprise",
     "step2Title": "Paramètres TVA",
     "step3Title": "Préférence d'export",

@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import type { Expense } from "@quittungsch/db/client";
+import type { Expense } from "@spezo/db/client";
 
 const CATEGORY_LABELS: Record<string, string> = {
   RESTAURANT: "Essen & Getränke",

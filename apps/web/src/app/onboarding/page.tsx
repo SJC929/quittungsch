@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "@quittungsch/ui";
-import { Input } from "@quittungsch/ui";
-import { Label } from "@quittungsch/ui";
+import { Button } from "@spezo/ui";
+import { Input } from "@spezo/ui";
+import { Label } from "@spezo/ui";
 import { LogoWithText } from "@/components/logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 
@@ -118,7 +118,7 @@ export default function OnboardingPage() {
               </div>
               <p className="text-xs text-gray-400">
                 Die Schweizer MwSt-Sätze sind: 8.1% (Standard), 3.8% (Beherbergung), 2.5% (Reduziert).
-                QuittungsCH erkennt diese automatisch per OCR.
+                Spezo erkennt diese automatisch per OCR.
               </p>
             </div>
           )}
@@ -163,7 +163,7 @@ export default function OnboardingPage() {
               <div>
                 <h2 className="text-2xl font-bold mb-1">{STEPS[3]!.title}</h2>
                 <p className="text-gray-500">
-                  QuittungsCH unterstützt alle Landessprachen.
+                  Spezo unterstützt alle Landessprachen.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-3">

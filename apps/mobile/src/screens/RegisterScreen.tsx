@@ -61,7 +61,7 @@ export function RegisterScreen({ onNavigateToLogin }: RegisterScreenProps) {
         keyboardShouldPersistTaps="handled"
       >
         <View style={styles.header}>
-          <Text style={styles.appName}>QuittungsCH</Text>
+          <Text style={styles.appName}>Spezo</Text>
           <Text style={styles.tagline}>14 Tage kostenlos testen</Text>
         </View>
 

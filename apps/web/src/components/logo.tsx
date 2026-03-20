@@ -67,7 +67,7 @@ export function LogoWithText({ iconSize = 36, className = "", textSize = "md" }:
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
       <LogoIcon size={iconSize} />
-      <span className={`${textClass} text-emerald-700`}>QuittungsCH</span>
+      <span className={`${textClass} text-emerald-700`}>Spezo</span>
     </div>
   );
 }

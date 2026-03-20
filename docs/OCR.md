@@ -1,8 +1,8 @@
-# QuittungsCH – OCR Setup Guide
+# Spezo – OCR Setup Guide
 
 ## Overview
 
-QuittungsCH uses a **3-Layer OCR Pipeline** to extract data from receipts:
+Spezo uses a **3-Layer OCR Pipeline** to extract data from receipts:
 
 ```
 Layer 1: Google Cloud Vision  →  Raw text + bounding boxes
@@ -97,7 +97,7 @@ Without Upstash, rate limiting is disabled (development mode).
 
 ## Swiss QR-Rechnung
 
-QuittungsCH automatically detects Swiss QR invoices (SPC standard).
+Spezo automatically detects Swiss QR invoices (SPC standard).
 
 **Detection:** The QR code starts with `SPC` (Swiss Payments Code).
 

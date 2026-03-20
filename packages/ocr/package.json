@@ -1,5 +1,5 @@
 {
-  "name": "@quittungsch/ocr",
+  "name": "@spezo/ocr",
   "version": "0.1.0",
   "private": true,
   "main": "./src/index.ts",
@@ -21,6 +21,6 @@
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "@quittungsch/types": "*"
+    "@spezo/types": "*"
   }
 }

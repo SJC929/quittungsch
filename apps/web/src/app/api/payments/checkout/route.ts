@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getPaymentProvider, isPaymentEnabled } from "@quittungsch/payments";
+import { getPaymentProvider, isPaymentEnabled } from "@spezo/payments";
 import { getSession } from "@/lib/auth";
 
 export async function POST(_req: NextRequest) {

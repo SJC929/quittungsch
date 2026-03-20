@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { CAMERA_PERMISSION_TEXT, type SupportedLanguage } from "@quittungsch/i18n";
+import { CAMERA_PERMISSION_TEXT, type SupportedLanguage } from "@spezo/i18n";
 import { LogoIcon } from "@/components/logo";
 
 interface CameraPermissionIntroProps {

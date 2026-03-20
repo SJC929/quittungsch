@@ -1,4 +1,4 @@
-import type { OcrRawResult, TextBlock } from "@quittungsch/types";
+import type { OcrRawResult, TextBlock } from "@spezo/types";
 
 /**
  * Google Cloud Vision OCR Provider

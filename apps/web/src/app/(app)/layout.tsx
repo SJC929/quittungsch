@@ -1,11 +1,11 @@
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/auth";
-import { prisma } from "@quittungsch/db/client";
+import { prisma } from "@spezo/db/client";
 import { Sidebar } from "@/components/layout/sidebar";
 import { Topbar } from "@/components/layout/topbar";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { CameraPermissionGate } from "@/components/camera-permission-intro";
-import type { SupportedLanguage } from "@quittungsch/i18n";
+import type { SupportedLanguage } from "@spezo/i18n";
 
 export default async function AppLayout({
   children,

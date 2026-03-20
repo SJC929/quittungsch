@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { StripeProvider } from "@quittungsch/payments";
-import { getActiveProvider } from "@quittungsch/payments/feature-flags";
-import { prisma } from "@quittungsch/db/client";
+import { StripeProvider } from "@spezo/payments";
+import { getActiveProvider } from "@spezo/payments/feature-flags";
+import { prisma } from "@spezo/db/client";
 import { getSession } from "@/lib/auth";
 
 export async function GET(req: NextRequest) {

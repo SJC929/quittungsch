@@ -11,7 +11,7 @@ import { CameraView, useCameraPermissions } from "expo-camera";
 import * as ImagePicker from "expo-image-picker";
 import { preprocessReceiptImage } from "../lib/image-preprocessing";
 import { uploadReceipt } from "../lib/api";
-import type { ExtractedExpense } from "@quittungsch/types";
+import type { ExtractedExpense } from "@spezo/types";
 
 interface CameraScreenProps {
   onReceiptCaptured: (extracted: ExtractedExpense, receiptPath: string, imageUri: string) => void;
@@ -94,7 +94,7 @@ export function CameraScreen({ onReceiptCaptured }: CameraScreenProps) {
     return (
       <View style={styles.center}>
         <Text style={styles.permissionText}>
-          QuittungsCH benötigt Kamerazugriff, um Belege zu fotografieren.
+          Spezo benötigt Kamerazugriff, um Belege zu fotografieren.
         </Text>
         <TouchableOpacity style={styles.button} onPress={requestPermission}>
           <Text style={styles.buttonText}>Kamerazugriff erlauben</Text>

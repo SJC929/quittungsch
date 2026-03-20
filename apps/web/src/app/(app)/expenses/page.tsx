@@ -3,11 +3,11 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { format } from "date-fns";
-import { Button } from "@quittungsch/ui";
-import { Input } from "@quittungsch/ui";
-import { Badge } from "@quittungsch/ui";
-import { ConfidenceBadge } from "@quittungsch/ui";
-import type { Expense } from "@quittungsch/types";
+import { Button } from "@spezo/ui";
+import { Input } from "@spezo/ui";
+import { Badge } from "@spezo/ui";
+import { ConfidenceBadge } from "@spezo/ui";
+import type { Expense } from "@spezo/types";
 
 const CATEGORY_LABELS: Record<string, string> = {
   RESTAURANT: "Essen & Getränke",

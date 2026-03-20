@@ -1,5 +1,5 @@
 {
-  "name": "@quittungsch/payments",
+  "name": "@spezo/payments",
   "version": "0.1.0",
   "private": true,
   "main": "./src/index.ts",
@@ -16,6 +16,6 @@
     "@types/node": "^20.14.0"
   },
   "peerDependencies": {
-    "@quittungsch/types": "*"
+    "@spezo/types": "*"
   }
 }

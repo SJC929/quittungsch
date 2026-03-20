@@ -1,6 +1,6 @@
 import ExcelJS from "exceljs";
 import { format } from "date-fns";
-import type { Expense, KilometerLog } from "@quittungsch/db/client";
+import type { Expense, KilometerLog } from "@spezo/db/client";
 
 const CATEGORY_LABELS: Record<string, string> = {
   RESTAURANT: "Essen & Getränke",
@@ -23,7 +23,7 @@ export async function generateExcel(
   kmLogs: KilometerLog[]
 ): Promise<Buffer> {
   const workbook = new ExcelJS.Workbook();
-  workbook.creator = "QuittungsCH";
+  workbook.creator = "Spezo";
   workbook.created = new Date();
 
   // Group expenses by month

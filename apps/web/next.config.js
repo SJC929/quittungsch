@@ -9,12 +9,12 @@ const withPWA = require("next-pwa")({
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
-    "@quittungsch/ui",
-    "@quittungsch/types",
-    "@quittungsch/payments",
-    "@quittungsch/ocr",
-    "@quittungsch/i18n",
-    "@quittungsch/db",
+    "@spezo/ui",
+    "@spezo/types",
+    "@spezo/payments",
+    "@spezo/ocr",
+    "@spezo/i18n",
+    "@spezo/db",
   ],
   images: {
     domains: [

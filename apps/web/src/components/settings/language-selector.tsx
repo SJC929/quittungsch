@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { LANGUAGE_NAMES, SUPPORTED_LANGUAGES, type SupportedLanguage } from "@quittungsch/i18n";
+import { LANGUAGE_NAMES, SUPPORTED_LANGUAGES, type SupportedLanguage } from "@spezo/i18n";
 
 const LANGUAGE_FLAGS: Record<SupportedLanguage, string> = {
   de: "🇩🇪",

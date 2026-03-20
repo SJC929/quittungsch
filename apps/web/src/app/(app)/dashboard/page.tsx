@@ -1,10 +1,10 @@
-import { prisma } from "@quittungsch/db/client";
+import { prisma } from "@spezo/db/client";
 import { getSession } from "@/lib/auth";
 import { format, startOfMonth, endOfMonth } from "date-fns";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@quittungsch/ui";
-import { Badge } from "@quittungsch/ui";
-import { ConfidenceBadge } from "@quittungsch/ui";
+import { Card, CardContent, CardHeader, CardTitle } from "@spezo/ui";
+import { Badge } from "@spezo/ui";
+import { ConfidenceBadge } from "@spezo/ui";
 
 export const metadata = { title: "Dashboard" };
 

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { StripeProvider } from "@quittungsch/payments";
-import { prisma } from "@quittungsch/db/client";
+import { StripeProvider } from "@spezo/payments";
+import { prisma } from "@spezo/db/client";
 
 export async function POST(req: NextRequest) {
   const body = await req.text();

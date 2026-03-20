@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "QuittungsCH",
+    "name": "Spezo",
     "tagline": "Registrar simpel las quittanzas – per independents svizzers"
   },
   "nav": {
@@ -23,7 +23,7 @@
     "noAccount": "Nagin conto anc?"
   },
   "onboarding": {
-    "welcome": "Bainvegni tar QuittungsCH",
+    "welcome": "Bainvegni tar Spezo",
     "step1Title": "Vossa interpresa",
     "step2Title": "Parameters da l'IVA",
     "step3Title": "Preferenza d'export",

@@ -4,7 +4,7 @@ import Constants from "expo-constants";
 const API_URL = (Constants.expoConfig?.extra?.apiUrl as string | undefined) ?? "http://localhost:3000";
 
 // JWT token storage
-const TOKEN_KEY = "quittungsch_token";
+const TOKEN_KEY = "spezo_token";
 
 export async function getToken(): Promise<string | null> {
   return SecureStore.getItemAsync(TOKEN_KEY);

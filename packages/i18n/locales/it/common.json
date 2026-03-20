@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "QuittungsCH",
+    "name": "Spezo",
     "tagline": "Gestisci le ricevute facilmente – per lavoratori autonomi svizzeri"
   },
   "nav": {
@@ -23,7 +23,7 @@
     "noAccount": "Non hai ancora un account?"
   },
   "onboarding": {
-    "welcome": "Benvenuto su QuittungsCH",
+    "welcome": "Benvenuto su Spezo",
     "step1Title": "La tua azienda",
     "step2Title": "Impostazioni IVA",
     "step3Title": "Preferenza esportazione",

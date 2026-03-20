@@ -1,4 +1,4 @@
-import type { OcrRawResult } from "@quittungsch/types";
+import type { OcrRawResult } from "@spezo/types";
 
 /**
  * Tesseract OCR Provider – Offline Fallback

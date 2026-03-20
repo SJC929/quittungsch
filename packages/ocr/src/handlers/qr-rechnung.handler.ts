@@ -1,4 +1,4 @@
-import type { QrRechnungData } from "@quittungsch/types";
+import type { QrRechnungData } from "@spezo/types";
 
 /**
  * Swiss QR-Rechnung (QR Invoice) Handler

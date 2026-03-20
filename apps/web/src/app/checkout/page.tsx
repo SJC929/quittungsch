@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { isPaymentEnabled, getActiveProvider, isTwintViaStripeEnabled } from "@quittungsch/payments/feature-flags";
-import { Button } from "@quittungsch/ui";
-import { Card, CardContent, CardHeader, CardTitle } from "@quittungsch/ui";
+import { isPaymentEnabled, getActiveProvider, isTwintViaStripeEnabled } from "@spezo/payments/feature-flags";
+import { Button } from "@spezo/ui";
+import { Card, CardContent, CardHeader, CardTitle } from "@spezo/ui";
 import { LogoWithText } from "@/components/logo";
 
 export default function CheckoutPage() {

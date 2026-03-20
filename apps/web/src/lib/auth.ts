@@ -3,8 +3,8 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import EmailProvider from "next-auth/providers/email";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import bcrypt from "bcryptjs";
-import { prisma } from "@quittungsch/db/client";
-import type { Role } from "@quittungsch/db/client";
+import { prisma } from "@spezo/db/client";
+import type { Role } from "@spezo/db/client";
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -54,7 +54,7 @@ export const authOptions: NextAuthOptions = {
     // Magic link
     EmailProvider({
       server: process.env.EMAIL_SERVER ?? "",
-      from: process.env.EMAIL_FROM ?? "noreply@quittungsch.ch",
+      from: process.env.EMAIL_FROM ?? "noreply@spezo.ch",
     }),
   ],
 

@@ -7,15 +7,15 @@ const dmSans = DM_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600"
 
 export const metadata: Metadata = {
   title: {
-    default: "QuittungsCH",
-    template: "%s | QuittungsCH",
+    default: "Spezo",
+    template: "%s | Spezo",
   },
   description: "Belege einfach erfassen – für Schweizer Selbständige",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "QuittungsCH",
+    title: "Spezo",
   },
 };
 

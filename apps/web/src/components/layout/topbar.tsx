@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { LANGUAGE_NAMES, LANGUAGE_FLAGS, SUPPORTED_LANGUAGES, type SupportedLanguage } from "@quittungsch/i18n";
+import { LANGUAGE_NAMES, LANGUAGE_FLAGS, SUPPORTED_LANGUAGES, type SupportedLanguage } from "@spezo/i18n";
 import { Globe } from "lucide-react";
 
 export function Topbar({ currentLanguage }: { currentLanguage: string }) {

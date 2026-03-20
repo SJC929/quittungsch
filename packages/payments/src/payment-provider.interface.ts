@@ -2,7 +2,7 @@ import type {
   CheckoutSession,
   SubscriptionStatusResult,
   WebhookEvent,
-} from "@quittungsch/types";
+} from "@spezo/types";
 
 export type Plan = "PRO_MONTHLY";
 

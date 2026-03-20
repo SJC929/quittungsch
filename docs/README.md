@@ -1,4 +1,4 @@
-# QuittungsCH
+# Spezo
 
 > Belege einfach erfassen – für Schweizer Selbständige
 
@@ -72,4 +72,4 @@ All user data is stored exclusively in Switzerland (DSG/GDPR compliant):
 
 ## License
 
-Proprietary – QuittungsCH © 2026
+Proprietary – Spezo © 2026

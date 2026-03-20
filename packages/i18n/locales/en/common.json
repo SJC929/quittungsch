@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "QuittungsCH",
+    "name": "Spezo",
     "tagline": "Simple receipt management – for Swiss self-employed professionals"
   },
   "nav": {
@@ -23,7 +23,7 @@
     "noAccount": "Don't have an account?"
   },
   "onboarding": {
-    "welcome": "Welcome to QuittungsCH",
+    "welcome": "Welcome to Spezo",
     "step1Title": "Your Business",
     "step2Title": "VAT Settings",
     "step3Title": "Export Preference",

@@ -1,9 +1,9 @@
-# QuittungsCH – Architecture Overview
+# Spezo – Architecture Overview
 
 ## Project Structure
 
 ```
-quittungsch/
+spezo/
 ├── apps/
 │   ├── web/          → Next.js 14 PWA (TypeScript, App Router)
 │   └── mobile/       → React Native + Expo (iOS + Android)

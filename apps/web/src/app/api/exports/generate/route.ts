@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { prisma } from "@quittungsch/db/client";
+import { prisma } from "@spezo/db/client";
 import { getSession } from "@/lib/auth";
 import { generateExcel } from "@/lib/exports/excel";
 import { generateCsv } from "@/lib/exports/csv";
@@ -49,19 +49,19 @@ export async function POST(req: NextRequest) {
       case "EXCEL": {
         fileBuffer = await generateExcel(expenses, kmLogs);
         contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-        fileName = `QuittungsCH_${dateLabel}.xlsx`;
+        fileName = `Spezo_${dateLabel}.xlsx`;
         break;
       }
       case "CSV": {
         fileBuffer = generateCsv(expenses);
         contentType = "text/csv; charset=utf-8";
-        fileName = `QuittungsCH_${dateLabel}.csv`;
+        fileName = `Spezo_${dateLabel}.csv`;
         break;
       }
       case "PDF": {
         fileBuffer = await generatePdf(expenses, kmLogs, { dateFrom, dateTo });
         contentType = "application/pdf";
-        fileName = `QuittungsCH_${dateLabel}.pdf`;
+        fileName = `Spezo_${dateLabel}.pdf`;
         break;
       }
       case "GOOGLE_SHEETS": {

@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import { format } from "date-fns";
 import { apiRequest } from "../lib/api";
-import type { Expense } from "@quittungsch/types";
+import type { Expense } from "@spezo/types";
 
 const CATEGORY_LABELS: Record<string, string> = {
   RESTAURANT: "Essen & Getränke",

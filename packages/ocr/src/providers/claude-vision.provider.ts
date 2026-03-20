@@ -1,5 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
-import type { ExtractedExpense, OcrProvider } from "@quittungsch/types";
+import type { ExtractedExpense, OcrProvider } from "@spezo/types";
 
 /**
  * Claude Vision Provider – Layer 2 of the OCR pipeline

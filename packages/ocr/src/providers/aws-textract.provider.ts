@@ -1,4 +1,4 @@
-import type { OcrRawResult } from "@quittungsch/types";
+import type { OcrRawResult } from "@spezo/types";
 
 /**
  * AWS Textract OCR Provider – SCAFFOLD ONLY

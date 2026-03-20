@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "QuittungsCH",
+    "name": "Spezo",
     "tagline": "Menaxhoni faturat tuaja lehtë – për të vetëpunësuarit zviceranë"
   },
   "nav": {
@@ -23,7 +23,7 @@
     "noAccount": "Nuk keni llogari ende?"
   },
   "onboarding": {
-    "welcome": "Mirë se vini në QuittungsCH",
+    "welcome": "Mirë se vini në Spezo",
     "step1Title": "Biznesi Juaj",
     "step2Title": "Cilësimet e TVSH",
     "step3Title": "Preferencat e Eksportit",

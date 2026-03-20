@@ -1,9 +1,9 @@
 import { getSession } from "@/lib/auth";
-import { prisma } from "@quittungsch/db/client";
-import { isPaymentEnabled } from "@quittungsch/payments/feature-flags";
+import { prisma } from "@spezo/db/client";
+import { isPaymentEnabled } from "@spezo/payments/feature-flags";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@quittungsch/ui";
-import { Button } from "@quittungsch/ui";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@spezo/ui";
+import { Button } from "@spezo/ui";
 import { LanguageSelector } from "@/components/settings/language-selector";
 
 export const metadata = { title: "Einstellungen" };

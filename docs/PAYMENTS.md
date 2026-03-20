@@ -1,8 +1,8 @@
-# QuittungsCH – Payment Setup Guide
+# Spezo – Payment Setup Guide
 
 ## Overview
 
-QuittungsCH uses a **Payment Abstraction Layer** (`/packages/payments`) that supports two providers:
+Spezo uses a **Payment Abstraction Layer** (`/packages/payments`) that supports two providers:
 - **Stripe** (with TWINT) – Provider A
 - **Datatrans** (with TWINT) – Provider B (scaffold, not yet implemented)
 
@@ -35,7 +35,7 @@ Dashboard → Developers → API Keys:
 ### 3. Create a Recurring Price
 
 Dashboard → Products → Add Product:
-- Name: "QuittungsCH Pro"
+- Name: "Spezo Pro"
 - Price: CHF 10.00 / month (recurring)
 - Copy the Price ID → `STRIPE_PRICE_ID_MONTHLY`
 

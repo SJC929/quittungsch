@@ -27,7 +27,7 @@ export function getActiveProvider(): ActiveProvider {
 
   if (stripeEnabled && datatransEnabled) {
     console.warn(
-      "[QuittungsCH/payments] WARNING: Both PAYMENT_STRIPE_ENABLED and " +
+      "[Spezo/payments] WARNING: Both PAYMENT_STRIPE_ENABLED and " +
         "PAYMENT_DATATRANS_ENABLED are set to true. " +
         "Defaulting to Stripe. Only one provider should be active."
     );
@@ -38,7 +38,7 @@ export function getActiveProvider(): ActiveProvider {
   if (datatransEnabled) return "datatrans";
 
   console.warn(
-    "[QuittungsCH/payments] No payment provider active. " +
+    "[Spezo/payments] No payment provider active. " +
       "Running in free-trial mode. " +
       "Set PAYMENT_STRIPE_ENABLED=true or PAYMENT_DATATRANS_ENABLED=true to enable payments."
   );

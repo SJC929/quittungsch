@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import type { Expense, KilometerLog } from "@quittungsch/db/client";
+import type { Expense, KilometerLog } from "@spezo/db/client";
 
 interface PdfOptions {
   dateFrom: string;
@@ -8,7 +8,7 @@ interface PdfOptions {
 
 /**
  * Generate a PDF report using @react-pdf/renderer.
- * Includes watermark: "Erstellt mit QuittungsCH – Nicht geprüft"
+ * Includes watermark: "Erstellt mit Spezo – Nicht geprüft"
  *
  * Note: @react-pdf/renderer requires a React environment.
  * This function dynamically imports it to avoid SSR issues.
@@ -73,14 +73,14 @@ export async function generatePdf(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const doc = React.createElement<any>(
     Document,
-    { title: "QuittungsCH Ausgaben-Report" },
+    { title: "Spezo Ausgaben-Report" },
     React.createElement(
       Page,
       { size: "A4", style: styles.page },
       // Watermark
-      React.createElement(Text, { style: styles.watermark }, "Erstellt mit QuittungsCH – Nicht geprüft"),
+      React.createElement(Text, { style: styles.watermark }, "Erstellt mit Spezo – Nicht geprüft"),
       // Title
-      React.createElement(Text, { style: styles.title }, "QuittungsCH – Ausgaben-Report"),
+      React.createElement(Text, { style: styles.title }, "Spezo – Ausgaben-Report"),
       React.createElement(
         Text,
         { style: styles.subtitle },
@@ -156,7 +156,7 @@ export async function generatePdf(
         View,
         { style: styles.footer },
         React.createElement(Text, null, `Erstellt: ${format(new Date(), "dd.MM.yyyy HH:mm")}`),
-        React.createElement(Text, null, "QuittungsCH – Nicht geprüft / nicht testiert")
+        React.createElement(Text, null, "Spezo – Nicht geprüft / nicht testiert")
       )
     )
   );
