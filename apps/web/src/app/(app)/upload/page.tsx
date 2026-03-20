@@ -180,7 +180,7 @@ export default function UploadPage() {
         <div
           onDrop={handleDrop}
           onDragOver={(e) => e.preventDefault()}
-          className="border-2 border-dashed border-gray-300 rounded-2xl p-12 text-center hover:border-blue-400 transition-colors cursor-pointer"
+          className="border-2 border-dashed border-gray-300 rounded-2xl p-12 text-center hover:border-emerald-500 transition-colors cursor-pointer"
           onClick={() => document.getElementById("file-input")?.click()}
         >
           <div className="text-5xl mb-4">📄</div>

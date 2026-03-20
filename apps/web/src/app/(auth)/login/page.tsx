@@ -64,7 +64,7 @@ export default function LoginPage() {
       <div className="max-w-md w-full">
         {/* Logo */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-blue-600">QuittungsCH</h1>
+          <h1 className="text-3xl font-bold text-emerald-700">QuittungsCH</h1>
           <p className="text-gray-500 mt-1">Belege einfach erfassen</p>
         </div>
 
@@ -135,7 +135,7 @@ export default function LoginPage() {
 
           <p className="text-center text-sm text-gray-500 mt-6">
             Noch kein Konto?{" "}
-            <Link href="/register" className="text-blue-600 hover:underline font-medium">
+            <Link href="/register" className="text-emerald-700 hover:underline font-medium">
               Registrieren
             </Link>
           </p>

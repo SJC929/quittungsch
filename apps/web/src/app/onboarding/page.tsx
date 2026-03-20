@@ -48,7 +48,7 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center p-4">
       <div className="max-w-lg w-full bg-white rounded-2xl shadow-lg overflow-hidden">
         {/* Progress bar */}
         <div className="flex">
@@ -56,7 +56,7 @@ export default function OnboardingPage() {
             <div
               key={s.id}
               className={`flex-1 h-1 transition-colors ${
-                s.id <= step ? "bg-blue-600" : "bg-gray-200"
+                s.id <= step ? "bg-emerald-700" : "bg-gray-200"
               }`}
             />
           ))}
@@ -131,7 +131,7 @@ export default function OnboardingPage() {
                     onClick={() => setData({ ...data, preferredExportFormat: fmt })}
                     className={`p-4 rounded-xl border-2 text-left transition-all ${
                       data.preferredExportFormat === fmt
-                        ? "border-blue-600 bg-blue-50"
+                        ? "border-emerald-700 bg-emerald-50"
                         : "border-gray-200 hover:border-gray-300"
                     }`}
                   >
@@ -172,7 +172,7 @@ export default function OnboardingPage() {
                     onClick={() => setData({ ...data, language: lang.code })}
                     className={`p-4 rounded-xl border-2 text-left transition-all ${
                       data.language === lang.code
-                        ? "border-blue-600 bg-blue-50"
+                        ? "border-emerald-700 bg-emerald-50"
                         : "border-gray-200 hover:border-gray-300"
                     }`}
                   >

@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QuittungsCH – Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');*{font-family:'Inter',sans-serif;}</style>
+  <style>@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap');*{font-family:'DM Sans',sans-serif;}</style>
 </head>
 <body class="bg-gray-50 min-h-screen flex">
 
   <!-- Sidebar -->
   <aside class="w-60 bg-white border-r border-gray-100 flex flex-col min-h-screen fixed left-0 top-0">
     <div class="p-5 border-b border-gray-100">
-      <span class="text-xl font-bold text-blue-600">QuittungsCH</span>
+      <span class="text-xl font-bold text-emerald-700">QuittungsCH</span>
       <p class="text-xs text-gray-400 mt-0.5" data-i18n="tagline">Buchhaltung leicht gemacht</p>
     </div>
     <nav class="flex-1 p-4 space-y-1">
-      <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-blue-50 text-blue-700 font-medium text-sm">
+      <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-50 text-emerald-700 font-medium text-sm">
         <span>📊</span> <span data-i18n="nav_dashboard">Dashboard</span>
       </a>
       <a href="04-upload.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
@@ -39,7 +39,7 @@
     </nav>
     <div class="p-4 border-t border-gray-100">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-sm font-bold text-blue-700">M</div>
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-sm font-bold text-emerald-700">M</div>
         <div>
           <p class="text-sm font-medium text-gray-800">Max Muster</p>
           <p class="text-xs text-gray-400" data-i18n="free_plan">Free Plan</p>
@@ -58,7 +58,7 @@
           <span>🌐</span><span id="lang-flag">🇩🇪</span><span id="lang-name" class="ml-1">Deutsch</span><span class="text-gray-400 text-xs ml-1">▾</span>
         </button>
         <div id="lang-menu" class="hidden absolute right-0 top-full mt-1 w-44 bg-white border border-gray-200 rounded-xl shadow-lg py-1 z-50">
-          <button onclick="applyLang('de','🇩🇪','Deutsch')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50" id="btn-de"><span>🇩🇪</span> Deutsch <span class="ml-auto text-blue-600">✓</span></button>
+          <button onclick="applyLang('de','🇩🇪','Deutsch')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50" id="btn-de"><span>🇩🇪</span> Deutsch <span class="ml-auto text-emerald-700">✓</span></button>
           <button onclick="applyLang('fr','🇫🇷','Français')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700" id="btn-fr"><span>🇫🇷</span> Français</button>
           <button onclick="applyLang('it','🇮🇹','Italiano')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700" id="btn-it"><span>🇮🇹</span> Italiano</button>
           <button onclick="applyLang('rm','🏔️','Rumantsch')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700" id="btn-rm"><span>🏔️</span> Rumantsch</button>
@@ -74,7 +74,7 @@
           <h1 class="text-2xl font-bold text-gray-900" data-i18n="greeting">Guten Morgen, Max 👋</h1>
           <p class="text-gray-400 text-sm mt-0.5" data-i18n="subtitle">März 2026 – Übersicht</p>
         </div>
-        <a href="04-upload.html" class="bg-blue-600 text-white font-semibold rounded-xl px-5 py-2.5 text-sm hover:bg-blue-700 flex items-center gap-2">
+        <a href="04-upload.html" class="bg-emerald-700 text-white font-semibold rounded-xl px-5 py-2.5 text-sm hover:bg-emerald-800 flex items-center gap-2">
           + <span data-i18n="btn_add">Beleg erfassen</span>
         </a>
       </div>
@@ -113,14 +113,14 @@
                 <span class="text-gray-600">🚗 <span data-i18n="cat_vehicle">Fahrzeug</span></span>
                 <span class="font-medium">CHF 1'240</span>
               </div>
-              <div class="w-full bg-gray-100 rounded-full h-2"><div class="bg-blue-500 h-2 rounded-full" style="width:32%"></div></div>
+              <div class="w-full bg-gray-100 rounded-full h-2"><div class="bg-emerald-600 h-2 rounded-full" style="width:32%"></div></div>
             </div>
             <div>
               <div class="flex justify-between text-sm mb-1">
                 <span class="text-gray-600">💻 Software</span>
                 <span class="font-medium">CHF 890</span>
               </div>
-              <div class="w-full bg-gray-100 rounded-full h-2"><div class="bg-indigo-500 h-2 rounded-full" style="width:23%"></div></div>
+              <div class="w-full bg-gray-100 rounded-full h-2"><div class="bg-emerald-600 h-2 rounded-full" style="width:23%"></div></div>
             </div>
             <div>
               <div class="flex justify-between text-sm mb-1">
@@ -180,7 +180,7 @@
               <tr>
                 <td class="py-2.5 text-gray-500">17.03.26</td>
                 <td class="py-2.5 font-medium text-gray-800">Garage Müller</td>
-                <td class="py-2.5"><span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs" data-i18n="cat_vehicle">Fahrzeug</span></td>
+                <td class="py-2.5"><span class="px-2 py-0.5 bg-blue-100 text-emerald-700 rounded-full text-xs" data-i18n="cat_vehicle">Fahrzeug</span></td>
                 <td class="py-2.5 text-right font-medium">CHF 189.00</td>
                 <td class="py-2.5 text-right"><span class="inline-flex items-center gap-1 text-xs text-green-600">● <span data-i18n="status_ok">OK</span></span></td>
               </tr>
@@ -194,7 +194,7 @@
               <tr>
                 <td class="py-2.5 text-gray-500">15.03.26</td>
                 <td class="py-2.5 font-medium text-gray-800">SBB</td>
-                <td class="py-2.5"><span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs" data-i18n="cat_travel">Reise</span></td>
+                <td class="py-2.5"><span class="px-2 py-0.5 bg-blue-100 text-emerald-700 rounded-full text-xs" data-i18n="cat_travel">Reise</span></td>
                 <td class="py-2.5 text-right font-medium">CHF 42.40</td>
                 <td class="py-2.5 text-right"><span class="inline-flex items-center gap-1 text-xs text-green-600">● <span data-i18n="status_ok">OK</span></span></td>
               </tr>
@@ -216,7 +216,7 @@
           <p class="font-bold" data-i18n="banner_title">Sie nutzen den kostenlosen Plan</p>
           <p class="text-sm text-blue-100 mt-0.5" data-i18n="banner_sub">Upgrade auf Pro für unlimitierte Belege, Google Sheets & Prioritäts-Support</p>
         </div>
-        <a href="07-checkout.html" class="bg-white text-blue-700 font-semibold rounded-xl px-5 py-2.5 text-sm hover:bg-blue-50 whitespace-nowrap" data-i18n="banner_btn">
+        <a href="07-checkout.html" class="bg-white text-emerald-700 font-semibold rounded-xl px-5 py-2.5 text-sm hover:bg-emerald-50 whitespace-nowrap" data-i18n="banner_btn">
           Upgrade → CHF 9/Mt
         </a>
       </div>
@@ -338,7 +338,7 @@ function applyLang(code, flag, name) {
   // Update checkmark in dropdown
   ['de','fr','it','rm','en'].forEach(l => {
     const btn = document.getElementById('btn-' + l);
-    btn.classList.toggle('text-blue-600', l === code);
+    btn.classList.toggle('text-emerald-700', l === code);
     btn.classList.toggle('font-medium', l === code);
     btn.classList.toggle('text-gray-700', l !== code);
   });

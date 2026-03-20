@@ -67,13 +67,13 @@ export function Topbar({ currentLanguage }: { currentLanguage: string }) {
                 key={lang}
                 onClick={() => void handleSelect(lang)}
                 className={`w-full flex items-center gap-3 px-3 py-2 text-sm hover:bg-gray-50 transition-colors ${
-                  selected === lang ? "text-blue-600 font-medium" : "text-gray-700"
+                  selected === lang ? "text-emerald-700 font-medium" : "text-gray-700"
                 }`}
               >
                 <span>{LANGUAGE_FLAGS[lang]}</span>
                 <span>{LANGUAGE_NAMES[lang]}</span>
                 {selected === lang && (
-                  <svg className="h-4 w-4 ml-auto text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-4 w-4 ml-auto text-emerald-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 )}

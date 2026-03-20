@@ -39,7 +39,7 @@ export default function RegisterPage() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-blue-600">QuittungsCH</h1>
+          <h1 className="text-3xl font-bold text-emerald-700">QuittungsCH</h1>
           <p className="text-gray-500 mt-1">14 Tage kostenlos testen</p>
         </div>
 
@@ -103,7 +103,7 @@ export default function RegisterPage() {
 
           <p className="text-center text-sm text-gray-500 mt-4">
             Bereits ein Konto?{" "}
-            <Link href="/login" className="text-blue-600 hover:underline font-medium">
+            <Link href="/login" className="text-emerald-700 hover:underline font-medium">
               Anmelden
             </Link>
           </p>

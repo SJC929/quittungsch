@@ -150,7 +150,7 @@ export default async function DashboardPage() {
                         </div>
                         <div className="w-full bg-gray-100 rounded-full h-2">
                           <div
-                            className="bg-blue-500 h-2 rounded-full"
+                            className="bg-emerald-600 h-2 rounded-full"
                             style={{ width: `${pct}%` }}
                           />
                         </div>
@@ -173,7 +173,7 @@ export default async function DashboardPage() {
                 <p className="text-gray-400 text-sm mb-3">Noch keine Belege vorhanden.</p>
                 <Link
                   href="/upload"
-                  className="text-blue-600 hover:underline text-sm font-medium"
+                  className="text-emerald-700 hover:underline text-sm font-medium"
                 >
                   Ersten Beleg erfassen →
                 </Link>
