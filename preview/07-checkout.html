@@ -10,7 +10,7 @@
 <body class="bg-gradient-to-br from-emerald-50 to-teal-100 min-h-screen flex items-center justify-center p-6">
 
   <!-- Top bar with logo and language switcher -->
-  <div style="position:fixed;top:0;left:0;right:0;height:52px;background:white;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;justify-between;padding:0 24px;z-index:50;">
+  <div style="position:fixed;top:0;left:0;right:0;height:52px;background:white;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:50;">
     <div style="display:flex;align-items:center;gap:10px;">
       <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="100" height="100" rx="22" fill="#34D399"/>
@@ -31,7 +31,7 @@
       </svg>
       <span style="font-size:17px;font-weight:700;color:#059669;">Spezo</span>
     </div>
-    <select id="langSelect" onchange="changeLang(this.value)" style="padding:6px 10px;border:1px solid #E5E7EB;border-radius:10px;font-family:inherit;font-size:13px;color:#374151;background:white;cursor:pointer;">
+    <select id="langSelect" onchange="changeLang(this.value)" style="padding:6px 10px;border:1px solid #D1FAE5;border-radius:10px;font-family:inherit;font-size:13px;color:#374151;background:white;cursor:pointer;">
       <option value="de">🇩🇪 Deutsch</option>
       <option value="fr">🇫🇷 Français</option>
       <option value="it">🇮🇹 Italiano</option>
@@ -43,14 +43,14 @@
   </div>
 
   <div class="w-full max-w-4xl" style="margin-top:52px;">
-    <a href="03-dashboard.html" class="text-sm text-blue-500 hover:underline mb-6 block">← Zurück zum Dashboard</a>
+    <a href="03-dashboard.html" class="text-sm text-emerald-600 hover:underline mb-6 block" id="txt-back">← Zurück zum Dashboard</a>
 
     <!-- Free trial banner (payments disabled) -->
     <div class="bg-green-500 text-white rounded-2xl px-6 py-4 flex items-center gap-4 mb-6 shadow-lg">
       <span class="text-2xl">🎉</span>
       <div>
-        <p class="font-bold text-lg">Kostenloser Zugang bis zum offiziellen Launch!</p>
-        <p class="text-green-100 text-sm">Zahlung noch nicht aktiviert – Sie können Spezo jetzt vollständig gratis nutzen.</p>
+        <p class="font-bold text-lg" id="txt-banner-title">Kostenloser Zugang bis zum offiziellen Launch!</p>
+        <p class="text-green-100 text-sm" id="txt-banner-sub">Zahlung noch nicht aktiviert – Sie können Spezo jetzt vollständig gratis nutzen.</p>
       </div>
     </div>
 
@@ -200,7 +200,8 @@
   <script>
     function showStripeModal() { document.getElementById('stripe-modal').classList.remove('hidden'); }
     function hideStripeModal() { document.getElementById('stripe-modal').classList.add('hidden'); }
-    function changeLang(lang) { console.log('Language changed to:', lang); }
+    const CT={de:{back:'← Zurück zum Dashboard',bannerTitle:'Kostenloser Zugang bis zum offiziellen Launch!',bannerSub:'Zahlung noch nicht aktiviert – Sie können Spezo jetzt vollständig gratis nutzen.'},fr:{back:'← Retour au tableau de bord',bannerTitle:'Accès gratuit jusqu'au lancement officiel!',bannerSub:'Paiement pas encore activé – Vous pouvez utiliser Spezo gratuitement.'},it:{back:'← Torna alla dashboard',bannerTitle:'Accesso gratuito fino al lancio ufficiale!',bannerSub:'Pagamento non ancora attivato – Puoi usare Spezo completamente gratis.'},rm:{back:'← Returnar al dashboard',bannerTitle:'Access gratuit fin al launch!',bannerSub:'Pajament betg anc activà – Vus pudais utilisar Spezo gratuitamain.'},en:{back:'← Back to Dashboard',bannerTitle:'Free access until the official launch!',bannerSub:'Payments not yet activated – You can use Spezo completely free.'},tr:{back:'← Panele geri dön',bannerTitle:'Resmi lansmana kadar ücretsiz erişim!',bannerSub:'Ödeme henüz etkinleştirilmedi – Spezo'yu tamamen ücretsiz kullanabilirsiniz.'},sq:{back:'← Kthehu te paneli',bannerTitle:'Akses falas deri në lansimin zyrtar!',bannerSub:'Pagesa ende nuk është aktivizuar – Mund ta përdorni Spezon krejtësisht falas.'}};
+  function changeLang(lang){const t=CT[lang];if(!t)return;document.getElementById('txt-back').textContent=t.back;document.getElementById('txt-banner-title').textContent=t.bannerTitle;document.getElementById('txt-banner-sub').textContent=t.bannerSub;}
   </script>
 </body>
 </html>

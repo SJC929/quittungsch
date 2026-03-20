@@ -10,7 +10,7 @@
 <body style="background:#F0FDF9;" class="min-h-screen flex items-center justify-center">
 
   <!-- Top bar with language switcher -->
-  <div style="position:fixed;top:0;left:0;right:0;height:52px;background:white;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;justify-between;padding:0 24px;z-index:50;">
+  <div style="position:fixed;top:0;left:0;right:0;height:52px;background:white;border-bottom:1px solid #D1FAE5;display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:50;">
     <div style="display:flex;align-items:center;gap:10px;">
       <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="100" height="100" rx="22" fill="#34D399"/>
@@ -31,7 +31,7 @@
       </svg>
       <span style="font-size:17px;font-weight:700;color:#059669;">Spezo</span>
     </div>
-    <select id="langSelect" onchange="changeLang(this.value)" style="padding:6px 10px;border:1px solid #E5E7EB;border-radius:10px;font-family:inherit;font-size:13px;color:#374151;background:white;cursor:pointer;">
+    <select id="langSelect" onchange="changeLang(this.value)" style="padding:6px 12px;border:1px solid #D1FAE5;border-radius:10px;font-family:inherit;font-size:13px;color:#374151;background:white;cursor:pointer;">
       <option value="de">🇩🇪 Deutsch</option>
       <option value="fr">🇫🇷 Français</option>
       <option value="it">🇮🇹 Italiano</option>
@@ -42,10 +42,10 @@
     </select>
   </div>
 
-  <div class="w-full max-w-md px-4" style="margin-top:52px;">
+  <div class="w-full max-w-md px-4" style="margin-top:68px;">
 
     <!-- Back link -->
-    <a href="index.html" class="text-sm text-blue-500 hover:underline mb-6 block">← Zurück zur Übersicht</a>
+    <a href="index.html" class="text-sm text-emerald-600 hover:underline mb-6 block" id="txt-back">← Zurück zur Übersicht</a>
 
     <!-- Logo -->
     <div class="text-center mb-8">
@@ -69,28 +69,28 @@
         </svg>
         <span style="font-size:28px;font-weight:800;color:#059669;">Spezo</span>
       </div>
-      <p class="text-gray-400 mt-1 text-sm">Belege einfach erfassen – für Schweizer Selbständige</p>
+      <p class="text-gray-400 mt-1 text-sm" id="txt-tagline">Belege einfach erfassen – für Schweizer Selbständige</p>
     </div>
 
-    <!-- Card -->
-    <div class="bg-white rounded-2xl shadow-lg p-8">
-      <h2 class="text-xl font-bold text-gray-900 mb-6">Anmelden</h2>
+    <!-- Login Card -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100">
+      <h2 class="text-xl font-bold text-gray-900 mb-6" id="txt-login-title">Anmelden</h2>
 
       <div class="space-y-4">
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1.5">E-Mail</label>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5" id="txt-email">E-Mail</label>
           <input type="email" placeholder="max@muster.ch" value="max@muster.ch"
-            class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm text-gray-800 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-800 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-emerald-500">
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1.5">Passwort</label>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5" id="txt-password">Passwort</label>
           <input type="password" value="••••••••"
-            class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm text-gray-800 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-800 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-emerald-500">
         </div>
 
         <a href="03-dashboard.html">
-          <button class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-xl py-3 text-sm transition mt-2">
+          <button class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-xl py-3 text-sm transition mt-2" id="txt-submit">
             Anmelden
           </button>
         </a>
@@ -98,52 +98,216 @@
 
       <!-- Divider -->
       <div class="relative my-5">
-        <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-gray-200"></div></div>
-        <div class="relative flex justify-center text-xs"><span class="px-3 bg-white text-gray-400">oder</span></div>
+        <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-gray-100"></div></div>
+        <div class="relative flex justify-center text-xs"><span class="px-3 bg-white text-gray-400" id="txt-or">oder</span></div>
       </div>
 
-      <button class="w-full border border-gray-300 text-gray-700 font-medium rounded-xl py-3 text-sm hover:bg-gray-50 transition">
-        ✉️ Mit Magic Link anmelden
+      <button class="w-full border border-emerald-200 text-emerald-700 font-medium rounded-xl py-3 text-sm hover:bg-emerald-50 transition" id="txt-magic">
+        ✨ Mit Magic Link anmelden
       </button>
 
       <p class="text-center text-sm text-gray-400 mt-6">
-        Noch kein Konto?
-        <a href="#" class="text-emerald-700 font-medium hover:underline ml-1">Registrieren</a>
+        <span id="txt-no-account">Noch kein Konto?</span>
+        <a href="#" class="text-emerald-700 font-medium hover:underline ml-1" id="txt-register">Registrieren</a>
       </p>
     </div>
 
-    <!-- Register preview below -->
-    <div class="bg-white rounded-2xl shadow-lg p-8 mt-6">
-      <h2 class="text-xl font-bold text-gray-900 mb-1">Konto erstellen</h2>
-      <p class="text-xs text-gray-400 mb-5">14 Tage kostenlos – kein Zahlungsmittel nötig</p>
+    <!-- Register Card -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 mt-6 border border-emerald-100">
+      <h2 class="text-xl font-bold text-gray-900 mb-1" id="txt-reg-title">Konto erstellen</h2>
+      <p class="text-xs text-gray-400 mb-5" id="txt-reg-sub">14 Tage kostenlos – kein Zahlungsmittel nötig</p>
 
       <div class="space-y-4">
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1.5">Name / Firma</label>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5" id="txt-name">Name / Firma</label>
           <input type="text" placeholder="Max Muster GmbH"
-            class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm bg-gray-50">
+            class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm bg-gray-50">
         </div>
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1.5">E-Mail *</label>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5" id="txt-email2">E-Mail *</label>
           <input type="email" placeholder="max@muster.ch"
-            class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm bg-gray-50">
+            class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm bg-gray-50">
         </div>
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1.5">Passwort *</label>
-          <input type="password" placeholder="Min. 8 Zeichen"
-            class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm bg-gray-50">
+          <label class="block text-sm font-medium text-gray-700 mb-1.5" id="txt-password2">Passwort *</label>
+          <input type="password" placeholder="Min. 8 Zeichen" id="txt-pw-hint"
+            class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm bg-gray-50">
         </div>
-        <button class="w-full bg-emerald-700 text-white font-semibold rounded-xl py-3 text-sm">
+        <button class="w-full bg-emerald-700 text-white font-semibold rounded-xl py-3 text-sm hover:bg-emerald-800 transition" id="txt-reg-submit">
           Kostenlos registrieren
         </button>
-        <p class="text-xs text-gray-400 text-center">Alle Daten werden in der Schweiz gespeichert 🇨🇭 (DSG-konform)</p>
+        <p class="text-xs text-gray-400 text-center" id="txt-footer">Alle Daten werden in der Schweiz gespeichert 🇨🇭 (DSG-konform)</p>
       </div>
     </div>
 
   </div>
 
   <script>
-  function changeLang(lang) { console.log('Language changed to:', lang); }
+  const TRANSLATIONS = {
+    de: {
+      back: "← Zurück zur Übersicht",
+      tagline: "Belege einfach erfassen – für Schweizer Selbständige",
+      loginTitle: "Anmelden",
+      email: "E-Mail",
+      password: "Passwort",
+      submit: "Anmelden",
+      or: "oder",
+      magic: "✨ Mit Magic Link anmelden",
+      noAccount: "Noch kein Konto?",
+      register: "Registrieren",
+      regTitle: "Konto erstellen",
+      regSub: "14 Tage kostenlos – kein Zahlungsmittel nötig",
+      name: "Name / Firma",
+      email2: "E-Mail *",
+      password2: "Passwort *",
+      pwHint: "Min. 8 Zeichen",
+      regSubmit: "Kostenlos registrieren",
+      footer: "Alle Daten werden in der Schweiz gespeichert 🇨🇭 (DSG-konform)",
+    },
+    fr: {
+      back: "← Retour à l'aperçu",
+      tagline: "Saisir facilement vos reçus – pour indépendants suisses",
+      loginTitle: "Se connecter",
+      email: "E-Mail",
+      password: "Mot de passe",
+      submit: "Se connecter",
+      or: "ou",
+      magic: "✨ Connexion avec Magic Link",
+      noAccount: "Pas encore de compte ?",
+      register: "S'inscrire",
+      regTitle: "Créer un compte",
+      regSub: "14 jours gratuits – aucun moyen de paiement requis",
+      name: "Nom / Entreprise",
+      email2: "E-Mail *",
+      password2: "Mot de passe *",
+      pwHint: "Min. 8 caractères",
+      regSubmit: "S'inscrire gratuitement",
+      footer: "Toutes les données sont stockées en Suisse 🇨🇭",
+    },
+    it: {
+      back: "← Torna alla panoramica",
+      tagline: "Gestisci le ricevute facilmente – per indipendenti svizzeri",
+      loginTitle: "Accedi",
+      email: "E-Mail",
+      password: "Password",
+      submit: "Accedi",
+      or: "oppure",
+      magic: "✨ Accedi con Magic Link",
+      noAccount: "Non hai un account?",
+      register: "Registrati",
+      regTitle: "Crea un account",
+      regSub: "14 giorni gratuiti – nessun metodo di pagamento richiesto",
+      name: "Nome / Azienda",
+      email2: "E-Mail *",
+      password2: "Password *",
+      pwHint: "Min. 8 caratteri",
+      regSubmit: "Registrati gratuitamente",
+      footer: "Tutti i dati sono archiviati in Svizzera 🇨🇭",
+    },
+    rm: {
+      back: "← Returnar a la survista",
+      tagline: "Registrar quittanzas simpel – per independents svizzers",
+      loginTitle: "S'annunziar",
+      email: "E-Mail",
+      password: "Pled-clav",
+      submit: "S'annunziar",
+      or: "u",
+      magic: "✨ Cun Magic Link",
+      noAccount: "Anc nagin conto?",
+      register: "Registrar",
+      regTitle: "Crear in conto",
+      regSub: "14 dis gratuits – nagina moda da pajament necessaria",
+      name: "Num / Firma",
+      email2: "E-Mail *",
+      password2: "Pled-clav *",
+      pwHint: "Min. 8 caracters",
+      regSubmit: "Registrar gratuitamain",
+      footer: "Tut las datas vegnan memorisadas en Svizra 🇨🇭",
+    },
+    en: {
+      back: "← Back to overview",
+      tagline: "Capture receipts easily – for Swiss freelancers",
+      loginTitle: "Sign in",
+      email: "Email",
+      password: "Password",
+      submit: "Sign in",
+      or: "or",
+      magic: "✨ Sign in with Magic Link",
+      noAccount: "Don't have an account?",
+      register: "Register",
+      regTitle: "Create an account",
+      regSub: "14-day free trial – no payment method required",
+      name: "Name / Company",
+      email2: "Email *",
+      password2: "Password *",
+      pwHint: "Min. 8 characters",
+      regSubmit: "Register for free",
+      footer: "All data is stored in Switzerland 🇨🇭",
+    },
+    tr: {
+      back: "← Genel bakışa dön",
+      tagline: "Makbuzları kolayca kaydedin – İsviçreli serbest çalışanlar için",
+      loginTitle: "Giriş Yap",
+      email: "E-Posta",
+      password: "Şifre",
+      submit: "Giriş Yap",
+      or: "veya",
+      magic: "✨ Magic Link ile Giriş",
+      noAccount: "Hesabınız yok mu?",
+      register: "Kayıt Ol",
+      regTitle: "Hesap Oluştur",
+      regSub: "14 gün ücretsiz – ödeme aracı gerekmez",
+      name: "Ad / Şirket",
+      email2: "E-Posta *",
+      password2: "Şifre *",
+      pwHint: "Min. 8 karakter",
+      regSubmit: "Ücretsiz kayıt ol",
+      footer: "Tüm veriler İsviçre'de saklanmaktadır 🇨🇭",
+    },
+    sq: {
+      back: "← Kthehu te pasqyra",
+      tagline: "Kapni faturat lehtë – për të vetëpunësuarit zviceranë",
+      loginTitle: "Hyr",
+      email: "E-Mail",
+      password: "Fjalëkalim",
+      submit: "Hyr",
+      or: "ose",
+      magic: "✨ Hyr me Magic Link",
+      noAccount: "Nuk keni llogari?",
+      register: "Regjistrohu",
+      regTitle: "Krijo një llogari",
+      regSub: "14 ditë falas – nuk kërkohet mjet pagese",
+      name: "Emri / Kompania",
+      email2: "E-Mail *",
+      password2: "Fjalëkalim *",
+      pwHint: "Min. 8 karaktere",
+      regSubmit: "Regjistrohu falas",
+      footer: "Të gjitha të dhënat ruhen në Zvicër 🇨🇭",
+    },
+  };
+
+  function changeLang(lang) {
+    const t = TRANSLATIONS[lang];
+    if (!t) return;
+    document.getElementById('txt-back').textContent = t.back;
+    document.getElementById('txt-tagline').textContent = t.tagline;
+    document.getElementById('txt-login-title').textContent = t.loginTitle;
+    document.getElementById('txt-email').textContent = t.email;
+    document.getElementById('txt-password').textContent = t.password;
+    document.getElementById('txt-submit').textContent = t.submit;
+    document.getElementById('txt-or').textContent = t.or;
+    document.getElementById('txt-magic').textContent = t.magic;
+    document.getElementById('txt-no-account').textContent = t.noAccount;
+    document.getElementById('txt-register').textContent = t.register;
+    document.getElementById('txt-reg-title').textContent = t.regTitle;
+    document.getElementById('txt-reg-sub').textContent = t.regSub;
+    document.getElementById('txt-name').textContent = t.name;
+    document.getElementById('txt-email2').textContent = t.email2;
+    document.getElementById('txt-password2').textContent = t.password2;
+    document.getElementById('txt-pw-hint').placeholder = t.pwHint;
+    document.getElementById('txt-reg-submit').textContent = t.regSubmit;
+    document.getElementById('txt-footer').textContent = t.footer;
+  }
   </script>
 </body>
 </html>

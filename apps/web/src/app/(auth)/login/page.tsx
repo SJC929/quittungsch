@@ -9,15 +9,155 @@ import { Input } from "@spezo/ui";
 import { Label } from "@spezo/ui";
 import { LogoWithText } from "@/components/logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import type { SupportedLanguage } from "@spezo/i18n";
+
+const T = {
+  de: {
+    tagline: "Belege einfach erfassen – für Schweizer Selbständige",
+    title: "Anmelden",
+    email: "E-Mail",
+    password: "Passwort",
+    submit: "Anmelden",
+    loading: "Lädt...",
+    magicLink: "✨ Mit Magic Link anmelden",
+    withPassword: "🔑 Mit Passwort anmelden",
+    sendMagicLink: "Magic Link senden",
+    noAccount: "Noch kein Konto?",
+    register: "Kostenlos registrieren",
+    magicSentTitle: "Magic Link gesendet!",
+    magicSentText: "Bitte prüfen Sie Ihre E-Mail",
+    magicSentSuffix: "und klicken Sie den Link.",
+    errorInvalid: "Ungültige E-Mail oder Passwort.",
+    errorMagic: "Magic Link konnte nicht gesendet werden.",
+    footer: "🇨🇭 Alle Daten werden in der Schweiz gespeichert",
+  },
+  fr: {
+    tagline: "Saisir facilement vos reçus – pour indépendants suisses",
+    title: "Se connecter",
+    email: "E-Mail",
+    password: "Mot de passe",
+    submit: "Se connecter",
+    loading: "Chargement...",
+    magicLink: "✨ Connexion avec Magic Link",
+    withPassword: "🔑 Connexion avec mot de passe",
+    sendMagicLink: "Envoyer le Magic Link",
+    noAccount: "Pas encore de compte ?",
+    register: "S'inscrire gratuitement",
+    magicSentTitle: "Magic Link envoyé !",
+    magicSentText: "Veuillez vérifier votre e-mail",
+    magicSentSuffix: "et cliquer sur le lien.",
+    errorInvalid: "E-mail ou mot de passe invalide.",
+    errorMagic: "Le Magic Link n'a pas pu être envoyé.",
+    footer: "🇨🇭 Toutes les données sont stockées en Suisse",
+  },
+  it: {
+    tagline: "Gestisci le ricevute facilmente – per indipendenti svizzeri",
+    title: "Accedi",
+    email: "E-Mail",
+    password: "Password",
+    submit: "Accedi",
+    loading: "Caricamento...",
+    magicLink: "✨ Accedi con Magic Link",
+    withPassword: "🔑 Accedi con password",
+    sendMagicLink: "Invia Magic Link",
+    noAccount: "Non hai un account?",
+    register: "Registrati gratuitamente",
+    magicSentTitle: "Magic Link inviato!",
+    magicSentText: "Controlla la tua e-mail",
+    magicSentSuffix: "e clicca sul link.",
+    errorInvalid: "E-mail o password non validi.",
+    errorMagic: "Impossibile inviare il Magic Link.",
+    footer: "🇨🇭 Tutti i dati sono archiviati in Svizzera",
+  },
+  rm: {
+    tagline: "Registrar quittanzas simpel – per independents svizzers",
+    title: "S'annunziar",
+    email: "E-Mail",
+    password: "Pled-clav",
+    submit: "S'annunziar",
+    loading: "Chargament...",
+    magicLink: "✨ Cun Magic Link",
+    withPassword: "🔑 Cun pled-clav",
+    sendMagicLink: "Trametter Magic Link",
+    noAccount: "Anc nagin conto?",
+    register: "Registrar gratuitamain",
+    magicSentTitle: "Magic Link tramess!",
+    magicSentText: "Controllai vostra e-mail",
+    magicSentSuffix: "e cliccat sin il link.",
+    errorInvalid: "E-Mail u pled-clav nunvalaivel.",
+    errorMagic: "Magic Link n'ha betg pudì vegnir tramess.",
+    footer: "🇨🇭 Tut las datas vegnan memorisadas en Svizra",
+  },
+  en: {
+    tagline: "Capture receipts easily – for Swiss freelancers",
+    title: "Sign in",
+    email: "Email",
+    password: "Password",
+    submit: "Sign in",
+    loading: "Loading...",
+    magicLink: "✨ Sign in with Magic Link",
+    withPassword: "🔑 Sign in with Password",
+    sendMagicLink: "Send Magic Link",
+    noAccount: "Don't have an account?",
+    register: "Register for free",
+    magicSentTitle: "Magic Link sent!",
+    magicSentText: "Please check your email",
+    magicSentSuffix: "and click the link.",
+    errorInvalid: "Invalid email or password.",
+    errorMagic: "Magic Link could not be sent.",
+    footer: "🇨🇭 All data is stored in Switzerland",
+  },
+  tr: {
+    tagline: "Makbuzları kolayca kaydedin – İsviçreli serbest çalışanlar için",
+    title: "Giriş Yap",
+    email: "E-Posta",
+    password: "Şifre",
+    submit: "Giriş Yap",
+    loading: "Yükleniyor...",
+    magicLink: "✨ Magic Link ile Giriş",
+    withPassword: "🔑 Şifre ile Giriş",
+    sendMagicLink: "Magic Link Gönder",
+    noAccount: "Hesabınız yok mu?",
+    register: "Ücretsiz kayıt ol",
+    magicSentTitle: "Magic Link gönderildi!",
+    magicSentText: "Lütfen e-postanızı kontrol edin",
+    magicSentSuffix: "ve bağlantıya tıklayın.",
+    errorInvalid: "Geçersiz e-posta veya şifre.",
+    errorMagic: "Magic Link gönderilemedi.",
+    footer: "🇨🇭 Tüm veriler İsviçre'de saklanmaktadır",
+  },
+  sq: {
+    tagline: "Kapni faturat lehtë – për të vetëpunësuarit zviceranë",
+    title: "Hyr",
+    email: "E-Mail",
+    password: "Fjalëkalim",
+    submit: "Hyr",
+    loading: "Duke ngarkuar...",
+    magicLink: "✨ Hyr me Magic Link",
+    withPassword: "🔑 Hyr me fjalëkalim",
+    sendMagicLink: "Dërgo Magic Link",
+    noAccount: "Nuk keni llogari?",
+    register: "Regjistrohu falas",
+    magicSentTitle: "Magic Link u dërgua!",
+    magicSentText: "Ju lutemi kontrolloni e-mailin tuaj",
+    magicSentSuffix: "dhe klikoni lidhjen.",
+    errorInvalid: "E-mail ose fjalëkalim i pavlefshëm.",
+    errorMagic: "Magic Link nuk mund të dërgohej.",
+    footer: "🇨🇭 Të gjitha të dhënat ruhen në Zvicër",
+  },
+} satisfies Record<SupportedLanguage, Record<string, string>>;
 
 export default function LoginPage() {
   const router = useRouter();
+  const [lang, setLang] = useState<SupportedLanguage>("de");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [magicLinkSent, setMagicLinkSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [mode, setMode] = useState<"password" | "magic">("password");
+
+  const t = T[lang];
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -29,7 +169,7 @@ export default function LoginPage() {
       if (result?.ok) {
         setMagicLinkSent(true);
       } else {
-        setError("Magic Link konnte nicht gesendet werden.");
+        setError(t.errorMagic);
       }
     } else {
       const result = await signIn("credentials", {
@@ -40,7 +180,7 @@ export default function LoginPage() {
       if (result?.ok) {
         router.push("/dashboard");
       } else {
-        setError("Ungültige E-Mail oder Passwort.");
+        setError(t.errorInvalid);
       }
     }
 
@@ -52,9 +192,9 @@ export default function LoginPage() {
       <div className="min-h-screen flex items-center justify-center" style={{ background: "#F0FDF9" }}>
         <div className="max-w-md w-full bg-white rounded-2xl shadow-sm border border-emerald-100 p-8 text-center">
           <div className="text-5xl mb-4">📧</div>
-          <h2 className="text-xl font-bold mb-2">Magic Link gesendet!</h2>
+          <h2 className="text-xl font-bold mb-2">{t.magicSentTitle}</h2>
           <p className="text-gray-500">
-            Bitte prüfen Sie Ihre E-Mail <strong>{email}</strong> und klicken Sie den Link.
+            {t.magicSentText} <strong>{email}</strong> {t.magicSentSuffix}
           </p>
         </div>
       </div>
@@ -64,8 +204,8 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex flex-col" style={{ background: "#F0FDF9" }}>
       {/* Top bar with language switcher */}
-      <div className="flex justify-end p-4">
-        <LanguageSwitcher />
+      <div className="flex justify-end p-4 pr-6">
+        <LanguageSwitcher current={lang} onChange={setLang} />
       </div>
 
       <div className="flex-1 flex items-center justify-center px-4 pb-8">
@@ -74,10 +214,10 @@ export default function LoginPage() {
           <div className="flex justify-center mb-8">
             <LogoWithText iconSize={48} textSize="xl" />
           </div>
-          <p className="text-center text-gray-500 -mt-4 mb-8 text-sm">Belege einfach erfassen</p>
+          <p className="text-center text-gray-500 -mt-4 mb-8 text-sm">{t.tagline}</p>
 
           <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-8">
-            <h2 className="text-xl font-bold mb-6 text-gray-900">Anmelden</h2>
+            <h2 className="text-xl font-bold mb-6 text-gray-900">{t.title}</h2>
 
             {error && (
               <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl mb-4 text-sm">
@@ -87,7 +227,7 @@ export default function LoginPage() {
 
             <form onSubmit={(e) => void handleSubmit(e)} className="space-y-4">
               <div>
-                <Label htmlFor="email">E-Mail</Label>
+                <Label htmlFor="email">{t.email}</Label>
                 <Input
                   id="email"
                   type="email"
@@ -101,7 +241,7 @@ export default function LoginPage() {
 
               {mode === "password" && (
                 <div>
-                  <Label htmlFor="password">Passwort</Label>
+                  <Label htmlFor="password">{t.password}</Label>
                   <Input
                     id="password"
                     type="password"
@@ -118,11 +258,7 @@ export default function LoginPage() {
                 className="w-full h-12 text-sm font-semibold bg-emerald-700 hover:bg-emerald-800"
                 disabled={loading}
               >
-                {loading
-                  ? "Lädt..."
-                  : mode === "magic"
-                  ? "Magic Link senden"
-                  : "Anmelden"}
+                {loading ? t.loading : mode === "magic" ? t.sendMagicLink : t.submit}
               </Button>
             </form>
 
@@ -140,22 +276,18 @@ export default function LoginPage() {
               className="w-full h-11 border-emerald-200 text-emerald-700 hover:bg-emerald-50"
               onClick={() => setMode(mode === "password" ? "magic" : "password")}
             >
-              {mode === "password"
-                ? "✨ Mit Magic Link anmelden"
-                : "🔑 Mit Passwort anmelden"}
+              {mode === "password" ? t.magicLink : t.withPassword}
             </Button>
 
             <p className="text-center text-sm text-gray-500 mt-6">
-              Noch kein Konto?{" "}
+              {t.noAccount}{" "}
               <Link href="/register" className="text-emerald-700 hover:underline font-semibold">
-                Kostenlos registrieren
+                {t.register}
               </Link>
             </p>
           </div>
 
-          <p className="text-center text-xs text-gray-400 mt-4">
-            🇨🇭 Alle Daten werden in der Schweiz gespeichert
-          </p>
+          <p className="text-center text-xs text-gray-400 mt-4">{t.footer}</p>
         </div>
       </div>
     </div>
