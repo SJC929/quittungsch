@@ -64,8 +64,8 @@ export default async function SettingsPage() {
         </CardHeader>
         <CardContent>
           {!paymentEnabled ? (
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <p className="text-blue-700 text-sm font-medium">
+            <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+              <p className="text-emerald-700 text-sm font-medium">
                 Zahlungen folgen bald – kostenlose Nutzung bis zum Launch
               </p>
             </div>
@@ -77,7 +77,7 @@ export default async function SettingsPage() {
                   subscription.status === "ACTIVE"
                     ? "text-green-600"
                     : subscription.status === "TRIALING"
-                    ? "text-blue-600"
+                    ? "text-emerald-600"
                     : "text-red-600"
                 }`}>
                   {subscription.status}

@@ -3,6 +3,9 @@ import { getSession } from "@/lib/auth";
 import { prisma } from "@quittungsch/db/client";
 import { Sidebar } from "@/components/layout/sidebar";
 import { Topbar } from "@/components/layout/topbar";
+import { MobileNav } from "@/components/layout/mobile-nav";
+import { CameraPermissionGate } from "@/components/camera-permission-intro";
+import type { SupportedLanguage } from "@quittungsch/i18n";
 
 export default async function AppLayout({
   children,
@@ -17,15 +20,27 @@ export default async function AppLayout({
     select: { preferredLanguage: true },
   });
 
+  const lang = (tenant?.preferredLanguage ?? "de") as SupportedLanguage;
+
   return (
-    <div className="flex h-screen bg-gray-50">
-      <Sidebar />
-      <div className="flex-1 ml-64 flex flex-col overflow-hidden">
-        <Topbar currentLanguage={tenant?.preferredLanguage ?? "de"} />
-        <main className="flex-1 overflow-auto">
-          {children}
-        </main>
+    <CameraPermissionGate language={lang}>
+      <div className="flex h-screen bg-gray-50">
+        {/* Desktop Sidebar – hidden on mobile */}
+        <div className="hidden lg:block">
+          <Sidebar />
+        </div>
+
+        {/* Main content */}
+        <div className="flex-1 lg:ml-64 flex flex-col overflow-hidden">
+          <Topbar currentLanguage={lang} />
+          <main className="flex-1 overflow-auto pb-20 lg:pb-0">
+            {children}
+          </main>
+        </div>
+
+        {/* Mobile bottom nav */}
+        <MobileNav />
       </div>
-    </div>
+    </CameraPermissionGate>
   );
 }

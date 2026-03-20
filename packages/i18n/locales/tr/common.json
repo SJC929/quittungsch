@@ -1,0 +1,180 @@
+{
+  "app": {
+    "name": "QuittungsCH",
+    "tagline": "Makbuzlarınızı kolayca yönetin – İsviçreli serbest çalışanlar için"
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "expenses": "Makbuzlar",
+    "upload": "Makbuz Ekle",
+    "exports": "Dışa Aktar",
+    "settings": "Ayarlar",
+    "logout": "Çıkış Yap"
+  },
+  "auth": {
+    "login": "Giriş Yap",
+    "register": "Kayıt Ol",
+    "email": "E-posta",
+    "password": "Şifre",
+    "forgotPassword": "Şifremi unuttum?",
+    "magicLink": "Sihirli Bağlantı Gönder",
+    "orContinueWith": "veya şununla devam et",
+    "alreadyHaveAccount": "Zaten hesabınız var mı?",
+    "noAccount": "Henüz hesabınız yok mu?"
+  },
+  "onboarding": {
+    "welcome": "QuittungsCH'e Hoş Geldiniz",
+    "step1Title": "İşletmeniz",
+    "step2Title": "KDV Ayarları",
+    "step3Title": "Dışa Aktarma Tercihi",
+    "step4Title": "Dil",
+    "businessName": "Firma Adı / Ad",
+    "uid": "KDV Numarası (UID, isteğe bağlı)",
+    "uidPlaceholder": "CHE-123.456.789",
+    "preferredExport": "Tercih edilen dışa aktarma formatı",
+    "language": "Dil",
+    "next": "İleri",
+    "back": "Geri",
+    "finish": "Başla",
+    "skip": "Atla"
+  },
+  "expenses": {
+    "title": "Makbuzlar",
+    "add": "Makbuz Ekle",
+    "search": "Ara...",
+    "filterCategory": "Kategori",
+    "filterDate": "Tarih Aralığı",
+    "filterAmount": "Tutar",
+    "noExpenses": "Henüz makbuz yok",
+    "merchant": "Satıcı",
+    "date": "Tarih",
+    "amount": "Tutar",
+    "category": "Kategori",
+    "vatRate": "KDV Oranı",
+    "vatAmount": "KDV Tutarı",
+    "paymentMethod": "Ödeme Yöntemi",
+    "notes": "Notlar",
+    "receiptType": "Makbuz Türü",
+    "needsReview": "İnceleme Gerekiyor",
+    "confidence": "OCR Güven Skoru",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "view": "Görüntüle"
+  },
+  "categories": {
+    "RESTAURANT": "Yiyecek & İçecek",
+    "TANKSTELLE": "Yakıt / Ulaşım",
+    "BUERO": "Ofis Malzemeleri",
+    "TELEFON": "Telefon / İnternet",
+    "TRANSPORT": "Ulaşım / Seyahat",
+    "UNTERKUNFT": "Konaklama",
+    "VERSICHERUNG": "Sigorta",
+    "WEITERBILDUNG": "Eğitim",
+    "DIVERSES": "Diğer"
+  },
+  "receiptTypes": {
+    "KASSENBON": "Fiş",
+    "RECHNUNG": "Fatura",
+    "TANKBELEG": "Yakıt Fişi",
+    "QR_RECHNUNG": "QR Fatura",
+    "SONSTIGE": "Diğer"
+  },
+  "paymentMethods": {
+    "CASH": "Nakit",
+    "CARD": "Kart",
+    "TWINT": "TWINT",
+    "BANK_TRANSFER": "Banka Transferi",
+    "UNKNOWN": "Bilinmiyor"
+  },
+  "ocr": {
+    "processing": "Makbuz analiz ediliyor...",
+    "highConfidence": "Yüksek doğruluk – doğrudan kaydedilebilir",
+    "mediumConfidence": "Lütfen alanları kontrol edin",
+    "lowConfidence": "Düşük doğruluk – işaretli alanları düzeltin",
+    "layer1": "Metin tanıma (OCR)...",
+    "layer2": "Yapay zeka analizi...",
+    "manualFallback": "Lütfen verileri manuel olarak girin",
+    "qrDetected": "QR Fatura tespit edildi"
+  },
+  "upload": {
+    "title": "Makbuz Ekle",
+    "dragDrop": "Bir resim veya PDF sürükleyin",
+    "orClick": "veya seçmek için tıklayın",
+    "takePhoto": "Fotoğraf Çek",
+    "supportedFormats": "JPG, PNG, PDF - maksimum 10 MB",
+    "processing": "İşleniyor...",
+    "confirm": "Onayla ve Kaydet"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "totalExpenses": "Toplam Giderler",
+    "totalVat": "Toplam KDV",
+    "expenseCount": "Makbuz Sayısı",
+    "needsReview": "İnceleme Gerekiyor",
+    "thisMonth": "Bu Ay",
+    "lastMonth": "Geçen Ay",
+    "byCategory": "Kategoriye Göre",
+    "recentExpenses": "Son Makbuzlar"
+  },
+  "exports": {
+    "title": "Dışa Aktar",
+    "generate": "Dışa Aktarma Oluştur",
+    "format": "Format",
+    "dateRange": "Tarih Aralığı",
+    "from": "Başlangıç",
+    "to": "Bitiş",
+    "download": "İndir",
+    "formats": {
+      "EXCEL": "Excel (.xlsx)",
+      "CSV": "CSV (noktalı virgül)",
+      "PDF": "PDF Raporu",
+      "GOOGLE_SHEETS": "Google Sheets"
+    },
+    "status": {
+      "pending": "Bekliyor",
+      "processing": "Oluşturuluyor...",
+      "done": "Tamamlandı",
+      "error": "Hata"
+    }
+  },
+  "payment": {
+    "title": "Abonelik",
+    "price": "CHF 10 / ay",
+    "payWithCard": "Kart ile Öde",
+    "payWithTwint": "TWINT ile Öde",
+    "payWithDatatrans": "Datatrans ile Öde",
+    "comingSoon": "Ödemeler yakında geliyor – lansmana kadar uygulamayı ücretsiz kullanabilirsiniz",
+    "managePlan": "Aboneliği Yönet",
+    "cancelSubscription": "İptal Et",
+    "trialDays": "{{days}} gün ücretsiz"
+  },
+  "errors": {
+    "generic": "Bir hata oluştu",
+    "notFound": "Bulunamadı",
+    "unauthorized": "Yetkisiz",
+    "rateLimit": "Çok fazla istek – lütfen bekleyin",
+    "uploadFailed": "Yükleme başarısız",
+    "ocrFailed": "OCR analizi başarısız"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "confirm": "Onayla",
+    "close": "Kapat",
+    "yes": "Evet",
+    "no": "Hayır",
+    "chf": "CHF",
+    "dateFormat": "DD.MM.YYYY"
+  },
+  "camera": {
+    "permissionTitle": "Kamera Erişimi Gerekli",
+    "permissionText": "Makbuzlarınızı fotoğraflamak için kamera erişimine ihtiyacımız var. Lütfen ayarlardan kamera iznini etkinleştirin.",
+    "permissionButton": "Kamera İznini Ver",
+    "permissionSkip": "Şimdilik Atla"
+  }
+}

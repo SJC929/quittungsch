@@ -1,0 +1,180 @@
+{
+  "app": {
+    "name": "QuittungsCH",
+    "tagline": "Menaxhoni faturat tuaja lehtë – për të vetëpunësuarit zviceranë"
+  },
+  "nav": {
+    "dashboard": "Paneli",
+    "expenses": "Faturat",
+    "upload": "Shto Faturë",
+    "exports": "Eksporto",
+    "settings": "Cilësimet",
+    "logout": "Dil"
+  },
+  "auth": {
+    "login": "Hyr",
+    "register": "Regjistrohu",
+    "email": "E-mail",
+    "password": "Fjalëkalimi",
+    "forgotPassword": "Keni harruar fjalëkalimin?",
+    "magicLink": "Dërgo Lidhjen Magjike",
+    "orContinueWith": "ose vazhdoni me",
+    "alreadyHaveAccount": "Keni tashmë një llogari?",
+    "noAccount": "Nuk keni llogari ende?"
+  },
+  "onboarding": {
+    "welcome": "Mirë se vini në QuittungsCH",
+    "step1Title": "Biznesi Juaj",
+    "step2Title": "Cilësimet e TVSH",
+    "step3Title": "Preferencat e Eksportit",
+    "step4Title": "Gjuha",
+    "businessName": "Emri i Firmës / Emri",
+    "uid": "Numri TVSH (UID, opsional)",
+    "uidPlaceholder": "CHE-123.456.789",
+    "preferredExport": "Formati i preferuar i eksportit",
+    "language": "Gjuha",
+    "next": "Tjetër",
+    "back": "Mbrapa",
+    "finish": "Fillo",
+    "skip": "Kalo"
+  },
+  "expenses": {
+    "title": "Faturat",
+    "add": "Shto Faturë",
+    "search": "Kërko...",
+    "filterCategory": "Kategoria",
+    "filterDate": "Periudha",
+    "filterAmount": "Shuma",
+    "noExpenses": "Nuk ka fatura ende",
+    "merchant": "Shitësi",
+    "date": "Data",
+    "amount": "Shuma",
+    "category": "Kategoria",
+    "vatRate": "Norma e TVSH",
+    "vatAmount": "Shuma e TVSH",
+    "paymentMethod": "Mënyra e Pagesës",
+    "notes": "Shënime",
+    "receiptType": "Lloji i Faturës",
+    "needsReview": "Kërkon Kontroll",
+    "confidence": "Besueshmëria OCR",
+    "save": "Ruaj",
+    "cancel": "Anulo",
+    "delete": "Fshi",
+    "edit": "Ndrysho",
+    "view": "Shiko"
+  },
+  "categories": {
+    "RESTAURANT": "Ushqim & Pije",
+    "TANKSTELLE": "Karburant / Transport",
+    "BUERO": "Materiale Zyre",
+    "TELEFON": "Telefon / Internet",
+    "TRANSPORT": "Transport / Udhëtim",
+    "UNTERKUNFT": "Akomodim",
+    "VERSICHERUNG": "Sigurim",
+    "WEITERBILDUNG": "Trajnim",
+    "DIVERSES": "Të Ndryshme"
+  },
+  "receiptTypes": {
+    "KASSENBON": "Kupon Arke",
+    "RECHNUNG": "Faturë",
+    "TANKBELEG": "Kupon Karburanti",
+    "QR_RECHNUNG": "Faturë QR",
+    "SONSTIGE": "Tjetër"
+  },
+  "paymentMethods": {
+    "CASH": "Para Gati",
+    "CARD": "Kartë",
+    "TWINT": "TWINT",
+    "BANK_TRANSFER": "Transfer Bankar",
+    "UNKNOWN": "I Panjohur"
+  },
+  "ocr": {
+    "processing": "Fatura po analizohet...",
+    "highConfidence": "Saktësi e lartë – mund të ruhet direkt",
+    "mediumConfidence": "Ju lutemi kontrolloni fushat",
+    "lowConfidence": "Saktësi e ulët – korrigjoni fushat e shënuara",
+    "layer1": "Njohja e tekstit (OCR)...",
+    "layer2": "Analiza e AI...",
+    "manualFallback": "Ju lutemi futni të dhënat manualisht",
+    "qrDetected": "Faturë QR u zbulua"
+  },
+  "upload": {
+    "title": "Shto Faturë",
+    "dragDrop": "Tërhiqni një imazh ose PDF këtu",
+    "orClick": "ose klikoni për të zgjedhur",
+    "takePhoto": "Bëj Foto",
+    "supportedFormats": "JPG, PNG, PDF deri në 10 MB",
+    "processing": "Po përpunohet...",
+    "confirm": "Konfirmo dhe Ruaj"
+  },
+  "dashboard": {
+    "title": "Paneli",
+    "totalExpenses": "Shpenzimet Totale",
+    "totalVat": "TVSH Totale",
+    "expenseCount": "Numri i Faturave",
+    "needsReview": "Kërkon Kontroll",
+    "thisMonth": "Këtë Muaj",
+    "lastMonth": "Muajin e Kaluar",
+    "byCategory": "Sipas Kategorisë",
+    "recentExpenses": "Faturat e Fundit"
+  },
+  "exports": {
+    "title": "Eksporto",
+    "generate": "Krijo Eksport",
+    "format": "Formati",
+    "dateRange": "Periudha",
+    "from": "Nga",
+    "to": "Deri",
+    "download": "Shkarko",
+    "formats": {
+      "EXCEL": "Excel (.xlsx)",
+      "CSV": "CSV (pikëpresje)",
+      "PDF": "Raport PDF",
+      "GOOGLE_SHEETS": "Google Sheets"
+    },
+    "status": {
+      "pending": "Në Pritje",
+      "processing": "Po krijohet...",
+      "done": "Përfunduar",
+      "error": "Gabim"
+    }
+  },
+  "payment": {
+    "title": "Abonamenti",
+    "price": "CHF 10 / muaj",
+    "payWithCard": "Paguaj me Kartë",
+    "payWithTwint": "Paguaj me TWINT",
+    "payWithDatatrans": "Paguaj me Datatrans",
+    "comingSoon": "Pagesat vijnë së shpejti – mund ta përdorni aplikacionin falas deri në lansim",
+    "managePlan": "Menaxho Abonimentin",
+    "cancelSubscription": "Anulo",
+    "trialDays": "{{days}} ditë falas"
+  },
+  "errors": {
+    "generic": "Ndodhi një gabim",
+    "notFound": "Nuk u gjet",
+    "unauthorized": "I paautorizuar",
+    "rateLimit": "Shumë kërkesa – ju lutemi prisni",
+    "uploadFailed": "Ngarkimi dështoi",
+    "ocrFailed": "Analiza OCR dështoi"
+  },
+  "common": {
+    "loading": "Duke u ngarkuar...",
+    "save": "Ruaj",
+    "cancel": "Anulo",
+    "delete": "Fshi",
+    "edit": "Ndrysho",
+    "confirm": "Konfirmo",
+    "close": "Mbyll",
+    "yes": "Po",
+    "no": "Jo",
+    "chf": "CHF",
+    "dateFormat": "DD.MM.YYYY"
+  },
+  "camera": {
+    "permissionTitle": "Kamera Kërkon Leje",
+    "permissionText": "Kemi nevojë për akses në kamerën tuaj për të fotografuar faturat. Ju lutemi aktivizoni lejen e kamerës në cilësimet.",
+    "permissionButton": "Jep Leje Kamera",
+    "permissionSkip": "Kalo Tani"
+  }
+}

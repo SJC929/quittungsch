@@ -4,6 +4,7 @@ import { useState } from "react";
 import { isPaymentEnabled, getActiveProvider, isTwintViaStripeEnabled } from "@quittungsch/payments/feature-flags";
 import { Button } from "@quittungsch/ui";
 import { Card, CardContent, CardHeader, CardTitle } from "@quittungsch/ui";
+import { LogoWithText } from "@/components/logo";
 
 export default function CheckoutPage() {
   const [loading, setLoading] = useState(false);
@@ -34,9 +35,9 @@ export default function CheckoutPage() {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="max-w-md w-full space-y-4">
         {/* Logo */}
-        <div className="text-center mb-6">
-          <h1 className="text-3xl font-bold text-blue-600">QuittungsCH Pro</h1>
-          <p className="text-gray-500 mt-1">Alle Features ohne Einschränkungen</p>
+        <div className="flex flex-col items-center mb-6">
+          <LogoWithText iconSize={52} textSize="xl" />
+          <p className="text-gray-500 mt-2 text-sm">Alle Features ohne Einschränkungen</p>
         </div>
 
         {/* Price card */}
@@ -69,12 +70,12 @@ export default function CheckoutPage() {
         {/* Payment section */}
         {!paymentEnabled ? (
           /* Both providers disabled – free trial mode */
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center">
+          <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 text-center">
             <div className="text-2xl mb-2">🎉</div>
-            <h3 className="font-semibold text-blue-800 mb-2">
+            <h3 className="font-semibold text-emerald-800 mb-2">
               Kostenlos bis zum Launch
             </h3>
-            <p className="text-blue-600 text-sm">
+            <p className="text-emerald-700 text-sm">
               Wir nehmen bald Zahlungen entgegen – du kannst die App kostenlos nutzen bis zum Launch.
             </p>
             <Button

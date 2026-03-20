@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { Button } from "@quittungsch/ui";
 import { Input } from "@quittungsch/ui";
 import { Label } from "@quittungsch/ui";
+import { LogoWithText } from "@/components/logo";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -48,7 +50,12 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex flex-col p-4">
+      <div className="flex justify-between items-center mb-4">
+        <LogoWithText iconSize={32} textSize="sm" />
+        <LanguageSwitcher />
+      </div>
+      <div className="flex-1 flex items-center justify-center">
       <div className="max-w-lg w-full bg-white rounded-2xl shadow-lg overflow-hidden">
         {/* Progress bar */}
         <div className="flex">
@@ -224,6 +231,7 @@ export default function OnboardingPage() {
             </button>
           )}
         </div>
+      </div>
       </div>
     </div>
   );

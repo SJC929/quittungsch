@@ -6,6 +6,8 @@ import Link from "next/link";
 import { Button } from "@quittungsch/ui";
 import { Input } from "@quittungsch/ui";
 import { Label } from "@quittungsch/ui";
+import { LogoWithText } from "@/components/logo";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -36,76 +38,93 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-emerald-700">QuittungsCH</h1>
-          <p className="text-gray-500 mt-1">14 Tage kostenlos testen</p>
-        </div>
+    <div className="min-h-screen flex flex-col" style={{ background: "#F0FDF9" }}>
+      {/* Top bar with language switcher */}
+      <div className="flex justify-end p-4">
+        <LanguageSwitcher />
+      </div>
 
-        <div className="bg-white rounded-xl shadow p-8">
-          <h2 className="text-xl font-semibold mb-6">Konto erstellen</h2>
+      <div className="flex-1 flex items-center justify-center px-4 pb-8">
+        <div className="max-w-md w-full">
+          {/* Logo */}
+          <div className="flex justify-center mb-8">
+            <LogoWithText iconSize={48} textSize="xl" />
+          </div>
+          <p className="text-center text-gray-500 -mt-4 mb-8 text-sm">14 Tage kostenlos testen</p>
 
-          {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md mb-4 text-sm">
-              {error}
-            </div>
-          )}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+            <h2 className="text-xl font-bold mb-2 text-gray-900">Konto erstellen</h2>
+            <p className="text-sm text-gray-400 mb-6">Kostenlos, keine Kreditkarte nötig</p>
 
-          <form onSubmit={(e) => void handleSubmit(e)} className="space-y-4">
-            <div>
-              <Label htmlFor="name">Name / Firma</Label>
-              <Input
-                id="name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                placeholder="Max Muster"
-                className="mt-1"
-              />
-            </div>
+            {error && (
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl mb-4 text-sm">
+                {error}
+              </div>
+            )}
 
-            <div>
-              <Label htmlFor="email">E-Mail</Label>
-              <Input
-                id="email"
-                type="email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                placeholder="max@muster.ch"
-                required
-                className="mt-1"
-              />
-            </div>
+            <form onSubmit={(e) => void handleSubmit(e)} className="space-y-4">
+              <div>
+                <Label htmlFor="name">Name / Firma</Label>
+                <Input
+                  id="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  placeholder="Max Muster"
+                  className="mt-1"
+                />
+              </div>
 
-            <div>
-              <Label htmlFor="password">Passwort</Label>
-              <Input
-                id="password"
-                type="password"
-                value={formData.password}
-                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                placeholder="Min. 8 Zeichen"
-                required
-                minLength={8}
-                className="mt-1"
-              />
-            </div>
+              <div>
+                <Label htmlFor="email">E-Mail</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  placeholder="max@muster.ch"
+                  required
+                  className="mt-1"
+                />
+              </div>
 
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Konto wird erstellt..." : "Kostenlos registrieren"}
-            </Button>
-          </form>
+              <div>
+                <Label htmlFor="password">Passwort</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  value={formData.password}
+                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  placeholder="Min. 8 Zeichen"
+                  required
+                  minLength={8}
+                  className="mt-1"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                className="w-full h-12 text-sm font-semibold bg-emerald-700 hover:bg-emerald-800"
+                disabled={loading}
+              >
+                {loading ? "Konto wird erstellt..." : "Kostenlos registrieren"}
+              </Button>
+            </form>
+
+            <p className="text-center text-xs text-gray-400 mt-5 leading-relaxed">
+              Mit der Registrierung stimmen Sie unseren AGB zu.
+              Alle Daten werden in der Schweiz gespeichert.
+            </p>
+
+            <p className="text-center text-sm text-gray-500 mt-4">
+              Bereits ein Konto?{" "}
+              <Link href="/login" className="text-emerald-700 hover:underline font-semibold">
+                Anmelden
+              </Link>
+            </p>
+          </div>
 
           <p className="text-center text-xs text-gray-400 mt-4">
-            Mit der Registrierung stimmen Sie unseren AGB und Datenschutzbestimmungen zu.
-            Alle Daten werden in der Schweiz gespeichert.
-          </p>
-
-          <p className="text-center text-sm text-gray-500 mt-4">
-            Bereits ein Konto?{" "}
-            <Link href="/login" className="text-emerald-700 hover:underline font-medium">
-              Anmelden
-            </Link>
+            🇨🇭 Alle Daten werden in der Schweiz gespeichert
           </p>
         </div>
       </div>

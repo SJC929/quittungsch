@@ -9,7 +9,40 @@
 </head>
 <body class="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center p-4">
 
-  <div class="w-full max-w-lg">
+  <!-- Top bar with logo and language switcher -->
+  <div style="position:fixed;top:0;left:0;right:0;height:52px;background:white;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;justify-between;padding:0 24px;z-index:50;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="22" fill="#34D399"/>
+        <rect x="18" y="14" width="52" height="64" rx="4" fill="white"/>
+        <path d="M18 74 L23 68 L28 74 L33 68 L38 74 L43 68 L48 74 L53 68 L58 74 L63 68 L68 74 L70 74 L70 78 L18 78 Z" fill="white"/>
+        <rect x="26" y="23" width="22" height="5" rx="2.5" fill="#059669"/>
+        <rect x="26" y="33" width="32" height="3" rx="1.5" fill="#D1FAE5"/>
+        <rect x="26" y="40" width="28" height="3" rx="1.5" fill="#D1FAE5"/>
+        <rect x="26" y="47" width="30" height="3" rx="1.5" fill="#D1FAE5"/>
+        <rect x="26" y="54" width="24" height="3" rx="1.5" fill="#D1FAE5"/>
+        <rect x="26" y="61" width="20" height="4" rx="2" fill="#059669"/>
+        <circle cx="72" cy="74" r="18" fill="#047857"/>
+        <circle cx="72" cy="74" r="13" fill="white"/>
+        <circle cx="72" cy="74" r="8" fill="none" stroke="#047857" stroke-width="3"/>
+        <line x1="78" y1="80" x2="86" y2="88" stroke="#047857" stroke-width="4" stroke-linecap="round"/>
+        <rect x="67" y="72" width="10" height="2" rx="1" fill="#047857"/>
+        <rect x="67" y="76" width="7" height="2" rx="1" fill="#047857"/>
+      </svg>
+      <span style="font-size:17px;font-weight:700;color:#059669;">QuittungsCH</span>
+    </div>
+    <select id="langSelect" onchange="changeLang(this.value)" style="padding:6px 10px;border:1px solid #E5E7EB;border-radius:10px;font-family:inherit;font-size:13px;color:#374151;background:white;cursor:pointer;">
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="rm">🏔️ Rumantsch</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="tr">🇹🇷 Türkçe</option>
+      <option value="sq">🇦🇱 Shqip</option>
+    </select>
+  </div>
+
+  <div class="w-full max-w-lg" style="margin-top:52px;">
     <a href="index.html" class="text-sm text-blue-500 hover:underline mb-4 block">← Zurück</a>
 
     <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
@@ -131,5 +164,9 @@
     </div>
 
   </div>
+
+  <script>
+  function changeLang(lang) { console.log('Language changed to:', lang); }
+  </script>
 </body>
 </html>

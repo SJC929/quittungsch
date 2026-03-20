@@ -92,7 +92,7 @@ export default function ExportsPage() {
               onClick={() => setFormat(f.value)}
               className={`p-4 rounded-xl border-2 text-left transition-all ${
                 format === f.value
-                  ? "border-blue-600 bg-blue-50"
+                  ? "border-emerald-700 bg-emerald-50"
                   : "border-gray-200 hover:border-gray-300"
               }`}
             >
