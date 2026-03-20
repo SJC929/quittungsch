@@ -7,285 +7,329 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap');*{font-family:'DM Sans',sans-serif;}</style>
 </head>
-<body class="min-h-screen flex" style="background: #eafaf3;">
+<body class="min-h-screen flex" style="background: #f9fafb;">
 
   <!-- Sidebar -->
-  <aside class="w-60 border-r border-emerald-300 flex flex-col min-h-screen fixed left-0 top-0" style="background: linear-gradient(180deg, #6ee7b7 0%, #a7f3d0 40%, #d1fae5 100%);">
-    <div class="p-4 border-b border-gray-100">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;">
-        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="100" height="100" rx="22" fill="#34D399"/>
-          <rect x="18" y="14" width="52" height="64" rx="4" fill="white"/>
-          <path d="M18 74 L23 68 L28 74 L33 68 L38 74 L43 68 L48 74 L53 68 L58 74 L63 68 L68 74 L70 74 L70 78 L18 78 Z" fill="white"/>
-          <rect x="26" y="23" width="22" height="5" rx="2.5" fill="#059669"/>
-          <rect x="26" y="33" width="32" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="40" width="28" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="47" width="30" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="54" width="24" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="61" width="20" height="4" rx="2" fill="#059669"/>
-          <circle cx="72" cy="74" r="18" fill="#047857"/>
-          <circle cx="72" cy="74" r="13" fill="white"/>
-          <circle cx="72" cy="74" r="8" fill="none" stroke="#047857" stroke-width="3"/>
-          <line x1="78" y1="80" x2="86" y2="88" stroke="#047857" stroke-width="4" stroke-linecap="round"/>
-          <rect x="67" y="72" width="10" height="2" rx="1" fill="#047857"/>
-          <rect x="67" y="76" width="7" height="2" rx="1" fill="#047857"/>
+  <aside style="width:240px;background:linear-gradient(180deg,#0a1f14 0%,#0d2318 100%);display:flex;flex-direction:column;min-height:100vh;position:fixed;left:0;top:0;z-index:30;">
+    <!-- Logo section -->
+    <div style="padding:20px 20px 16px;border-bottom:1px solid rgba(255,255,255,0.1);">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;">
+        <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="24" fill="rgba(255,255,255,0.12)"/>
+          <rect x="20" y="14" width="50" height="62" rx="5" fill="rgba(255,255,255,0.95)"/>
+          <path d="M20 72 L25 66 L30 72 L35 66 L40 72 L45 66 L50 72 L55 66 L60 72 L65 66 L70 72 L70 76 L20 76 Z" fill="rgba(255,255,255,0.95)"/>
+          <rect x="28" y="22" width="20" height="5" rx="2.5" fill="white"/>
+          <rect x="28" y="32" width="30" height="3" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+          <rect x="28" y="39" width="26" height="3" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+          <rect x="28" y="46" width="28" height="3" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+          <rect x="28" y="53" width="22" height="3" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+          <rect x="28" y="60" width="18" height="4" rx="2" fill="white"/>
+          <circle cx="73" cy="73" r="17" fill="white"/>
+          <circle cx="73" cy="73" r="12" fill="rgba(255,255,255,0.15)"/>
+          <circle cx="73" cy="73" r="7" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5"/>
+          <line x1="78" y1="79" x2="86" y2="87" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round"/>
+          <rect x="69" y="72" width="8" height="2" rx="1" fill="rgba(255,255,255,0.9)"/>
+          <rect x="69" y="75.5" width="5.5" height="2" rx="1" fill="rgba(255,255,255,0.9)"/>
         </svg>
-        <span style="font-size:16px;font-weight:700;color:#059669;">Spezo</span>
+        <span style="font-size:20px;font-weight:700;color:white;letter-spacing:-0.3px;">Spezo</span>
       </div>
-      <p class="text-xs text-gray-400 mt-0.5">Buchhaltung leicht gemacht</p>
+      <p style="font-size:10px;color:rgba(52,211,153,0.8);letter-spacing:0.08em;text-transform:uppercase;font-weight:600;margin-left:54px;">SCHWEIZER BUCHHALTUNG</p>
     </div>
-    <nav class="flex-1 p-4 space-y-1">
-      <a href="03-dashboard.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
+
+    <!-- Quick add button -->
+    <div style="padding:12px 16px;">
+      <a href="#" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#10b981;color:white;border-radius:12px;padding:10px 16px;text-decoration:none;font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(16,185,129,0.3);">+ Beleg erfassen</a>
+    </div>
+
+    <!-- Nav -->
+    <nav style="flex:1;padding:4px 12px;overflow-y:auto;">
+      <a href="03-dashboard.html" style="color:rgba(255,255,255,0.45);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;margin-bottom:2px;">
         <span>📊</span> Dashboard
       </a>
-      <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white text-emerald-700 font-medium text-sm">
+      <a href="#" style="background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.25);color:#6ee7b7;font-weight:600;border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;margin-bottom:2px;">
         <span>📷</span> Beleg erfassen
       </a>
-      <a href="05-expenses.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
+      <a href="05-expenses.html" style="color:rgba(255,255,255,0.45);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;margin-bottom:2px;">
         <span>🧾</span> Belege
       </a>
-      <a href="06-exports.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
+      <a href="06-exports.html" style="color:rgba(255,255,255,0.45);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;margin-bottom:2px;">
         <span>📤</span> Export
       </a>
     </nav>
+
+    <!-- Bottom -->
+    <div style="padding:12px 16px;border-top:1px solid rgba(255,255,255,0.1);">
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:8px 12px;margin-bottom:8px;">
+        <p style="font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:1px;">Plan</p>
+        <p style="font-size:13px;font-weight:600;color:#34d399;">Free Trial</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;">
+        <div style="width:30px;height:30px;background:rgba(52,211,153,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#34d399;">M</div>
+        <div>
+          <p style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.8);margin:0;">Max Muster</p>
+          <p style="font-size:10px;color:rgba(255,255,255,0.3);margin:0;">max@muster.ch</p>
+        </div>
+      </div>
+    </div>
   </aside>
 
   <!-- Main content -->
-  <div class="ml-60 flex-1 flex flex-col min-h-screen">
-  <!-- Topbar -->
-  <header class="border-b border-emerald-200 h-14 flex items-center justify-end px-6 sticky top-0 z-40" style="background: rgba(209,250,229,0.85); backdrop-filter: blur(8px);">
-    <div class="relative" id="lang-dropdown">
-      <button onclick="toggleLang()" class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm font-medium text-gray-700">
-        <span>🌐</span><span id="lang-flag">🇩🇪</span><span id="lang-name" class="ml-1">Deutsch</span><span class="text-gray-400 text-xs ml-1">▾</span>
-      </button>
-      <div id="lang-menu" class="hidden absolute right-0 top-full mt-1 w-44 bg-white border border-gray-200 rounded-xl shadow-lg py-1 z-50">
-        <button onclick="setLang('🇩🇪','Deutsch')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-emerald-700 font-medium">🇨🇭 Deutsch <span class="ml-auto">✓</span></button>
-        <button onclick="setLang('🇫🇷','Français')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700">🇫🇷 Français</button>
-        <button onclick="setLang('🇮🇹','Italiano')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700">🇮🇹 Italiano</button>
-        <button onclick="setLang('🏔️','Rumantsch')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700">🇨🇭 Rumantsch</button>
-        <button onclick="setLang('🇬🇧','English')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700">🇬🇧 English</button>
-        <button onclick="setLang('🇹🇷','Türkçe')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700">🇹🇷 Türkçe</button>
-        <button onclick="setLang('🇦🇱','Shqip')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700">🇦🇱 Shqip</button>
-      </div>
-    </div>
-  </header>
-  <main class="flex-1 p-8 max-w-4xl">
-    <div class="mb-8">
-      <h1 class="text-2xl font-bold text-gray-900">Beleg erfassen</h1>
-      <p class="text-gray-400 text-sm mt-0.5">Foto oder Datei hochladen – KI erkennt alle Details automatisch</p>
-    </div>
-
-    <!-- STATE 1: Upload zone (default visible) -->
-    <div id="state-upload">
-      <div class="border-2 border-dashed border-gray-300 rounded-2xl p-12 text-center hover:border-blue-400 hover:bg-white transition-colors cursor-pointer bg-white"
-           onclick="showState('state-processing')">
-        <div class="text-5xl mb-4">📁</div>
-        <p class="text-lg font-semibold text-gray-700 mb-1">Beleg hier ablegen</p>
-        <p class="text-sm text-gray-400 mb-4">oder klicken zum Auswählen</p>
-        <p class="text-xs text-gray-300">JPG, PNG, PDF – max. 10 MB</p>
-        <div class="mt-6 flex gap-3 justify-center">
-          <span class="px-4 py-2 bg-emerald-700 text-white rounded-xl text-sm font-medium">📷 Foto hochladen</span>
-          <span class="px-4 py-2 border border-gray-300 text-gray-600 rounded-xl text-sm font-medium">📄 PDF hochladen</span>
-        </div>
-      </div>
-      <p class="text-center text-xs text-gray-400 mt-4">👆 Klicken um OCR-Verarbeitung zu simulieren</p>
-    </div>
-
-    <!-- STATE 2: Processing (hidden initially) -->
-    <div id="state-processing" class="hidden">
-      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center">
-        <div class="text-5xl mb-4 animate-bounce">🔍</div>
-        <h3 class="text-lg font-bold text-gray-800 mb-2">Beleg wird analysiert...</h3>
-        <div class="max-w-sm mx-auto space-y-3 mt-6 text-left">
-          <div class="flex items-center gap-3">
-            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-xs">✓</div>
-            <div class="flex-1">
-              <p class="text-sm font-medium text-gray-700">Bild hochgeladen</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-xs">✓</div>
-            <div class="flex-1">
-              <p class="text-sm font-medium text-gray-700">Google Vision OCR</p>
-              <p class="text-xs text-gray-400">Texterkennung abgeschlossen</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center text-white text-xs animate-pulse">⟳</div>
-            <div class="flex-1">
-              <p class="text-sm font-medium text-gray-700">Claude KI-Analyse</p>
-              <p class="text-xs text-gray-400">Extrahiert Betrag, MwSt, Händler...</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 text-xs">3</div>
-            <div class="flex-1">
-              <p class="text-sm font-medium text-gray-400">Ergebnis speichern</p>
-            </div>
-          </div>
-        </div>
-        <button onclick="showState('state-review')" class="mt-8 px-6 py-2.5 bg-emerald-700 text-white rounded-xl text-sm font-medium hover:bg-emerald-800">
-          Ergebnis anzeigen (simulieren) →
+  <div class="flex-1 flex flex-col min-h-screen" style="margin-left:240px;">
+    <!-- Topbar -->
+    <header style="height:56px;background:white;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;justify-content:flex-end;padding:0 24px;position:sticky;top:0;z-index:40;box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+      <div style="position:relative;" id="lang-dropdown">
+        <button onclick="toggleLang(event)" style="display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;border:1px solid #e5e7eb;background:white;cursor:pointer;font-size:13px;font-weight:500;color:#374151;font-family:inherit;">
+          🌐 <span id="lang-flag">🇨🇭</span> <span id="lang-name">Deutsch</span> ▾
         </button>
+        <div id="lang-menu" style="display:none;position:absolute;right:0;top:calc(100% + 6px);width:180px;background:white;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.12);padding:6px;z-index:9999;">
+          <button onclick="applyLang('de','🇨🇭','Deutsch')" id="btn-de" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇨🇭 <span>Deutsch</span> <span id="chk-de" style="margin-left:auto;color:#059669;">✓</span></button>
+          <button onclick="applyLang('fr','🇫🇷','Français')" id="btn-fr" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇫🇷 <span>Français</span> <span id="chk-fr" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('it','🇮🇹','Italiano')" id="btn-it" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇮🇹 <span>Italiano</span> <span id="chk-it" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('rm','🇨🇭','Rumantsch')" id="btn-rm" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇨🇭 <span>Rumantsch</span> <span id="chk-rm" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('en','🇬🇧','English')" id="btn-en" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇬🇧 <span>English</span> <span id="chk-en" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('tr','🇹🇷','Türkçe')" id="btn-tr" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇹🇷 <span>Türkçe</span> <span id="chk-tr" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('sq','🇦🇱','Shqip')" id="btn-sq" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇦🇱 <span>Shqip</span> <span id="chk-sq" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+        </div>
       </div>
-    </div>
+    </header>
+    <main class="flex-1 p-8 max-w-4xl">
+      <div class="mb-8">
+        <h1 class="text-2xl font-bold text-gray-900">Beleg erfassen</h1>
+        <p class="text-gray-400 text-sm mt-0.5">Foto oder Datei hochladen – KI erkennt alle Details automatisch</p>
+      </div>
 
-    <!-- STATE 3: Review / Confirm -->
-    <div id="state-review" class="hidden">
-      <!-- Confidence banner: HIGH (green) -->
-      <div class="bg-green-50 border border-green-200 rounded-xl px-4 py-3 flex items-center gap-3 mb-5">
-        <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">94%</div>
-        <div>
-          <p class="text-sm font-semibold text-green-800">Hohe Erkennungsgenauigkeit</p>
-          <p class="text-xs text-green-600">Alle Felder wurden automatisch erkannt – bitte kurz prüfen</p>
+      <!-- STATE 1: Upload zone (default visible) -->
+      <div id="state-upload">
+        <div class="border-2 border-dashed border-gray-300 rounded-2xl p-12 text-center hover:border-blue-400 hover:bg-white transition-colors cursor-pointer bg-white"
+             onclick="showState('state-processing')">
+          <div class="text-5xl mb-4">📁</div>
+          <p class="text-lg font-semibold text-gray-700 mb-1">Beleg hier ablegen</p>
+          <p class="text-sm text-gray-400 mb-4">oder klicken zum Auswählen</p>
+          <p class="text-xs text-gray-300">JPG, PNG, PDF – max. 10 MB</p>
+          <div class="mt-6 flex gap-3 justify-center">
+            <span class="px-4 py-2 bg-emerald-700 text-white rounded-xl text-sm font-medium">📷 Foto hochladen</span>
+            <span class="px-4 py-2 border border-gray-300 text-gray-600 rounded-xl text-sm font-medium">📄 PDF hochladen</span>
+          </div>
+        </div>
+        <p class="text-center text-xs text-gray-400 mt-4">👆 Klicken um OCR-Verarbeitung zu simulieren</p>
+      </div>
+
+      <!-- STATE 2: Processing (hidden initially) -->
+      <div id="state-processing" class="hidden">
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center">
+          <div class="text-5xl mb-4 animate-bounce">🔍</div>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">Beleg wird analysiert...</h3>
+          <div class="max-w-sm mx-auto space-y-3 mt-6 text-left">
+            <div class="flex items-center gap-3">
+              <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-xs">✓</div>
+              <div class="flex-1">
+                <p class="text-sm font-medium text-gray-700">Bild hochgeladen</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-xs">✓</div>
+              <div class="flex-1">
+                <p class="text-sm font-medium text-gray-700">Google Vision OCR</p>
+                <p class="text-xs text-gray-400">Texterkennung abgeschlossen</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center text-white text-xs animate-pulse">⟳</div>
+              <div class="flex-1">
+                <p class="text-sm font-medium text-gray-700">Claude KI-Analyse</p>
+                <p class="text-xs text-gray-400">Extrahiert Betrag, MwSt, Händler...</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 text-xs">3</div>
+              <div class="flex-1">
+                <p class="text-sm font-medium text-gray-400">Ergebnis speichern</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="showState('state-review')" class="mt-8 px-6 py-2.5 bg-emerald-700 text-white rounded-xl text-sm font-medium hover:bg-emerald-800">
+            Ergebnis anzeigen (simulieren) →
+          </button>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-6">
-        <!-- Receipt preview -->
-        <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-          <p class="text-xs font-medium text-gray-400 mb-3">BELEG-VORSCHAU</p>
-          <div class="bg-gray-50 rounded-xl p-4 font-mono text-xs text-gray-600 space-y-1 border border-gray-200">
-            <p class="font-bold text-gray-800">COOP PRONTO</p>
-            <p>Bahnhofstrasse 12, 8001 Zürich</p>
-            <p class="text-gray-300">──────────────────</p>
-            <p>Kaffee Lungo         CHF  4.50</p>
-            <p>Sandwich Thon        CHF  8.90</p>
-            <p>Wasser 0.5l          CHF  2.40</p>
-            <p class="text-gray-300">──────────────────</p>
-            <p class="font-bold">TOTAL               CHF 15.80</p>
-            <p>MwSt 2.5% (Leb.)     CHF  0.39</p>
-            <p class="text-gray-300">──────────────────</p>
-            <p>18.03.2026  12:34</p>
-            <p>Karte: Maestro ****4521</p>
+      <!-- STATE 3: Review / Confirm -->
+      <div id="state-review" class="hidden">
+        <!-- Confidence banner: HIGH (green) -->
+        <div class="bg-green-50 border border-green-200 rounded-xl px-4 py-3 flex items-center gap-3 mb-5">
+          <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">94%</div>
+          <div>
+            <p class="text-sm font-semibold text-green-800">Hohe Erkennungsgenauigkeit</p>
+            <p class="text-xs text-green-600">Alle Felder wurden automatisch erkannt – bitte kurz prüfen</p>
           </div>
         </div>
 
-        <!-- Extracted data form -->
-        <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-          <p class="text-xs font-medium text-gray-400 mb-4">ERKANNTE DATEN – BITTE PRÜFEN</p>
-          <div class="space-y-3">
-            <div>
-              <label class="block text-xs text-gray-500 mb-1">Händler</label>
-              <input type="text" value="Coop Pronto" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-green-50 border-green-200">
+        <div class="grid grid-cols-2 gap-6">
+          <!-- Receipt preview -->
+          <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+            <p class="text-xs font-medium text-gray-400 mb-3">BELEG-VORSCHAU</p>
+            <div class="bg-gray-50 rounded-xl p-4 font-mono text-xs text-gray-600 space-y-1 border border-gray-200">
+              <p class="font-bold text-gray-800">COOP PRONTO</p>
+              <p>Bahnhofstrasse 12, 8001 Zürich</p>
+              <p class="text-gray-300">──────────────────</p>
+              <p>Kaffee Lungo         CHF  4.50</p>
+              <p>Sandwich Thon        CHF  8.90</p>
+              <p>Wasser 0.5l          CHF  2.40</p>
+              <p class="text-gray-300">──────────────────</p>
+              <p class="font-bold">TOTAL               CHF 15.80</p>
+              <p>MwSt 2.5% (Leb.)     CHF  0.39</p>
+              <p class="text-gray-300">──────────────────</p>
+              <p>18.03.2026  12:34</p>
+              <p>Karte: Maestro ****4521</p>
             </div>
-            <div class="grid grid-cols-2 gap-3">
+          </div>
+
+          <!-- Extracted data form -->
+          <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+            <p class="text-xs font-medium text-gray-400 mb-4">ERKANNTE DATEN – BITTE PRÜFEN</p>
+            <div class="space-y-3">
               <div>
-                <label class="block text-xs text-gray-500 mb-1">Datum</label>
-                <input type="text" value="18.03.2026" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-green-50 border-green-200">
+                <label class="block text-xs text-gray-500 mb-1">Händler</label>
+                <input type="text" value="Coop Pronto" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-green-50 border-green-200">
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1">Datum</label>
+                  <input type="text" value="18.03.2026" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-green-50 border-green-200">
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1">Betrag (CHF)</label>
+                  <input type="text" value="15.80" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-green-50 border-green-200">
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1">MwSt-Satz</label>
+                  <select class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-green-50 border-green-200">
+                    <option>2.5% – Lebensmittel</option>
+                    <option>8.1% – Normal</option>
+                    <option>3.8% – Beherbergung</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1">MwSt Betrag</label>
+                  <input type="text" value="0.39" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-green-50 border-green-200">
+                </div>
               </div>
               <div>
-                <label class="block text-xs text-gray-500 mb-1">Betrag (CHF)</label>
-                <input type="text" value="15.80" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-green-50 border-green-200">
-              </div>
-            </div>
-            <div class="grid grid-cols-2 gap-3">
-              <div>
-                <label class="block text-xs text-gray-500 mb-1">MwSt-Satz</label>
-                <select class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-green-50 border-green-200">
-                  <option>2.5% – Lebensmittel</option>
-                  <option>8.1% – Normal</option>
-                  <option>3.8% – Beherbergung</option>
+                <label class="block text-xs text-gray-500 mb-1">Kategorie</label>
+                <select class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm">
+                  <option>🍽️ Verpflegung</option>
+                  <option>🚗 Fahrzeug</option>
+                  <option>💻 Software</option>
+                  <option>📦 Material</option>
                 </select>
               </div>
               <div>
-                <label class="block text-xs text-gray-500 mb-1">MwSt Betrag</label>
-                <input type="text" value="0.39" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-green-50 border-green-200">
+                <label class="block text-xs text-gray-500 mb-1">Zahlungsmethode</label>
+                <select class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm">
+                  <option>💳 Karte</option>
+                  <option>💵 Bar</option>
+                  <option>📱 TWINT</option>
+                </select>
               </div>
             </div>
-            <div>
-              <label class="block text-xs text-gray-500 mb-1">Kategorie</label>
-              <select class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm">
-                <option>🍽️ Verpflegung</option>
-                <option>🚗 Fahrzeug</option>
-                <option>💻 Software</option>
-                <option>📦 Material</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs text-gray-500 mb-1">Zahlungsmethode</label>
-              <select class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm">
-                <option>💳 Karte</option>
-                <option>💵 Bar</option>
-                <option>📱 TWINT</option>
-              </select>
+
+            <div class="flex gap-3 mt-5">
+              <button onclick="showState('state-upload')" class="flex-1 border border-gray-300 text-gray-600 rounded-xl py-2.5 text-sm hover:bg-gray-50">
+                Abbrechen
+              </button>
+              <button onclick="showState('state-saved')" class="flex-2 flex-grow-[2] bg-emerald-700 text-white font-semibold rounded-xl py-2.5 text-sm hover:bg-emerald-800">
+                ✓ Speichern
+              </button>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="flex gap-3 mt-5">
-            <button onclick="showState('state-upload')" class="flex-1 border border-gray-300 text-gray-600 rounded-xl py-2.5 text-sm hover:bg-gray-50">
-              Abbrechen
+      <!-- STATE 4: Saved confirmation -->
+      <div id="state-saved" class="hidden">
+        <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100 text-center">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">✅</div>
+          <h3 class="text-xl font-bold text-gray-800 mb-1">Beleg gespeichert!</h3>
+          <p class="text-gray-400 text-sm mb-6">Coop Pronto – CHF 15.80 wurde erfolgreich erfasst.</p>
+          <div class="flex gap-3 justify-center">
+            <button onclick="showState('state-upload')" class="px-5 py-2.5 bg-emerald-700 text-white font-semibold rounded-xl text-sm hover:bg-emerald-800">
+              + Weiteren Beleg erfassen
             </button>
-            <button onclick="showState('state-saved')" class="flex-2 flex-grow-[2] bg-emerald-700 text-white font-semibold rounded-xl py-2.5 text-sm hover:bg-emerald-800">
-              ✓ Speichern
-            </button>
+            <a href="05-expenses.html" class="px-5 py-2.5 border border-gray-300 text-gray-600 rounded-xl text-sm hover:bg-gray-50">
+              Alle Belege anzeigen
+            </a>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- STATE 4: Saved confirmation -->
-    <div id="state-saved" class="hidden">
-      <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100 text-center">
-        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">✅</div>
-        <h3 class="text-xl font-bold text-gray-800 mb-1">Beleg gespeichert!</h3>
-        <p class="text-gray-400 text-sm mb-6">Coop Pronto – CHF 15.80 wurde erfolgreich erfasst.</p>
-        <div class="flex gap-3 justify-center">
-          <button onclick="showState('state-upload')" class="px-5 py-2.5 bg-emerald-700 text-white font-semibold rounded-xl text-sm hover:bg-emerald-800">
-            + Weiteren Beleg erfassen
-          </button>
-          <a href="05-expenses.html" class="px-5 py-2.5 border border-gray-300 text-gray-600 rounded-xl text-sm hover:bg-gray-50">
-            Alle Belege anzeigen
-          </a>
+      <!-- LOW CONFIDENCE example -->
+      <div class="mt-8 bg-orange-50 border border-orange-200 rounded-2xl p-5">
+        <p class="text-sm font-bold text-orange-800 mb-2">⚠ Beispiel: Niedrige Erkennungsgenauigkeit (62%)</p>
+        <p class="text-xs text-orange-600">Bei schlecht lesbaren Belegen zeigt Spezo welche Felder unsicher sind:</p>
+        <div class="mt-3 grid grid-cols-3 gap-3">
+          <div>
+            <label class="block text-xs text-gray-500 mb-1">Händler <span class="text-orange-500">● unsicher</span></label>
+            <input type="text" value="???" class="w-full border-2 border-orange-300 rounded-lg px-3 py-2 text-sm bg-orange-50">
+          </div>
+          <div>
+            <label class="block text-xs text-gray-500 mb-1">Betrag ✓</label>
+            <input type="text" value="89.40" class="w-full border border-green-300 rounded-lg px-3 py-2 text-sm bg-green-50">
+          </div>
+          <div>
+            <label class="block text-xs text-gray-500 mb-1">Datum <span class="text-orange-500">● unsicher</span></label>
+            <input type="text" value="??/03/26" class="w-full border-2 border-orange-300 rounded-lg px-3 py-2 text-sm bg-orange-50">
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- LOW CONFIDENCE example -->
-    <div class="mt-8 bg-orange-50 border border-orange-200 rounded-2xl p-5">
-      <p class="text-sm font-bold text-orange-800 mb-2">⚠ Beispiel: Niedrige Erkennungsgenauigkeit (62%)</p>
-      <p class="text-xs text-orange-600">Bei schlecht lesbaren Belegen zeigt Spezo welche Felder unsicher sind:</p>
-      <div class="mt-3 grid grid-cols-3 gap-3">
-        <div>
-          <label class="block text-xs text-gray-500 mb-1">Händler <span class="text-orange-500">● unsicher</span></label>
-          <input type="text" value="???" class="w-full border-2 border-orange-300 rounded-lg px-3 py-2 text-sm bg-orange-50">
-        </div>
-        <div>
-          <label class="block text-xs text-gray-500 mb-1">Betrag ✓</label>
-          <input type="text" value="89.40" class="w-full border border-green-300 rounded-lg px-3 py-2 text-sm bg-green-50">
-        </div>
-        <div>
-          <label class="block text-xs text-gray-500 mb-1">Datum <span class="text-orange-500">● unsicher</span></label>
-          <input type="text" value="??/03/26" class="w-full border-2 border-orange-300 rounded-lg px-3 py-2 text-sm bg-orange-50">
-        </div>
-      </div>
-    </div>
-  </main>
+    </main>
   </div>
 
   <script>
-    // On page load: restore saved language
-    window.addEventListener('DOMContentLoaded', function() {
-      const saved = localStorage.getItem('spezo_lang');
-      if (saved) {
-        const sel = document.getElementById('langSelect');
-        if (sel) { sel.value = saved; changeLang(saved); }
-        // For dashboard-style pages that use applyLang:
-        const langMap = {de:['🇨🇭','Deutsch'], fr:['🇫🇷','Français'], it:['🇮🇹','Italiano'], rm:['🇨🇭','Rumantsch'], en:['🇬🇧','English'], tr:['🇹🇷','Türkçe'], sq:['🇦🇱','Shqip']};
-        if (typeof applyLang === 'function' && langMap[saved]) applyLang(saved, langMap[saved][0], langMap[saved][1]);
-        if (langMap[saved]) { document.getElementById('lang-flag').textContent=langMap[saved][0]; document.getElementById('lang-name').textContent=langMap[saved][1]; }
-      }
+  let currentLang = 'de';
+
+  function toggleLang(e) {
+    if (e) e.stopPropagation();
+    var m = document.getElementById('lang-menu');
+    m.style.display = m.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function applyLang(code, flag, name) {
+    localStorage.setItem('spezo_lang', code);
+    currentLang = code;
+    document.getElementById('lang-flag').textContent = flag;
+    document.getElementById('lang-name').textContent = name;
+    document.getElementById('lang-menu').style.display = 'none';
+    ['de','fr','it','rm','en','tr','sq'].forEach(function(l) {
+      var chk = document.getElementById('chk-' + l);
+      if (chk) chk.style.display = (l === code) ? 'inline' : 'none';
     });
-    function toggleLang(){document.getElementById('lang-menu').classList.toggle('hidden');}
-    function setLang(flag,name){localStorage.setItem('spezo_lang', flag+name);document.getElementById('lang-flag').textContent=flag;document.getElementById('lang-name').textContent=name;document.getElementById('lang-menu').classList.add('hidden');}
-    function changeLang(lang){localStorage.setItem('spezo_lang', lang);const langMap={de:['🇨🇭','Deutsch'],fr:['🇫🇷','Français'],it:['🇮🇹','Italiano'],rm:['🇨🇭','Rumantsch'],en:['🇬🇧','English'],tr:['🇹🇷','Türkçe'],sq:['🇦🇱','Shqip']};if(langMap[lang]){document.getElementById('lang-flag').textContent=langMap[lang][0];document.getElementById('lang-name').textContent=langMap[lang][1];}}
-    document.addEventListener('click',function(e){if(!document.getElementById('lang-dropdown').contains(e.target)){document.getElementById('lang-menu').classList.add('hidden');}});
-    function showState(id) {
-      ['state-upload','state-processing','state-review','state-saved'].forEach(s => {
-        document.getElementById(s).classList.add('hidden');
-      });
-      document.getElementById(id).classList.remove('hidden');
+    document.documentElement.lang = code;
+  }
+
+  document.addEventListener('click', function(e) {
+    var dd = document.getElementById('lang-dropdown');
+    if (dd && !dd.contains(e.target)) {
+      var m = document.getElementById('lang-menu');
+      if (m) m.style.display = 'none';
     }
+  });
+
+  window.addEventListener('DOMContentLoaded', function() {
+    var saved = localStorage.getItem('spezo_lang');
+    if (saved) {
+      var langMap = {de:['🇨🇭','Deutsch'], fr:['🇫🇷','Français'], it:['🇮🇹','Italiano'], rm:['🇨🇭','Rumantsch'], en:['🇬🇧','English'], tr:['🇹🇷','Türkçe'], sq:['🇦🇱','Shqip']};
+      if (langMap[saved]) applyLang(saved, langMap[saved][0], langMap[saved][1]);
+    }
+  });
+
+  function showState(id) {
+    ['state-upload','state-processing','state-review','state-saved'].forEach(function(s) {
+      document.getElementById(s).classList.add('hidden');
+    });
+    document.getElementById(id).classList.remove('hidden');
+  }
   </script>
 </body>
 </html>

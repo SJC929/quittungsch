@@ -7,31 +7,31 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap');*{font-family:'DM Sans',sans-serif;}</style>
 </head>
-<body style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #d1fae5 100%);" class="min-h-screen flex items-center justify-center">
+<body style="background: #f9fafb;" class="min-h-screen flex items-center justify-center">
 
   <!-- Top bar with language switcher -->
-  <div style="position:fixed;top:0;left:0;right:0;height:52px;background:white;border-bottom:1px solid #D1FAE5;display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:50;">
+  <div style="position:fixed;top:0;left:0;right:0;height:52px;background:white;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:50;">
     <div style="display:flex;align-items:center;gap:10px;">
-      <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100" height="100" rx="22" fill="#34D399"/>
-        <rect x="18" y="14" width="52" height="64" rx="4" fill="white"/>
-        <path d="M18 74 L23 68 L28 74 L33 68 L38 74 L43 68 L48 74 L53 68 L58 74 L63 68 L68 74 L70 74 L70 78 L18 78 Z" fill="white"/>
-        <rect x="26" y="23" width="22" height="5" rx="2.5" fill="#059669"/>
-        <rect x="26" y="33" width="32" height="3" rx="1.5" fill="#D1FAE5"/>
-        <rect x="26" y="40" width="28" height="3" rx="1.5" fill="#D1FAE5"/>
-        <rect x="26" y="47" width="30" height="3" rx="1.5" fill="#D1FAE5"/>
-        <rect x="26" y="54" width="24" height="3" rx="1.5" fill="#D1FAE5"/>
-        <rect x="26" y="61" width="20" height="4" rx="2" fill="#059669"/>
-        <circle cx="72" cy="74" r="18" fill="#047857"/>
-        <circle cx="72" cy="74" r="13" fill="white"/>
-        <circle cx="72" cy="74" r="8" fill="none" stroke="#047857" stroke-width="3"/>
-        <line x1="78" y1="80" x2="86" y2="88" stroke="#047857" stroke-width="4" stroke-linecap="round"/>
-        <rect x="67" y="72" width="10" height="2" rx="1" fill="#047857"/>
-        <rect x="67" y="76" width="7" height="2" rx="1" fill="#047857"/>
+      <svg width="44" height="44" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="24" fill="#10b981"/>
+        <rect x="20" y="14" width="50" height="62" rx="5" fill="white"/>
+        <path d="M20 72 L25 66 L30 72 L35 66 L40 72 L45 66 L50 72 L55 66 L60 72 L65 66 L70 72 L70 76 L20 76 Z" fill="white"/>
+        <rect x="28" y="22" width="20" height="5" rx="2.5" fill="#065f46"/>
+        <rect x="28" y="32" width="30" height="3" rx="1.5" fill="#a7f3d0"/>
+        <rect x="28" y="39" width="26" height="3" rx="1.5" fill="#a7f3d0"/>
+        <rect x="28" y="46" width="28" height="3" rx="1.5" fill="#a7f3d0"/>
+        <rect x="28" y="53" width="22" height="3" rx="1.5" fill="#a7f3d0"/>
+        <rect x="28" y="60" width="18" height="4" rx="2" fill="#065f46"/>
+        <circle cx="73" cy="73" r="17" fill="#065f46"/>
+        <circle cx="73" cy="73" r="12" fill="white"/>
+        <circle cx="73" cy="73" r="7" fill="none" stroke="#065f46" stroke-width="2.5"/>
+        <line x1="78" y1="79" x2="86" y2="87" stroke="#065f46" stroke-width="4" stroke-linecap="round"/>
+        <rect x="69" y="72" width="8" height="2" rx="1" fill="#065f46"/>
+        <rect x="69" y="75.5" width="5.5" height="2" rx="1" fill="#065f46"/>
       </svg>
-      <span style="font-size:17px;font-weight:700;color:#059669;">Spezo</span>
+      <span style="font-size:18px;font-weight:700;color:#065f46;letter-spacing:-0.3px;">Spezo</span>
     </div>
-    <select id="langSelect" onchange="changeLang(this.value)" style="padding:6px 12px;border:1px solid #D1FAE5;border-radius:10px;font-family:inherit;font-size:13px;color:#374151;background:white;cursor:pointer;">
+    <select id="langSelect" onchange="changeLang(this.value)" style="padding:6px 12px;border:1px solid #e5e7eb;border-radius:10px;font-family:inherit;font-size:13px;color:#374151;background:white;cursor:pointer;">
       <option value="de">🇨🇭 Deutsch</option>
       <option value="fr">🇫🇷 Français</option>
       <option value="it">🇮🇹 Italiano</option>
@@ -50,22 +50,22 @@
     <!-- Logo -->
     <div class="text-center mb-8">
       <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:8px;">
-        <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="100" height="100" rx="22" fill="#34D399"/>
-          <rect x="18" y="14" width="52" height="64" rx="4" fill="white"/>
-          <path d="M18 74 L23 68 L28 74 L33 68 L38 74 L43 68 L48 74 L53 68 L58 74 L63 68 L68 74 L70 74 L70 78 L18 78 Z" fill="white"/>
-          <rect x="26" y="23" width="22" height="5" rx="2.5" fill="#059669"/>
-          <rect x="26" y="33" width="32" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="40" width="28" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="47" width="30" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="54" width="24" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="61" width="20" height="4" rx="2" fill="#059669"/>
-          <circle cx="72" cy="74" r="18" fill="#047857"/>
-          <circle cx="72" cy="74" r="13" fill="white"/>
-          <circle cx="72" cy="74" r="8" fill="none" stroke="#047857" stroke-width="3"/>
-          <line x1="78" y1="80" x2="86" y2="88" stroke="#047857" stroke-width="4" stroke-linecap="round"/>
-          <rect x="67" y="72" width="10" height="2" rx="1" fill="#047857"/>
-          <rect x="67" y="76" width="7" height="2" rx="1" fill="#047857"/>
+        <svg width="44" height="44" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="24" fill="#10b981"/>
+          <rect x="20" y="14" width="50" height="62" rx="5" fill="white"/>
+          <path d="M20 72 L25 66 L30 72 L35 66 L40 72 L45 66 L50 72 L55 66 L60 72 L65 66 L70 72 L70 76 L20 76 Z" fill="white"/>
+          <rect x="28" y="22" width="20" height="5" rx="2.5" fill="#065f46"/>
+          <rect x="28" y="32" width="30" height="3" rx="1.5" fill="#a7f3d0"/>
+          <rect x="28" y="39" width="26" height="3" rx="1.5" fill="#a7f3d0"/>
+          <rect x="28" y="46" width="28" height="3" rx="1.5" fill="#a7f3d0"/>
+          <rect x="28" y="53" width="22" height="3" rx="1.5" fill="#a7f3d0"/>
+          <rect x="28" y="60" width="18" height="4" rx="2" fill="#065f46"/>
+          <circle cx="73" cy="73" r="17" fill="#065f46"/>
+          <circle cx="73" cy="73" r="12" fill="white"/>
+          <circle cx="73" cy="73" r="7" fill="none" stroke="#065f46" stroke-width="2.5"/>
+          <line x1="78" y1="79" x2="86" y2="87" stroke="#065f46" stroke-width="4" stroke-linecap="round"/>
+          <rect x="69" y="72" width="8" height="2" rx="1" fill="#065f46"/>
+          <rect x="69" y="75.5" width="5.5" height="2" rx="1" fill="#065f46"/>
         </svg>
         <span style="font-size:28px;font-weight:800;color:#059669;">Spezo</span>
       </div>
@@ -73,7 +73,7 @@
     </div>
 
     <!-- Login Card -->
-    <div class="bg-white rounded-2xl shadow-lg p-8 border border-emerald-100">
+    <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
       <h2 class="text-xl font-bold text-gray-900 mb-6" id="txt-login-title">Anmelden</h2>
 
       <div class="space-y-4">
@@ -113,7 +113,7 @@
     </div>
 
     <!-- Register Card -->
-    <div class="bg-white rounded-2xl shadow-lg p-8 mt-6 border border-emerald-100">
+    <div class="bg-white rounded-2xl shadow-lg p-8 mt-6 border border-gray-100">
       <h2 class="text-xl font-bold text-gray-900 mb-1" id="txt-reg-title">Konto erstellen</h2>
       <p class="text-xs text-gray-400 mb-5" id="txt-reg-sub">14 Tage kostenlos – kein Zahlungsmittel nötig</p>
 
@@ -286,21 +286,17 @@
     },
   };
 
-  // On page load: restore saved language
   window.addEventListener('DOMContentLoaded', function() {
-    const saved = localStorage.getItem('spezo_lang');
+    var saved = localStorage.getItem('spezo_lang');
     if (saved) {
-      const sel = document.getElementById('langSelect');
+      var sel = document.getElementById('langSelect');
       if (sel) { sel.value = saved; changeLang(saved); }
-      // For dashboard-style pages that use applyLang:
-      const langMap = {de:['🇨🇭','Deutsch'], fr:['🇫🇷','Français'], it:['🇮🇹','Italiano'], rm:['🇨🇭','Rumantsch'], en:['🇬🇧','English'], tr:['🇹🇷','Türkçe'], sq:['🇦🇱','Shqip']};
-      if (typeof applyLang === 'function' && langMap[saved]) applyLang(saved, langMap[saved][0], langMap[saved][1]);
     }
   });
 
   function changeLang(lang) {
     localStorage.setItem('spezo_lang', lang);
-    const t = TRANSLATIONS[lang];
+    var t = TRANSLATIONS[lang];
     if (!t) return;
     document.getElementById('txt-back').textContent = t.back;
     document.getElementById('txt-tagline').textContent = t.tagline;

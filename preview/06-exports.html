@@ -7,265 +7,318 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap');*{font-family:'DM Sans',sans-serif;}</style>
 </head>
-<body class="min-h-screen flex" style="background: #eafaf3;">
+<body class="min-h-screen flex" style="background: #f9fafb;">
 
   <!-- Sidebar -->
-  <aside class="w-60 border-r border-emerald-300 flex flex-col min-h-screen fixed left-0 top-0" style="background: linear-gradient(180deg, #6ee7b7 0%, #a7f3d0 40%, #d1fae5 100%);">
-    <div class="p-4 border-b border-gray-100">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;">
-        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="100" height="100" rx="22" fill="#34D399"/>
-          <rect x="18" y="14" width="52" height="64" rx="4" fill="white"/>
-          <path d="M18 74 L23 68 L28 74 L33 68 L38 74 L43 68 L48 74 L53 68 L58 74 L63 68 L68 74 L70 74 L70 78 L18 78 Z" fill="white"/>
-          <rect x="26" y="23" width="22" height="5" rx="2.5" fill="#059669"/>
-          <rect x="26" y="33" width="32" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="40" width="28" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="47" width="30" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="54" width="24" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="61" width="20" height="4" rx="2" fill="#059669"/>
-          <circle cx="72" cy="74" r="18" fill="#047857"/>
-          <circle cx="72" cy="74" r="13" fill="white"/>
-          <circle cx="72" cy="74" r="8" fill="none" stroke="#047857" stroke-width="3"/>
-          <line x1="78" y1="80" x2="86" y2="88" stroke="#047857" stroke-width="4" stroke-linecap="round"/>
-          <rect x="67" y="72" width="10" height="2" rx="1" fill="#047857"/>
-          <rect x="67" y="76" width="7" height="2" rx="1" fill="#047857"/>
+  <aside style="width:240px;background:linear-gradient(180deg,#0a1f14 0%,#0d2318 100%);display:flex;flex-direction:column;min-height:100vh;position:fixed;left:0;top:0;z-index:30;">
+    <!-- Logo section -->
+    <div style="padding:20px 20px 16px;border-bottom:1px solid rgba(255,255,255,0.1);">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;">
+        <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="24" fill="rgba(255,255,255,0.12)"/>
+          <rect x="20" y="14" width="50" height="62" rx="5" fill="rgba(255,255,255,0.95)"/>
+          <path d="M20 72 L25 66 L30 72 L35 66 L40 72 L45 66 L50 72 L55 66 L60 72 L65 66 L70 72 L70 76 L20 76 Z" fill="rgba(255,255,255,0.95)"/>
+          <rect x="28" y="22" width="20" height="5" rx="2.5" fill="white"/>
+          <rect x="28" y="32" width="30" height="3" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+          <rect x="28" y="39" width="26" height="3" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+          <rect x="28" y="46" width="28" height="3" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+          <rect x="28" y="53" width="22" height="3" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+          <rect x="28" y="60" width="18" height="4" rx="2" fill="white"/>
+          <circle cx="73" cy="73" r="17" fill="white"/>
+          <circle cx="73" cy="73" r="12" fill="rgba(255,255,255,0.15)"/>
+          <circle cx="73" cy="73" r="7" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5"/>
+          <line x1="78" y1="79" x2="86" y2="87" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round"/>
+          <rect x="69" y="72" width="8" height="2" rx="1" fill="rgba(255,255,255,0.9)"/>
+          <rect x="69" y="75.5" width="5.5" height="2" rx="1" fill="rgba(255,255,255,0.9)"/>
         </svg>
-        <span style="font-size:16px;font-weight:700;color:#059669;">Spezo</span>
+        <span style="font-size:20px;font-weight:700;color:white;letter-spacing:-0.3px;">Spezo</span>
       </div>
-      <p class="text-xs text-gray-400 mt-0.5">Buchhaltung leicht gemacht</p>
+      <p style="font-size:10px;color:rgba(52,211,153,0.8);letter-spacing:0.08em;text-transform:uppercase;font-weight:600;margin-left:54px;">SCHWEIZER BUCHHALTUNG</p>
     </div>
-    <nav class="flex-1 p-4 space-y-1">
-      <a href="03-dashboard.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm"><span>📊</span> Dashboard</a>
-      <a href="04-upload.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm"><span>📷</span> Beleg erfassen</a>
-      <a href="05-expenses.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm"><span>🧾</span> Belege</a>
-      <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white text-emerald-700 font-medium text-sm"><span>📤</span> Export</a>
+
+    <!-- Quick add button -->
+    <div style="padding:12px 16px;">
+      <a href="04-upload.html" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#10b981;color:white;border-radius:12px;padding:10px 16px;text-decoration:none;font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(16,185,129,0.3);">+ Beleg erfassen</a>
+    </div>
+
+    <!-- Nav -->
+    <nav style="flex:1;padding:4px 12px;overflow-y:auto;">
+      <a href="03-dashboard.html" style="color:rgba(255,255,255,0.45);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;margin-bottom:2px;">
+        <span>📊</span> Dashboard
+      </a>
+      <a href="04-upload.html" style="color:rgba(255,255,255,0.45);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;margin-bottom:2px;">
+        <span>📷</span> Beleg erfassen
+      </a>
+      <a href="05-expenses.html" style="color:rgba(255,255,255,0.45);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;margin-bottom:2px;">
+        <span>🧾</span> Belege
+      </a>
+      <a href="#" style="background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.25);color:#6ee7b7;font-weight:600;border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;margin-bottom:2px;">
+        <span>📤</span> Export
+      </a>
     </nav>
+
+    <!-- Bottom -->
+    <div style="padding:12px 16px;border-top:1px solid rgba(255,255,255,0.1);">
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:8px 12px;margin-bottom:8px;">
+        <p style="font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:1px;">Plan</p>
+        <p style="font-size:13px;font-weight:600;color:#34d399;">Free Trial</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;">
+        <div style="width:30px;height:30px;background:rgba(52,211,153,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#34d399;">M</div>
+        <div>
+          <p style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.8);margin:0;">Max Muster</p>
+          <p style="font-size:10px;color:rgba(255,255,255,0.3);margin:0;">max@muster.ch</p>
+        </div>
+      </div>
+    </div>
   </aside>
 
   <!-- Main content -->
-  <div class="ml-60 flex-1 flex flex-col min-h-screen">
-  <!-- Topbar -->
-  <header class="border-b border-emerald-200 h-14 flex items-center justify-end px-6 sticky top-0 z-40" style="background: rgba(209,250,229,0.85); backdrop-filter: blur(8px);">
-    <div class="relative" id="lang-dropdown">
-      <button onclick="toggleLang()" class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm font-medium text-gray-700">
-        <span>🌐</span><span id="lang-flag">🇩🇪</span><span id="lang-name" class="ml-1">Deutsch</span><span class="text-gray-400 text-xs ml-1">▾</span>
-      </button>
-      <div id="lang-menu" class="hidden absolute right-0 top-full mt-1 w-44 bg-white border border-gray-200 rounded-xl shadow-lg py-1 z-50">
-        <button onclick="setLang('🇩🇪','Deutsch')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-emerald-700 font-medium">🇨🇭 Deutsch <span class="ml-auto">✓</span></button>
-        <button onclick="setLang('🇫🇷','Français')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700">🇫🇷 Français</button>
-        <button onclick="setLang('🇮🇹','Italiano')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700">🇮🇹 Italiano</button>
-        <button onclick="setLang('🏔️','Rumantsch')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700">🇨🇭 Rumantsch</button>
-        <button onclick="setLang('🇬🇧','English')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700">🇬🇧 English</button>
-        <button onclick="setLang('🇹🇷','Türkçe')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700">🇹🇷 Türkçe</button>
-        <button onclick="setLang('🇦🇱','Shqip')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700">🇦🇱 Shqip</button>
-      </div>
-    </div>
-  </header>
-  <main class="flex-1 p-8 max-w-4xl">
-    <div class="mb-8">
-      <h1 class="text-2xl font-bold text-gray-900">Export</h1>
-      <p class="text-gray-400 text-sm mt-0.5">Belege für Ihren Treuhänder oder Ihre Buchhaltungssoftware exportieren</p>
-    </div>
-
-    <div class="grid grid-cols-3 gap-6">
-      <!-- Left: Config panel -->
-      <div class="col-span-2 space-y-5">
-
-        <!-- Format selector -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-          <h3 class="font-bold text-gray-800 mb-4">1. Export-Format wählen</h3>
-          <div class="grid grid-cols-2 gap-3" id="format-selector">
-            <div class="format-card border-2 border-emerald-700 bg-white rounded-xl p-4 cursor-pointer" onclick="selectFormat(this)">
-              <p class="font-bold text-sm text-emerald-700">📊 Excel (.xlsx)</p>
-              <p class="text-xs text-gray-500 mt-1">Ideal für Treuhänder, eine Seite pro Monat</p>
-              <span class="mt-2 inline-block text-xs bg-emerald-700 text-white px-2 py-0.5 rounded-full">Empfohlen</span>
-            </div>
-            <div class="format-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer hover:border-gray-300" onclick="selectFormat(this)">
-              <p class="font-bold text-sm">📋 CSV</p>
-              <p class="text-xs text-gray-500 mt-1">Universell – für jede Buchhaltungssoftware</p>
-            </div>
-            <div class="format-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer hover:border-gray-300" onclick="selectFormat(this)">
-              <p class="font-bold text-sm">📄 PDF-Bericht</p>
-              <p class="text-xs text-gray-500 mt-1">Detaillierter Bericht für den Treuhänder</p>
-            </div>
-            <div class="format-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer hover:border-gray-300 relative" onclick="selectFormat(this)">
-              <p class="font-bold text-sm text-gray-400">🌐 Google Sheets</p>
-              <p class="text-xs text-gray-400 mt-1">Direkte Synchronisation</p>
-              <span class="mt-2 inline-block text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full">Pro</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Date range -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-          <h3 class="font-bold text-gray-800 mb-4">2. Zeitraum</h3>
-          <div class="flex gap-4">
-            <div class="flex-1">
-              <label class="block text-xs text-gray-500 mb-1.5">Von</label>
-              <input type="date" value="2026-03-01" class="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm">
-            </div>
-            <div class="flex-1">
-              <label class="block text-xs text-gray-500 mb-1.5">Bis</label>
-              <input type="date" value="2026-03-31" class="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm">
-            </div>
-          </div>
-          <div class="flex gap-2 mt-3">
-            <button class="text-xs px-3 py-1.5 bg-white text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">Januar</button>
-            <button class="text-xs px-3 py-1.5 bg-white text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">Februar</button>
-            <button class="text-xs px-3 py-1.5 bg-emerald-700 text-white rounded-lg font-medium">März</button>
-            <button class="text-xs px-3 py-1.5 bg-white text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">Q1 2026</button>
-            <button class="text-xs px-3 py-1.5 bg-white text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">2025</button>
-          </div>
-        </div>
-
-        <!-- Options -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-          <h3 class="font-bold text-gray-800 mb-4">3. Optionen</h3>
-          <div class="space-y-3">
-            <label class="flex items-center gap-3 cursor-pointer">
-              <div class="w-10 h-6 bg-emerald-700 rounded-full flex items-center justify-end pr-1">
-                <div class="w-4 h-4 bg-white rounded-full"></div>
-              </div>
-              <div>
-                <p class="text-sm font-medium text-gray-700">Kilometer-Protokoll einschliessen</p>
-                <p class="text-xs text-gray-400">347 km × CHF 0.70 = CHF 242.90</p>
-              </div>
-            </label>
-            <label class="flex items-center gap-3 cursor-pointer">
-              <div class="w-10 h-6 bg-gray-200 rounded-full flex items-center pl-1">
-                <div class="w-4 h-4 bg-white rounded-full"></div>
-              </div>
-              <div>
-                <p class="text-sm font-medium text-gray-700">Nur geprüfte Belege</p>
-                <p class="text-xs text-gray-400">2 ungeprüfte Belege ausschliessen</p>
-              </div>
-            </label>
-            <label class="flex items-center gap-3 cursor-pointer">
-              <div class="w-10 h-6 bg-emerald-700 rounded-full flex items-center justify-end pr-1">
-                <div class="w-4 h-4 bg-white rounded-full"></div>
-              </div>
-              <div>
-                <p class="text-sm font-medium text-gray-700">MwSt-Aufschlüsselung</p>
-                <p class="text-xs text-gray-400">Separate Spalten für 8.1%, 3.8%, 2.5%</p>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <!-- Export button -->
-        <button onclick="showExportDone()" class="w-full bg-emerald-700 text-white font-bold rounded-2xl py-4 text-base hover:bg-emerald-800 flex items-center justify-center gap-2">
-          📥 Export herunterladen
+  <div class="flex-1 flex flex-col min-h-screen" style="margin-left:240px;">
+    <!-- Topbar -->
+    <header style="height:56px;background:white;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;justify-content:flex-end;padding:0 24px;position:sticky;top:0;z-index:40;box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+      <div style="position:relative;" id="lang-dropdown">
+        <button onclick="toggleLang(event)" style="display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;border:1px solid #e5e7eb;background:white;cursor:pointer;font-size:13px;font-weight:500;color:#374151;font-family:inherit;">
+          🌐 <span id="lang-flag">🇨🇭</span> <span id="lang-name">Deutsch</span> ▾
         </button>
-        <div id="export-done" class="hidden bg-green-50 border border-green-200 rounded-2xl p-4 text-center">
-          <p class="text-green-800 font-semibold">✅ Spezo_2026-03-01_2026-03-31.xlsx</p>
-          <p class="text-xs text-green-600 mt-1">Download startet automatisch...</p>
+        <div id="lang-menu" style="display:none;position:absolute;right:0;top:calc(100% + 6px);width:180px;background:white;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.12);padding:6px;z-index:9999;">
+          <button onclick="applyLang('de','🇨🇭','Deutsch')" id="btn-de" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇨🇭 <span>Deutsch</span> <span id="chk-de" style="margin-left:auto;color:#059669;">✓</span></button>
+          <button onclick="applyLang('fr','🇫🇷','Français')" id="btn-fr" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇫🇷 <span>Français</span> <span id="chk-fr" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('it','🇮🇹','Italiano')" id="btn-it" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇮🇹 <span>Italiano</span> <span id="chk-it" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('rm','🇨🇭','Rumantsch')" id="btn-rm" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇨🇭 <span>Rumantsch</span> <span id="chk-rm" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('en','🇬🇧','English')" id="btn-en" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇬🇧 <span>English</span> <span id="chk-en" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('tr','🇹🇷','Türkçe')" id="btn-tr" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇹🇷 <span>Türkçe</span> <span id="chk-tr" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('sq','🇦🇱','Shqip')" id="btn-sq" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇦🇱 <span>Shqip</span> <span id="chk-sq" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
         </div>
       </div>
+    </header>
+    <main class="flex-1 p-8 max-w-4xl">
+      <div class="mb-8">
+        <h1 class="text-2xl font-bold text-gray-900">Export</h1>
+        <p class="text-gray-400 text-sm mt-0.5">Belege für Ihren Treuhänder oder Ihre Buchhaltungssoftware exportieren</p>
+      </div>
 
-      <!-- Right: Summary -->
-      <div class="col-span-1 space-y-4">
-        <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-          <h3 class="font-bold text-gray-800 mb-4">Vorschau</h3>
-          <div class="space-y-2 text-sm">
-            <div class="flex justify-between">
-              <span class="text-gray-500">Zeitraum</span>
-              <span class="font-medium text-gray-800">März 2026</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-gray-500">Belege</span>
-              <span class="font-medium text-gray-800">24</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-gray-500">Total</span>
-              <span class="font-bold text-gray-900">CHF 3'847.50</span>
-            </div>
-            <div class="border-t border-gray-100 pt-2 mt-2">
-              <div class="flex justify-between">
-                <span class="text-gray-500">MwSt 8.1%</span>
-                <span class="text-gray-700">CHF 287.42</span>
+      <div class="grid grid-cols-3 gap-6">
+        <!-- Left: Config panel -->
+        <div class="col-span-2 space-y-5">
+
+          <!-- Format selector -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <h3 class="font-bold text-gray-800 mb-4">1. Export-Format wählen</h3>
+            <div class="grid grid-cols-2 gap-3" id="format-selector">
+              <div class="format-card border-2 border-emerald-700 bg-white rounded-xl p-4 cursor-pointer" onclick="selectFormat(this)">
+                <p class="font-bold text-sm text-emerald-700">📊 Excel (.xlsx)</p>
+                <p class="text-xs text-gray-500 mt-1">Ideal für Treuhänder, eine Seite pro Monat</p>
+                <span class="mt-2 inline-block text-xs bg-emerald-700 text-white px-2 py-0.5 rounded-full">Empfohlen</span>
               </div>
-              <div class="flex justify-between">
-                <span class="text-gray-500">MwSt 2.5%</span>
-                <span class="text-gray-700">CHF 18.60</span>
+              <div class="format-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer hover:border-gray-300" onclick="selectFormat(this)">
+                <p class="font-bold text-sm">📋 CSV</p>
+                <p class="text-xs text-gray-500 mt-1">Universell – für jede Buchhaltungssoftware</p>
               </div>
-              <div class="flex justify-between">
-                <span class="text-gray-500">MwSt 3.8%</span>
-                <span class="text-gray-700">CHF 5.62</span>
+              <div class="format-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer hover:border-gray-300" onclick="selectFormat(this)">
+                <p class="font-bold text-sm">📄 PDF-Bericht</p>
+                <p class="text-xs text-gray-500 mt-1">Detaillierter Bericht für den Treuhänder</p>
+              </div>
+              <div class="format-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer hover:border-gray-300 relative" onclick="selectFormat(this)">
+                <p class="font-bold text-sm text-gray-400">🌐 Google Sheets</p>
+                <p class="text-xs text-gray-400 mt-1">Direkte Synchronisation</p>
+                <span class="mt-2 inline-block text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full">Pro</span>
               </div>
             </div>
-            <div class="border-t border-gray-100 pt-2 mt-2">
-              <div class="flex justify-between">
-                <span class="text-gray-500">Kilometer</span>
-                <span class="text-gray-700">CHF 242.90</span>
+          </div>
+
+          <!-- Date range -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <h3 class="font-bold text-gray-800 mb-4">2. Zeitraum</h3>
+            <div class="flex gap-4">
+              <div class="flex-1">
+                <label class="block text-xs text-gray-500 mb-1.5">Von</label>
+                <input type="date" value="2026-03-01" class="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm">
               </div>
-              <div class="flex justify-between border-t border-gray-200 pt-2 mt-1">
-                <span class="font-bold text-gray-800">Gesamt</span>
-                <span class="font-bold text-emerald-700">CHF 4'090.40</span>
+              <div class="flex-1">
+                <label class="block text-xs text-gray-500 mb-1.5">Bis</label>
+                <input type="date" value="2026-03-31" class="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm">
+              </div>
+            </div>
+            <div class="flex gap-2 mt-3">
+              <button class="text-xs px-3 py-1.5 bg-white text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">Januar</button>
+              <button class="text-xs px-3 py-1.5 bg-white text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">Februar</button>
+              <button class="text-xs px-3 py-1.5 bg-emerald-700 text-white rounded-lg font-medium">März</button>
+              <button class="text-xs px-3 py-1.5 bg-white text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">Q1 2026</button>
+              <button class="text-xs px-3 py-1.5 bg-white text-emerald-700 rounded-lg hover:bg-blue-100 font-medium">2025</button>
+            </div>
+          </div>
+
+          <!-- Options -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <h3 class="font-bold text-gray-800 mb-4">3. Optionen</h3>
+            <div class="space-y-3">
+              <label class="flex items-center gap-3 cursor-pointer">
+                <div class="w-10 h-6 bg-emerald-700 rounded-full flex items-center justify-end pr-1">
+                  <div class="w-4 h-4 bg-white rounded-full"></div>
+                </div>
+                <div>
+                  <p class="text-sm font-medium text-gray-700">Kilometer-Protokoll einschliessen</p>
+                  <p class="text-xs text-gray-400">347 km × CHF 0.70 = CHF 242.90</p>
+                </div>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer">
+                <div class="w-10 h-6 bg-gray-200 rounded-full flex items-center pl-1">
+                  <div class="w-4 h-4 bg-white rounded-full"></div>
+                </div>
+                <div>
+                  <p class="text-sm font-medium text-gray-700">Nur geprüfte Belege</p>
+                  <p class="text-xs text-gray-400">2 ungeprüfte Belege ausschliessen</p>
+                </div>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer">
+                <div class="w-10 h-6 bg-emerald-700 rounded-full flex items-center justify-end pr-1">
+                  <div class="w-4 h-4 bg-white rounded-full"></div>
+                </div>
+                <div>
+                  <p class="text-sm font-medium text-gray-700">MwSt-Aufschlüsselung</p>
+                  <p class="text-xs text-gray-400">Separate Spalten für 8.1%, 3.8%, 2.5%</p>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Export button -->
+          <button onclick="showExportDone()" class="w-full bg-emerald-700 text-white font-bold rounded-2xl py-4 text-base hover:bg-emerald-800 flex items-center justify-center gap-2">
+            📥 Export herunterladen
+          </button>
+          <div id="export-done" class="hidden bg-green-50 border border-green-200 rounded-2xl p-4 text-center">
+            <p class="text-green-800 font-semibold">✅ Spezo_2026-03-01_2026-03-31.xlsx</p>
+            <p class="text-xs text-green-600 mt-1">Download startet automatisch...</p>
+          </div>
+        </div>
+
+        <!-- Right: Summary -->
+        <div class="col-span-1 space-y-4">
+          <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+            <h3 class="font-bold text-gray-800 mb-4">Vorschau</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-500">Zeitraum</span>
+                <span class="font-medium text-gray-800">März 2026</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">Belege</span>
+                <span class="font-medium text-gray-800">24</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">Total</span>
+                <span class="font-bold text-gray-900">CHF 3'847.50</span>
+              </div>
+              <div class="border-t border-gray-100 pt-2 mt-2">
+                <div class="flex justify-between">
+                  <span class="text-gray-500">MwSt 8.1%</span>
+                  <span class="text-gray-700">CHF 287.42</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-500">MwSt 2.5%</span>
+                  <span class="text-gray-700">CHF 18.60</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-500">MwSt 3.8%</span>
+                  <span class="text-gray-700">CHF 5.62</span>
+                </div>
+              </div>
+              <div class="border-t border-gray-100 pt-2 mt-2">
+                <div class="flex justify-between">
+                  <span class="text-gray-500">Kilometer</span>
+                  <span class="text-gray-700">CHF 242.90</span>
+                </div>
+                <div class="flex justify-between border-t border-gray-200 pt-2 mt-1">
+                  <span class="font-bold text-gray-800">Gesamt</span>
+                  <span class="font-bold text-emerald-700">CHF 4'090.40</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Export history -->
+          <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+            <h3 class="font-bold text-gray-800 mb-3 text-sm">Letzte Exporte</h3>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2 text-xs">
+                <span class="text-gray-400">📊</span>
+                <div class="flex-1">
+                  <p class="text-gray-700 font-medium">Feb 2026.xlsx</p>
+                  <p class="text-gray-400">15.03.26</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span class="text-gray-400">📄</span>
+                <div class="flex-1">
+                  <p class="text-gray-700 font-medium">Q4 2025.pdf</p>
+                  <p class="text-gray-400">02.01.26</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span class="text-gray-400">📋</span>
+                <div class="flex-1">
+                  <p class="text-gray-700 font-medium">Jan 2026.csv</p>
+                  <p class="text-gray-400">01.02.26</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Export history -->
-        <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-          <h3 class="font-bold text-gray-800 mb-3 text-sm">Letzte Exporte</h3>
-          <div class="space-y-2">
-            <div class="flex items-center gap-2 text-xs">
-              <span class="text-gray-400">📊</span>
-              <div class="flex-1">
-                <p class="text-gray-700 font-medium">Feb 2026.xlsx</p>
-                <p class="text-gray-400">15.03.26</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-2 text-xs">
-              <span class="text-gray-400">📄</span>
-              <div class="flex-1">
-                <p class="text-gray-700 font-medium">Q4 2025.pdf</p>
-                <p class="text-gray-400">02.01.26</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-2 text-xs">
-              <span class="text-gray-400">📋</span>
-              <div class="flex-1">
-                <p class="text-gray-700 font-medium">Jan 2026.csv</p>
-                <p class="text-gray-400">01.02.26</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
-  </main>
+    </main>
   </div>
 
   <script>
-    // On page load: restore saved language
-    window.addEventListener('DOMContentLoaded', function() {
-      const saved = localStorage.getItem('spezo_lang');
-      if (saved) {
-        const sel = document.getElementById('langSelect');
-        if (sel) { sel.value = saved; changeLang(saved); }
-        // For dashboard-style pages that use applyLang:
-        const langMap = {de:['🇨🇭','Deutsch'], fr:['🇫🇷','Français'], it:['🇮🇹','Italiano'], rm:['🇨🇭','Rumantsch'], en:['🇬🇧','English'], tr:['🇹🇷','Türkçe'], sq:['🇦🇱','Shqip']};
-        if (typeof applyLang === 'function' && langMap[saved]) applyLang(saved, langMap[saved][0], langMap[saved][1]);
-        if (langMap[saved]) { document.getElementById('lang-flag').textContent=langMap[saved][0]; document.getElementById('lang-name').textContent=langMap[saved][1]; }
-      }
+  let currentLang = 'de';
+
+  function toggleLang(e) {
+    if (e) e.stopPropagation();
+    var m = document.getElementById('lang-menu');
+    m.style.display = m.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function applyLang(code, flag, name) {
+    localStorage.setItem('spezo_lang', code);
+    currentLang = code;
+    document.getElementById('lang-flag').textContent = flag;
+    document.getElementById('lang-name').textContent = name;
+    document.getElementById('lang-menu').style.display = 'none';
+    ['de','fr','it','rm','en','tr','sq'].forEach(function(l) {
+      var chk = document.getElementById('chk-' + l);
+      if (chk) chk.style.display = (l === code) ? 'inline' : 'none';
     });
-    function toggleLang(){document.getElementById('lang-menu').classList.toggle('hidden');}
-    function setLang(flag,name){document.getElementById('lang-flag').textContent=flag;document.getElementById('lang-name').textContent=name;document.getElementById('lang-menu').classList.add('hidden');}
-    function changeLang(lang){localStorage.setItem('spezo_lang', lang);const langMap={de:['🇨🇭','Deutsch'],fr:['🇫🇷','Français'],it:['🇮🇹','Italiano'],rm:['🇨🇭','Rumantsch'],en:['🇬🇧','English'],tr:['🇹🇷','Türkçe'],sq:['🇦🇱','Shqip']};if(langMap[lang]){document.getElementById('lang-flag').textContent=langMap[lang][0];document.getElementById('lang-name').textContent=langMap[lang][1];}}
-    document.addEventListener('click',function(e){if(!document.getElementById('lang-dropdown').contains(e.target)){document.getElementById('lang-menu').classList.add('hidden');}});
-    function showExportDone() {
-      document.getElementById('export-done').classList.remove('hidden');
+    document.documentElement.lang = code;
+  }
+
+  document.addEventListener('click', function(e) {
+    var dd = document.getElementById('lang-dropdown');
+    if (dd && !dd.contains(e.target)) {
+      var m = document.getElementById('lang-menu');
+      if (m) m.style.display = 'none';
     }
-    function selectFormat(el) {
-      document.querySelectorAll('.format-card').forEach(c => {
-        c.classList.remove('border-emerald-700', 'bg-white');
-        c.classList.add('border-gray-200');
-      });
-      el.classList.remove('border-gray-200');
-      el.classList.add('border-emerald-700', 'bg-white');
+  });
+
+  window.addEventListener('DOMContentLoaded', function() {
+    var saved = localStorage.getItem('spezo_lang');
+    if (saved) {
+      var langMap = {de:['🇨🇭','Deutsch'], fr:['🇫🇷','Français'], it:['🇮🇹','Italiano'], rm:['🇨🇭','Rumantsch'], en:['🇬🇧','English'], tr:['🇹🇷','Türkçe'], sq:['🇦🇱','Shqip']};
+      if (langMap[saved]) applyLang(saved, langMap[saved][0], langMap[saved][1]);
     }
+  });
+
+  function showExportDone() {
+    document.getElementById('export-done').classList.remove('hidden');
+  }
+
+  function selectFormat(el) {
+    document.querySelectorAll('.format-card').forEach(function(c) {
+      c.classList.remove('border-emerald-700', 'bg-white');
+      c.classList.add('border-gray-200');
+    });
+    el.classList.remove('border-gray-200');
+    el.classList.add('border-emerald-700', 'bg-white');
+  }
   </script>
 </body>
 </html>

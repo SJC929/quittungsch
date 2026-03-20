@@ -7,83 +7,92 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap');*{font-family:'DM Sans',sans-serif;}</style>
 </head>
-<body class="min-h-screen flex" style="background: #eafaf3;">
+<body class="min-h-screen flex" style="background: #f9fafb;">
 
   <!-- Sidebar -->
-  <aside class="w-60 border-r border-emerald-300 flex flex-col min-h-screen fixed left-0 top-0" style="background: linear-gradient(180deg, #6ee7b7 0%, #a7f3d0 40%, #d1fae5 100%);">
-    <div class="p-4 border-b border-gray-100">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;">
-        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="100" height="100" rx="22" fill="#34D399"/>
-          <rect x="18" y="14" width="52" height="64" rx="4" fill="white"/>
-          <path d="M18 74 L23 68 L28 74 L33 68 L38 74 L43 68 L48 74 L53 68 L58 74 L63 68 L68 74 L70 74 L70 78 L18 78 Z" fill="white"/>
-          <rect x="26" y="23" width="22" height="5" rx="2.5" fill="#059669"/>
-          <rect x="26" y="33" width="32" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="40" width="28" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="47" width="30" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="54" width="24" height="3" rx="1.5" fill="#D1FAE5"/>
-          <rect x="26" y="61" width="20" height="4" rx="2" fill="#059669"/>
-          <circle cx="72" cy="74" r="18" fill="#047857"/>
-          <circle cx="72" cy="74" r="13" fill="white"/>
-          <circle cx="72" cy="74" r="8" fill="none" stroke="#047857" stroke-width="3"/>
-          <line x1="78" y1="80" x2="86" y2="88" stroke="#047857" stroke-width="4" stroke-linecap="round"/>
-          <rect x="67" y="72" width="10" height="2" rx="1" fill="#047857"/>
-          <rect x="67" y="76" width="7" height="2" rx="1" fill="#047857"/>
+  <aside style="width:240px;background:linear-gradient(180deg,#0a1f14 0%,#0d2318 100%);display:flex;flex-direction:column;min-height:100vh;position:fixed;left:0;top:0;z-index:30;">
+    <!-- Logo section -->
+    <div style="padding:20px 20px 16px;border-bottom:1px solid rgba(255,255,255,0.1);">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;">
+        <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="24" fill="rgba(255,255,255,0.12)"/>
+          <rect x="20" y="14" width="50" height="62" rx="5" fill="rgba(255,255,255,0.95)"/>
+          <path d="M20 72 L25 66 L30 72 L35 66 L40 72 L45 66 L50 72 L55 66 L60 72 L65 66 L70 72 L70 76 L20 76 Z" fill="rgba(255,255,255,0.95)"/>
+          <rect x="28" y="22" width="20" height="5" rx="2.5" fill="white"/>
+          <rect x="28" y="32" width="30" height="3" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+          <rect x="28" y="39" width="26" height="3" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+          <rect x="28" y="46" width="28" height="3" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+          <rect x="28" y="53" width="22" height="3" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+          <rect x="28" y="60" width="18" height="4" rx="2" fill="white"/>
+          <circle cx="73" cy="73" r="17" fill="white"/>
+          <circle cx="73" cy="73" r="12" fill="rgba(255,255,255,0.15)"/>
+          <circle cx="73" cy="73" r="7" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5"/>
+          <line x1="78" y1="79" x2="86" y2="87" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round"/>
+          <rect x="69" y="72" width="8" height="2" rx="1" fill="rgba(255,255,255,0.9)"/>
+          <rect x="69" y="75.5" width="5.5" height="2" rx="1" fill="rgba(255,255,255,0.9)"/>
         </svg>
-        <span style="font-size:16px;font-weight:700;color:#059669;">Spezo</span>
+        <span style="font-size:20px;font-weight:700;color:white;letter-spacing:-0.3px;">Spezo</span>
       </div>
-      <p class="text-xs text-gray-400 mt-0.5" data-i18n="tagline">Buchhaltung leicht gemacht</p>
+      <p style="font-size:10px;color:rgba(52,211,153,0.8);letter-spacing:0.08em;text-transform:uppercase;font-weight:600;margin-left:54px;" data-i18n="tagline">SCHWEIZER BUCHHALTUNG</p>
     </div>
-    <nav class="flex-1 p-4 space-y-1">
-      <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white text-emerald-700 font-medium text-sm">
+
+    <!-- Quick add button -->
+    <div style="padding:12px 16px;">
+      <a href="04-upload.html" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#10b981;color:white;border-radius:12px;padding:10px 16px;text-decoration:none;font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(16,185,129,0.3);" data-i18n="nav_upload_btn">+ Beleg erfassen</a>
+    </div>
+
+    <!-- Nav -->
+    <nav style="flex:1;padding:4px 12px;overflow-y:auto;">
+      <a href="#" style="background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.25);color:#6ee7b7;font-weight:600;border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;margin-bottom:2px;">
         <span>📊</span> <span data-i18n="nav_dashboard">Dashboard</span>
       </a>
-      <a href="04-upload.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
-        <span>📷</span> <span data-i18n="nav_upload">Beleg erfassen</span>
-      </a>
-      <a href="05-expenses.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
+      <a href="05-expenses.html" style="color:rgba(255,255,255,0.45);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;margin-bottom:2px;">
         <span>🧾</span> <span data-i18n="nav_expenses">Belege</span>
       </a>
-      <a href="06-exports.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
+      <a href="06-exports.html" style="color:rgba(255,255,255,0.45);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;margin-bottom:2px;">
         <span>📤</span> <span data-i18n="nav_exports">Export</span>
       </a>
-      <a href="07-checkout.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
+      <a href="07-checkout.html" style="color:rgba(255,255,255,0.45);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;margin-bottom:2px;">
         <span>💳</span> <span data-i18n="nav_upgrade">Upgrade</span>
       </a>
-      <div class="pt-4 border-t border-gray-100 mt-4">
-        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:bg-gray-50 text-sm">
-          <span>⚙️</span> <span data-i18n="nav_settings">Einstellungen</span>
-        </a>
-      </div>
+      <a href="#" style="color:rgba(255,255,255,0.45);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;margin-bottom:2px;">
+        <span>⚙️</span> <span data-i18n="nav_settings">Einstellungen</span>
+      </a>
     </nav>
-    <div class="p-4 border-t border-gray-100">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-sm font-bold text-emerald-700">M</div>
+
+    <!-- Bottom -->
+    <div style="padding:12px 16px;border-top:1px solid rgba(255,255,255,0.1);">
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:8px 12px;margin-bottom:8px;">
+        <p style="font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:1px;" data-i18n="plan_label">Plan</p>
+        <p style="font-size:13px;font-weight:600;color:#34d399;" data-i18n="free_plan">Free Trial</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;">
+        <div style="width:30px;height:30px;background:rgba(52,211,153,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#34d399;">M</div>
         <div>
-          <p class="text-sm font-medium text-gray-800">Max Muster</p>
-          <p class="text-xs text-gray-400" data-i18n="free_plan">Free Plan</p>
+          <p style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.8);margin:0;">Max Muster</p>
+          <p style="font-size:10px;color:rgba(255,255,255,0.3);margin:0;">max@muster.ch</p>
         </div>
       </div>
     </div>
   </aside>
 
   <!-- Main -->
-  <div class="ml-60 flex-1 flex flex-col min-h-screen">
+  <div class="flex-1 flex flex-col min-h-screen" style="margin-left:240px;">
 
     <!-- Topbar -->
-    <header class="border-b border-emerald-200 h-14 flex items-center justify-end px-6 sticky top-0 z-40" style="background: rgba(209,250,229,0.85); backdrop-filter: blur(8px);">
-      <div class="relative" id="lang-dropdown">
-        <button onclick="toggleLang()" class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm font-medium text-gray-700">
-          <span>🌐</span><span id="lang-flag">🇨🇭</span><span id="lang-name" class="ml-1">Deutsch</span><span class="text-gray-400 text-xs ml-1">▾</span>
+    <header style="height:56px;background:white;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;justify-content:flex-end;padding:0 24px;position:sticky;top:0;z-index:40;box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+      <div style="position:relative;" id="lang-dropdown">
+        <button onclick="toggleLang(event)" style="display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;border:1px solid #e5e7eb;background:white;cursor:pointer;font-size:13px;font-weight:500;color:#374151;font-family:inherit;">
+          🌐 <span id="lang-flag">🇨🇭</span> <span id="lang-name">Deutsch</span> ▾
         </button>
-        <div id="lang-menu" class="hidden absolute right-0 top-full mt-1 w-44 bg-white border border-gray-200 rounded-xl shadow-lg py-1 z-50">
-          <button onclick="applyLang('de','🇨🇭','Deutsch')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50" id="btn-de"><span>🇨🇭</span> Deutsch <span class="ml-auto text-emerald-700">✓</span></button>
-          <button onclick="applyLang('fr','🇫🇷','Français')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700" id="btn-fr"><span>🇫🇷</span> Français</button>
-          <button onclick="applyLang('it','🇮🇹','Italiano')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700" id="btn-it"><span>🇮🇹</span> Italiano</button>
-          <button onclick="applyLang('rm','🇨🇭','Rumantsch')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700" id="btn-rm"><span>🇨🇭</span> Rumantsch</button>
-          <button onclick="applyLang('en','🇬🇧','English')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700" id="btn-en"><span>🇬🇧</span> English</button>
-          <button onclick="applyLang('tr','🇹🇷','Türkçe')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700" id="btn-tr"><span>🇹🇷</span> Türkçe</button>
-          <button onclick="applyLang('sq','🇦🇱','Shqip')" class="w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-50 text-gray-700" id="btn-sq"><span>🇦🇱</span> Shqip</button>
+        <div id="lang-menu" style="display:none;position:absolute;right:0;top:calc(100% + 6px);width:180px;background:white;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.12);padding:6px;z-index:9999;">
+          <button onclick="applyLang('de','🇨🇭','Deutsch')" id="btn-de" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇨🇭 <span>Deutsch</span> <span id="chk-de" style="margin-left:auto;color:#059669;">✓</span></button>
+          <button onclick="applyLang('fr','🇫🇷','Français')" id="btn-fr" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇫🇷 <span>Français</span> <span id="chk-fr" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('it','🇮🇹','Italiano')" id="btn-it" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇮🇹 <span>Italiano</span> <span id="chk-it" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('rm','🇨🇭','Rumantsch')" id="btn-rm" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇨🇭 <span>Rumantsch</span> <span id="chk-rm" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('en','🇬🇧','English')" id="btn-en" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇬🇧 <span>English</span> <span id="chk-en" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('tr','🇹🇷','Türkçe')" id="btn-tr" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇹🇷 <span>Türkçe</span> <span id="chk-tr" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
+          <button onclick="applyLang('sq','🇦🇱','Shqip')" id="btn-sq" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;border:none;background:none;cursor:pointer;font-size:13px;text-align:left;font-family:inherit;color:#374151;">🇦🇱 <span>Shqip</span> <span id="chk-sq" style="margin-left:auto;color:#059669;display:none;">✓</span></button>
         </div>
       </div>
     </header>
@@ -235,10 +244,10 @@
       <div class="mt-6 bg-gradient-to-r from-emerald-500 to-emerald-700 rounded-2xl p-5 flex items-center justify-between text-white">
         <div>
           <p class="font-bold" data-i18n="banner_title">Sie nutzen den kostenlosen Plan</p>
-          <p class="text-sm text-blue-100 mt-0.5" data-i18n="banner_sub">Upgrade auf Pro für unlimitierte Belege, Google Sheets & Prioritäts-Support</p>
+          <p class="text-sm text-blue-100 mt-0.5" data-i18n="banner_sub">Upgrade auf Pro für unlimitierte Belege, Google Sheets &amp; Prioritäts-Support</p>
         </div>
         <a href="07-checkout.html" class="bg-white text-emerald-700 font-semibold rounded-xl px-5 py-2.5 text-sm hover:bg-white whitespace-nowrap" data-i18n="banner_btn">
-          Upgrade → CHF 9/Mt
+          Upgrade → CHF 4.95/Mt
         </a>
       </div>
     </main>
@@ -247,10 +256,11 @@
 <script>
 const T = {
   de: {
-    tagline: "Buchhaltung leicht gemacht",
+    tagline: "SCHWEIZER BUCHHALTUNG",
+    nav_upload_btn: "+ Beleg erfassen",
     nav_dashboard: "Dashboard", nav_upload: "Beleg erfassen", nav_expenses: "Belege",
     nav_exports: "Export", nav_upgrade: "Upgrade", nav_settings: "Einstellungen",
-    free_plan: "Free Plan",
+    plan_label: "Plan", free_plan: "Free Trial",
     greeting: "Guten Morgen, Max 👋", subtitle: "März 2026 – Übersicht", btn_add: "Beleg erfassen",
     kpi_expenses: "Ausgaben (März)", kpi_expenses_sub: "↑ +12% vs. Vormonat",
     kpi_vat: "MwSt (März)", kpi_vat_sub: "8.1% Normalsatz",
@@ -265,10 +275,11 @@ const T = {
     banner_btn: "Upgrade → CHF 4.95/Mt"
   },
   fr: {
-    tagline: "La comptabilité simplifiée",
+    tagline: "COMPTABILITÉ SUISSE",
+    nav_upload_btn: "+ Saisir reçu",
     nav_dashboard: "Tableau de bord", nav_upload: "Saisir reçu", nav_expenses: "Reçus",
     nav_exports: "Exports", nav_upgrade: "Mise à niveau", nav_settings: "Paramètres",
-    free_plan: "Plan gratuit",
+    plan_label: "Plan", free_plan: "Essai gratuit",
     greeting: "Bonjour, Max 👋", subtitle: "Mars 2026 – Aperçu", btn_add: "Saisir reçu",
     kpi_expenses: "Dépenses (mars)", kpi_expenses_sub: "↑ +12% vs. mois précédent",
     kpi_vat: "TVA (mars)", kpi_vat_sub: "8.1% taux normal",
@@ -283,10 +294,11 @@ const T = {
     banner_btn: "Mise à niveau → CHF 4.95/mois"
   },
   it: {
-    tagline: "Contabilità semplice",
+    tagline: "CONTABILITÀ SVIZZERA",
+    nav_upload_btn: "+ Aggiungi ricevuta",
     nav_dashboard: "Pannello", nav_upload: "Aggiungi ricevuta", nav_expenses: "Ricevute",
     nav_exports: "Esportazioni", nav_upgrade: "Aggiornamento", nav_settings: "Impostazioni",
-    free_plan: "Piano gratuito",
+    plan_label: "Piano", free_plan: "Prova gratuita",
     greeting: "Buongiorno, Max 👋", subtitle: "Marzo 2026 – Panoramica", btn_add: "Aggiungi ricevuta",
     kpi_expenses: "Spese (marzo)", kpi_expenses_sub: "↑ +12% vs. mese precedente",
     kpi_vat: "IVA (marzo)", kpi_vat_sub: "8.1% aliquota normale",
@@ -301,10 +313,11 @@ const T = {
     banner_btn: "Aggiornamento → CHF 4.95/mese"
   },
   rm: {
-    tagline: "La contabilitad simplifitgada",
+    tagline: "CONTABILITAD SVIZRA",
+    nav_upload_btn: "+ Registrar quittanza",
     nav_dashboard: "Dashboard", nav_upload: "Registrar quittanza", nav_expenses: "Quittanzas",
     nav_exports: "Exports", nav_upgrade: "Agrandissement", nav_settings: "Parameters",
-    free_plan: "Plan gratuit",
+    plan_label: "Plan", free_plan: "Prova gratuita",
     greeting: "Bun di, Max 👋", subtitle: "Mars 2026 – Survista", btn_add: "Registrar quittanza",
     kpi_expenses: "Expensas (mars)", kpi_expenses_sub: "↑ +12% vs. mais avant",
     kpi_vat: "IVA (mars)", kpi_vat_sub: "8.1% taux normal",
@@ -319,10 +332,11 @@ const T = {
     banner_btn: "Agrandissement → CHF 4.95/mais"
   },
   en: {
-    tagline: "Accounting made easy",
+    tagline: "SWISS ACCOUNTING",
+    nav_upload_btn: "+ Add receipt",
     nav_dashboard: "Dashboard", nav_upload: "Add receipt", nav_expenses: "Receipts",
     nav_exports: "Exports", nav_upgrade: "Upgrade", nav_settings: "Settings",
-    free_plan: "Free Plan",
+    plan_label: "Plan", free_plan: "Free Trial",
     greeting: "Good morning, Max 👋", subtitle: "March 2026 – Overview", btn_add: "Add receipt",
     kpi_expenses: "Expenses (March)", kpi_expenses_sub: "↑ +12% vs. last month",
     kpi_vat: "VAT (March)", kpi_vat_sub: "8.1% standard rate",
@@ -334,62 +348,54 @@ const T = {
     status_ok: "OK", status_review: "Review",
     banner_title: "You are on the free plan",
     banner_sub: "Upgrade to Pro for unlimited receipts, Google Sheets & priority support",
-    banner_btn: "Upgrade → CHF 9/mo"
+    banner_btn: "Upgrade → CHF 4.95/mo"
+  },
+  tr: {
+    tagline: "İSVİÇRE MUHASEBESİ",
+    nav_upload_btn: "+ Makbuz ekle",
+    nav_dashboard: "Panel", nav_upload: "Makbuz ekle", nav_expenses: "Makbuzlar",
+    nav_exports: "Dışa aktarım", nav_upgrade: "Yükselt", nav_settings: "Ayarlar",
+    plan_label: "Plan", free_plan: "Ücretsiz Deneme",
+    greeting: "Günaydın, Max 👋", subtitle: "Mart 2026 – Genel Bakış", btn_add: "Makbuz ekle",
+    kpi_expenses: "Giderler (Mart)", kpi_expenses_sub: "↑ +12% önceki aya göre",
+    kpi_vat: "KDV (Mart)", kpi_vat_sub: "8.1% normal oran",
+    kpi_receipts: "Makbuzlar (Mart)", kpi_receipts_sub: "⚠ 2 incelenecek",
+    kpi_km: "Kilometre", kpi_km_sub: "CHF 242.90 götürü",
+    categories: "Kategoriler", recent: "Son Makbuzlar", show_all: "Tümünü göster →",
+    th_date: "Tarih", th_merchant: "Satıcı", th_category: "Kategori", th_amount: "Tutar", th_status: "Durum",
+    cat_vehicle: "Araç", cat_food: "Yiyecek & İçecek", cat_material: "Malzeme", cat_office: "Ofis", cat_other: "Diğer", cat_travel: "Seyahat",
+    status_ok: "Tamam", status_review: "İncele",
+    banner_title: "Ücretsiz plan kullanıyorsunuz",
+    banner_sub: "Sınırsız makbuz, Google Sheets & öncelikli destek için Pro'a geçin",
+    banner_btn: "Yükselt → CHF 4.95/Ay"
+  },
+  sq: {
+    tagline: "KONTABILITETI ZVICERAN",
+    nav_upload_btn: "+ Shto faturë",
+    nav_dashboard: "Paneli", nav_upload: "Shto faturë", nav_expenses: "Faturat",
+    nav_exports: "Eksportet", nav_upgrade: "Përmirëso", nav_settings: "Cilësimet",
+    plan_label: "Plani", free_plan: "Provë Falas",
+    greeting: "Mirëmëngjes, Max 👋", subtitle: "Mars 2026 – Pasqyra", btn_add: "Shto faturë",
+    kpi_expenses: "Shpenzimet (Mars)", kpi_expenses_sub: "↑ +12% vs muajin e kaluar",
+    kpi_vat: "TVSH (Mars)", kpi_vat_sub: "8.1% norma normale",
+    kpi_receipts: "Faturat (Mars)", kpi_receipts_sub: "⚠ 2 për t'u verifikuar",
+    kpi_km: "Kilometra", kpi_km_sub: "CHF 242.90 tarifë e sheshtë",
+    categories: "Kategoritë", recent: "Faturat e fundit", show_all: "Shfaq të gjitha →",
+    th_date: "Data", th_merchant: "Shitësi", th_category: "Kategoria", th_amount: "Shuma", th_status: "Statusi",
+    cat_vehicle: "Automjet", cat_food: "Ushqim & Pije", cat_material: "Material", cat_office: "Zyrë", cat_other: "Të tjera", cat_travel: "Udhëtim",
+    status_ok: "OK", status_review: "Verifiko",
+    banner_title: "Jeni duke përdorur planin falas",
+    banner_sub: "Kaloni në Pro për fatura të pakufizuara, Google Sheets & mbështetje prioritare",
+    banner_btn: "Përmirëso → CHF 4.95/Muaj"
   }
 };
 
-  tr: {
-    tagline: 'Muhasebe kolaylaştırıldı',
-    nav_dashboard: 'Panel', nav_upload: 'Makbuz ekle', nav_expenses: 'Makbuzlar',
-    nav_exports: 'Dışa aktarım', nav_upgrade: 'Yükselt', nav_settings: 'Ayarlar',
-    free_plan: 'Ücretsiz Plan',
-    greeting: 'Günaydın, Max 👋', subtitle: 'Mart 2026 – Genel Bakış', btn_add: 'Makbuz ekle',
-    kpi_expenses: 'Giderler (Mart)', kpi_expenses_sub: '↑ +12% önceki aya göre',
-    kpi_vat: 'KDV (Mart)', kpi_vat_sub: '8.1% normal oran',
-    kpi_receipts: 'Makbuzlar (Mart)', kpi_receipts_sub: '⚠ 2 incelenecek',
-    kpi_km: 'Kilometre', kpi_km_sub: 'CHF 242.90 götürü',
-    categories: 'Kategoriler', recent: 'Son Makbuzlar', show_all: 'Tümünü göster →',
-    th_date: 'Tarih', th_merchant: 'Satıcı', th_category: 'Kategori', th_amount: 'Tutar', th_status: 'Durum',
-    cat_vehicle: 'Araç', cat_food: 'Yiyecek & İçecek', cat_material: 'Malzeme', cat_office: 'Ofis', cat_other: 'Diğer', cat_travel: 'Seyahat',
-    status_ok: 'Tamam', status_review: 'İncele',
-    banner_title: 'Ücretsiz plan kullanıyorsunuz',
-    banner_sub: 'Sınırsız makbuz, Google Sheets & öncelikli destek için Pro'a geçin',
-    banner_btn: 'Yükselt → CHF 4.95/Ay'
-  },
-  sq: {
-    tagline: 'Kontabiliteti i thjeshtësuar',
-    nav_dashboard: 'Paneli', nav_upload: 'Shto faturë', nav_expenses: 'Faturat',
-    nav_exports: 'Eksportet', nav_upgrade: 'Përmirëso', nav_settings: 'Cilësimet',
-    free_plan: 'Plan Falas',
-    greeting: 'Mirëmëngjes, Max 👋', subtitle: 'Mars 2026 – Pasqyra', btn_add: 'Shto faturë',
-    kpi_expenses: 'Shpenzimet (Mars)', kpi_expenses_sub: '↑ +12% vs muajin e kaluar',
-    kpi_vat: 'TVSH (Mars)', kpi_vat_sub: '8.1% norma normale',
-    kpi_receipts: 'Faturat (Mars)', kpi_receipts_sub: '⚠ 2 për t'u verifikuar',
-    kpi_km: 'Kilometra', kpi_km_sub: 'CHF 242.90 tarifë e sheshtë',
-    categories: 'Kategoritë', recent: 'Faturat e fundit', show_all: 'Shfaq të gjitha →',
-    th_date: 'Data', th_merchant: 'Shitësi', th_category: 'Kategoria', th_amount: 'Shuma', th_status: 'Statusi',
-    cat_vehicle: 'Automjet', cat_food: 'Ushqim & Pije', cat_material: 'Material', cat_office: 'Zyrë', cat_other: 'Të tjera', cat_travel: 'Udhëtim',
-    status_ok: 'OK', status_review: 'Verifiko',
-    banner_title: 'Jeni duke përdorur planin falas',
-    banner_sub: 'Kaloni në Pro për fatura të pakufizuara, Google Sheets & mbështetje prioritare',
-    banner_btn: 'Përmirëso → CHF 4.95/Muaj'
-  },
-  let currentLang = 'de';
+let currentLang = 'de';
 
-// On page load: restore saved language
-window.addEventListener('DOMContentLoaded', function() {
-  const saved = localStorage.getItem('spezo_lang');
-  if (saved) {
-    const sel = document.getElementById('langSelect');
-    if (sel) { sel.value = saved; changeLang(saved); }
-    // For dashboard-style pages that use applyLang:
-    const langMap = {de:['🇨🇭','Deutsch'], fr:['🇫🇷','Français'], it:['🇮🇹','Italiano'], rm:['🇨🇭','Rumantsch'], en:['🇬🇧','English'], tr:['🇹🇷','Türkçe'], sq:['🇦🇱','Shqip']};
-    if (typeof applyLang === 'function' && langMap[saved]) applyLang(saved, langMap[saved][0], langMap[saved][1]);
-  }
-});
-
-function toggleLang() {
-  document.getElementById('lang-menu').classList.toggle('hidden');
+function toggleLang(e) {
+  if (e) e.stopPropagation();
+  var m = document.getElementById('lang-menu');
+  m.style.display = m.style.display === 'none' ? 'block' : 'none';
 }
 
 function applyLang(code, flag, name) {
@@ -397,30 +403,33 @@ function applyLang(code, flag, name) {
   currentLang = code;
   document.getElementById('lang-flag').textContent = flag;
   document.getElementById('lang-name').textContent = name;
-  document.getElementById('lang-menu').classList.add('hidden');
+  document.getElementById('lang-menu').style.display = 'none';
 
-  // Update all translated elements
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (T[code] && T[code][key]) el.textContent = T[code][key];
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (T[code] && T[code][key] !== undefined) el.textContent = T[code][key];
   });
 
-  // Update checkmark in dropdown
-  ['de','fr','it','rm','en','tr','sq'].forEach(l => {
-    const btn = document.getElementById('btn-' + l);
-    if (btn) {
-      btn.classList.toggle('text-emerald-700', l === code);
-      btn.classList.toggle('font-medium', l === code);
-      btn.classList.toggle('text-gray-700', l !== code);
-    }
+  ['de','fr','it','rm','en','tr','sq'].forEach(function(l) {
+    var chk = document.getElementById('chk-' + l);
+    if (chk) chk.style.display = (l === code) ? 'inline' : 'none';
   });
-
   document.documentElement.lang = code;
 }
 
 document.addEventListener('click', function(e) {
-  if (!document.getElementById('lang-dropdown').contains(e.target)) {
-    document.getElementById('lang-menu').classList.add('hidden');
+  var dd = document.getElementById('lang-dropdown');
+  if (dd && !dd.contains(e.target)) {
+    var m = document.getElementById('lang-menu');
+    if (m) m.style.display = 'none';
+  }
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+  var saved = localStorage.getItem('spezo_lang');
+  if (saved) {
+    var langMap = {de:['🇨🇭','Deutsch'], fr:['🇫🇷','Français'], it:['🇮🇹','Italiano'], rm:['🇨🇭','Rumantsch'], en:['🇬🇧','English'], tr:['🇹🇷','Türkçe'], sq:['🇦🇱','Shqip']};
+    if (langMap[saved]) applyLang(saved, langMap[saved][0], langMap[saved][1]);
   }
 });
 </script>
